@@ -10,6 +10,12 @@
 
 @interface RestaurantListViewController ()
 
+/** 表示条件ボタン */
+@property (weak, nonatomic) IBOutlet UIButton *conditionButton;
+
+/** 表示順ボタン */
+@property (weak, nonatomic) IBOutlet UIButton *sortButton;
+
 @end
 
 @implementation RestaurantListViewController
@@ -18,7 +24,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        
     }
     return self;
 }
@@ -28,6 +34,16 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     NSLog(@"%s", __func__);
+    
+    [self initButton:self.conditionButton];
+    [self initButton:self.sortButton];
+}
+
+- (void)initButton:(UIButton *)button
+{
+    button.layer.borderColor = [UIColor grayColor].CGColor;
+    button.layer.borderWidth = 1.0f;
+    button.layer.cornerRadius = 7.5f;
 }
 
 - (void)didReceiveMemoryWarning
