@@ -14,13 +14,15 @@
 		77956EC71893D30900CF98C8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 77956EC61893D30900CF98C8 /* main.m */; };
 		77956ECB1893D30900CF98C8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 77956ECA1893D30900CF98C8 /* AppDelegate.m */; };
 		77956ECE1893D30900CF98C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77956ECC1893D30900CF98C8 /* Main.storyboard */; };
-		77956ED11893D30900CF98C8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77956ED01893D30900CF98C8 /* ViewController.m */; };
 		77956ED31893D30900CF98C8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77956ED21893D30900CF98C8 /* Images.xcassets */; };
 		77956EDA1893D30900CF98C8 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77956ED91893D30900CF98C8 /* XCTest.framework */; };
 		77956EDB1893D30900CF98C8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77956EBA1893D30900CF98C8 /* Foundation.framework */; };
 		77956EDC1893D30900CF98C8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77956EBE1893D30900CF98C8 /* UIKit.framework */; };
 		77956EE41893D30900CF98C8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 77956EE21893D30900CF98C8 /* InfoPlist.strings */; };
 		77956EE61893D30900CF98C8 /* lunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 77956EE51893D30900CF98C8 /* lunchTests.m */; };
+		77956EF21893E5A300CF98C8 /* LunchTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77956EF11893E5A300CF98C8 /* LunchTabBarController.m */; };
+		77956EF51893E6A000CF98C8 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77956EF41893E6A000CF98C8 /* MapViewController.m */; };
+		77956EFE1893F3A500CF98C8 /* RestaurantListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77956EFD1893F3A500CF98C8 /* RestaurantListViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,14 +47,18 @@
 		77956EC91893D30900CF98C8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		77956ECA1893D30900CF98C8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		77956ECD1893D30900CF98C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		77956ECF1893D30900CF98C8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		77956ED01893D30900CF98C8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		77956ED21893D30900CF98C8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		77956ED81893D30900CF98C8 /* lunchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = lunchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		77956ED91893D30900CF98C8 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		77956EE11893D30900CF98C8 /* lunchTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "lunchTests-Info.plist"; sourceTree = "<group>"; };
 		77956EE31893D30900CF98C8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		77956EE51893D30900CF98C8 /* lunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = lunchTests.m; sourceTree = "<group>"; };
+		77956EF01893E5A300CF98C8 /* LunchTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LunchTabBarController.h; sourceTree = "<group>"; };
+		77956EF11893E5A300CF98C8 /* LunchTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LunchTabBarController.m; sourceTree = "<group>"; };
+		77956EF31893E6A000CF98C8 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		77956EF41893E6A000CF98C8 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		77956EFC1893F3A500CF98C8 /* RestaurantListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantListViewController.h; sourceTree = "<group>"; };
+		77956EFD1893F3A500CF98C8 /* RestaurantListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantListViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,11 +118,10 @@
 		77956EC01893D30900CF98C8 /* lunch */ = {
 			isa = PBXGroup;
 			children = (
+				77956EEF1893E4C200CF98C8 /* controller */,
 				77956EC91893D30900CF98C8 /* AppDelegate.h */,
 				77956ECA1893D30900CF98C8 /* AppDelegate.m */,
 				77956ECC1893D30900CF98C8 /* Main.storyboard */,
-				77956ECF1893D30900CF98C8 /* ViewController.h */,
-				77956ED01893D30900CF98C8 /* ViewController.m */,
 				77956ED21893D30900CF98C8 /* Images.xcassets */,
 				77956EC11893D30900CF98C8 /* Supporting Files */,
 			);
@@ -150,6 +155,19 @@
 				77956EE21893D30900CF98C8 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		77956EEF1893E4C200CF98C8 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				77956EF01893E5A300CF98C8 /* LunchTabBarController.h */,
+				77956EF11893E5A300CF98C8 /* LunchTabBarController.m */,
+				77956EF31893E6A000CF98C8 /* MapViewController.h */,
+				77956EF41893E6A000CF98C8 /* MapViewController.m */,
+				77956EFC1893F3A500CF98C8 /* RestaurantListViewController.h */,
+				77956EFD1893F3A500CF98C8 /* RestaurantListViewController.m */,
+			);
+			path = controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,7 +267,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77956ED11893D30900CF98C8 /* ViewController.m in Sources */,
+				77956EF21893E5A300CF98C8 /* LunchTabBarController.m in Sources */,
+				77956EFE1893F3A500CF98C8 /* RestaurantListViewController.m in Sources */,
+				77956EF51893E6A000CF98C8 /* MapViewController.m in Sources */,
 				77956ECB1893D30900CF98C8 /* AppDelegate.m in Sources */,
 				77956EC71893D30900CF98C8 /* main.m in Sources */,
 			);
@@ -460,6 +480,7 @@
 				77956EEB1893D30900CF98C8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		77956EEC1893D30900CF98C8 /* Build configuration list for PBXNativeTarget "lunchTests" */ = {
 			isa = XCConfigurationList;
@@ -468,6 +489,7 @@
 				77956EEE1893D30900CF98C8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

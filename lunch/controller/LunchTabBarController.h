@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  LunchTabBarController.h
 //  lunch
 //
 //  Created by u1 on 2014/01/25.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface LunchTabBarController : UITabBarController
 
 @end
