@@ -51,6 +51,7 @@
                     <tabBarItem key="tabBarItem" title="Item 1" id="rKo-VN-eS6"/>
                     <connections>
                         <outlet property="conditionButton" destination="1Sg-4k-1nS" id="0OE-hi-GgG"/>
+                        <outlet property="restaurantTableView" destination="aOy-ze-hG2" id="RIi-U7-VXB"/>
                         <outlet property="sortButton" destination="SZ4-gj-of3" id="zef-b1-Czb"/>
                     </connections>
                 </viewController>

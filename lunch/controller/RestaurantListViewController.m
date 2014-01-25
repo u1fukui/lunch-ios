@@ -7,24 +7,34 @@
 //
 
 #import "RestaurantListViewController.h"
+#import "Restaurant.h"
+#import "RestaurantCell.h"
 
 @interface RestaurantListViewController ()
 
-/** 表示条件ボタン */
 @property (weak, nonatomic) IBOutlet UIButton *conditionButton;
-
-/** 表示順ボタン */
 @property (weak, nonatomic) IBOutlet UIButton *sortButton;
+@property (weak, nonatomic) IBOutlet UITableView *restaurantTableView;
+
+@property NSMutableArray *restaurantArray;
 
 @end
 
 @implementation RestaurantListViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)initWithCoder:(NSCoder *)aDecoder
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    NSLog(@"%s", __func__);
+    self = [super initWithCoder:aDecoder];
     if (self) {
-        
+        self.restaurantArray = [NSMutableArray array];
+        NSArray *nameArray = @[ @"サブウェイ", @"松屋", @"すき家", @"マクドナルド", @"吉野家"];
+        for (NSString *name in nameArray) {
+            Restaurant *restaurant = [[Restaurant alloc] init];
+            restaurant.name = name;
+            [self.restaurantArray addObject:restaurant];            
+        }
+
     }
     return self;
 }
@@ -37,6 +47,9 @@
     
     [self initButton:self.conditionButton];
     [self initButton:self.sortButton];
+    
+    self.restaurantTableView.delegate = self;
+    self.restaurantTableView.dataSource = self;
 }
 
 - (void)initButton:(UIButton *)button
@@ -51,5 +64,49 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+#pragma mark - UITableViewDataSource
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.restaurantArray.count;
+}
+
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"Cell";
+    RestaurantCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[RestaurantCell alloc]
+                initWithStyle:UITableViewCellStyleDefault
+                reuseIdentifier:CellIdentifier];
+    }
+    
+    Restaurant *restaurant = [self.restaurantArray objectAtIndex:indexPath.row];
+    [cell setRestaurant:restaurant];
+    
+    return cell;
+}
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+
+#pragma mark - UITableViewDelegate
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return [RestaurantCell cellHeight];
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // 何もしない
+}
+
 
 @end

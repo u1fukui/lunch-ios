@@ -23,6 +23,8 @@
 		77956EF21893E5A300CF98C8 /* LunchTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77956EF11893E5A300CF98C8 /* LunchTabBarController.m */; };
 		77956EF51893E6A000CF98C8 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77956EF41893E6A000CF98C8 /* MapViewController.m */; };
 		77956EFE1893F3A500CF98C8 /* RestaurantListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77956EFD1893F3A500CF98C8 /* RestaurantListViewController.m */; };
+		77956F031893F77D00CF98C8 /* Restaurant.m in Sources */ = {isa = PBXBuildFile; fileRef = 77956F021893F77D00CF98C8 /* Restaurant.m */; };
+		77956F0C1894082600CF98C8 /* RestaurantCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 77956F0B1894082600CF98C8 /* RestaurantCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,10 @@
 		77956EF41893E6A000CF98C8 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		77956EFC1893F3A500CF98C8 /* RestaurantListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantListViewController.h; sourceTree = "<group>"; };
 		77956EFD1893F3A500CF98C8 /* RestaurantListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantListViewController.m; sourceTree = "<group>"; };
+		77956F011893F77D00CF98C8 /* Restaurant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Restaurant.h; sourceTree = "<group>"; };
+		77956F021893F77D00CF98C8 /* Restaurant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Restaurant.m; sourceTree = "<group>"; };
+		77956F0A1894082600CF98C8 /* RestaurantCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantCell.h; sourceTree = "<group>"; };
+		77956F0B1894082600CF98C8 /* RestaurantCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +124,8 @@
 		77956EC01893D30900CF98C8 /* lunch */ = {
 			isa = PBXGroup;
 			children = (
+				77956F091894080B00CF98C8 /* view */,
+				77956F001893F76300CF98C8 /* model */,
 				77956EEF1893E4C200CF98C8 /* controller */,
 				77956EC91893D30900CF98C8 /* AppDelegate.h */,
 				77956ECA1893D30900CF98C8 /* AppDelegate.m */,
@@ -168,6 +176,24 @@
 				77956EFD1893F3A500CF98C8 /* RestaurantListViewController.m */,
 			);
 			path = controller;
+			sourceTree = "<group>";
+		};
+		77956F001893F76300CF98C8 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				77956F011893F77D00CF98C8 /* Restaurant.h */,
+				77956F021893F77D00CF98C8 /* Restaurant.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		77956F091894080B00CF98C8 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				77956F0A1894082600CF98C8 /* RestaurantCell.h */,
+				77956F0B1894082600CF98C8 /* RestaurantCell.m */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,8 +295,10 @@
 			files = (
 				77956EF21893E5A300CF98C8 /* LunchTabBarController.m in Sources */,
 				77956EFE1893F3A500CF98C8 /* RestaurantListViewController.m in Sources */,
+				77956F0C1894082600CF98C8 /* RestaurantCell.m in Sources */,
 				77956EF51893E6A000CF98C8 /* MapViewController.m in Sources */,
 				77956ECB1893D30900CF98C8 /* AppDelegate.m in Sources */,
+				77956F031893F77D00CF98C8 /* Restaurant.m in Sources */,
 				77956EC71893D30900CF98C8 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
