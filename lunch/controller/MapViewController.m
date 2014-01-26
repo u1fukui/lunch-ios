@@ -7,8 +7,11 @@
 //
 
 #import "MapViewController.h"
+#import <GoogleMaps/GoogleMaps.h>
 
 @interface MapViewController ()
+
+@property (weak, nonatomic) IBOutlet GMSMapView *mapView;
 
 @end
 
@@ -26,7 +29,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
     NSLog(@"%s", __func__);
 }
 
