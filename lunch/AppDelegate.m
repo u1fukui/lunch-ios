@@ -10,9 +10,16 @@
 
 @implementation AppDelegate
 
+// デバッグ出力
+void uncaughtExceptionHandler(NSException *exception)
+{
+    NSLog(@"CRASH: %@", exception);
+    NSLog(@"Stack Trace: %@", [exception callStackSymbols]);
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
     return YES;
 }
 							
