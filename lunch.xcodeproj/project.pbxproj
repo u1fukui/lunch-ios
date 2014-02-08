@@ -29,6 +29,7 @@
 		77E5BEEE189E3C17008164F6 /* RestaurantDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E5BEED189E3C17008164F6 /* RestaurantDetailView.m */; };
 		77E5BEF0189E3C4B008164F6 /* RestaurantDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77E5BEEF189E3C4B008164F6 /* RestaurantDetailView.xib */; };
 		77E5BEF2189E7973008164F6 /* lunch.csv in Resources */ = {isa = PBXBuildFile; fileRef = 77E5BEF1189E7973008164F6 /* lunch.csv */; };
+		77E5BF0618A68399008164F6 /* RestaurantCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77E5BF0518A68399008164F6 /* RestaurantCell.xib */; };
 		897876439B114BD9AC17968E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E66ED4BD004CC4AC751D12 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +80,7 @@
 		77E5BEED189E3C17008164F6 /* RestaurantDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantDetailView.m; sourceTree = "<group>"; };
 		77E5BEEF189E3C4B008164F6 /* RestaurantDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RestaurantDetailView.xib; sourceTree = "<group>"; };
 		77E5BEF1189E7973008164F6 /* lunch.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lunch.csv; sourceTree = "<group>"; };
+		77E5BF0518A68399008164F6 /* RestaurantCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RestaurantCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +215,7 @@
 			children = (
 				77956F0A1894082600CF98C8 /* RestaurantCell.h */,
 				77956F0B1894082600CF98C8 /* RestaurantCell.m */,
+				77E5BF0518A68399008164F6 /* RestaurantCell.xib */,
 				77E5BEEC189E3C17008164F6 /* RestaurantDetailView.h */,
 				77E5BEED189E3C17008164F6 /* RestaurantDetailView.m */,
 				77E5BEEF189E3C4B008164F6 /* RestaurantDetailView.xib */,
@@ -303,6 +306,7 @@
 				77E5BEF2189E7973008164F6 /* lunch.csv in Resources */,
 				77956EC51893D30900CF98C8 /* InfoPlist.strings in Resources */,
 				77956ECE1893D30900CF98C8 /* Main.storyboard in Resources */,
+				77E5BF0618A68399008164F6 /* RestaurantCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

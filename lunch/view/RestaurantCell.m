@@ -8,10 +8,15 @@
 
 #import "RestaurantCell.h"
 #import "Restaurant.h"
+#import "RestaurantSimpleView.h"
 
 @interface RestaurantCell()
 
-@property (nonatomic, strong) UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *holidayLabel;
+@property (weak, nonatomic) IBOutlet UILabel *featuredMenuLabel;
+
 
 @end
 
@@ -21,15 +26,50 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        // Initialization code
-        self.nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(30.0f,
-                                                                      10.0f,
-                                                                      260.0f,
-                                                                      50.0f)];
-        self.nameLabel.backgroundColor = [UIColor clearColor];
-        self.nameLabel.numberOfLines = 2;
-        self.nameLabel.lineBreakMode = NSLineBreakByCharWrapping;
-        [self addSubview:self.nameLabel];
+//        // 店名
+//        self.nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(12.0f,
+//                                                                   10.0f,
+//                                                                   300.0f,
+//                                                                   15.0f)];
+//        self.nameLabel.backgroundColor = [UIColor clearColor];
+//        self.nameLabel.textColor = [UIColor blackColor];
+//        self.nameLabel.font = [UIFont boldSystemFontOfSize:14.0f];
+//        self.nameLabel.numberOfLines = 1;
+//        [self addSubview:self.nameLabel];
+//        
+//        // 開店時間
+//        self.timeLabel = [[UILabel alloc] initWithFrame:CGRectMake(12.0f,
+//                                                                   30.0f,
+//                                                                   120.0f,
+//                                                                   15.0f)];
+//        self.timeLabel.backgroundColor = [UIColor clearColor];
+//        self.timeLabel.textColor = [UIColor grayColor];
+//        self.timeLabel.font = [UIFont systemFontOfSize:12.0f];
+//        self.timeLabel.numberOfLines = 1;
+//        [self addSubview:self.timeLabel];
+//        
+//        // 定休日
+//        self.holidayLabel = [[UILabel alloc] initWithFrame:CGRectMake(150.0f,
+//                                                                   30.0f,
+//                                                                   160.0f,
+//                                                                   15.0f)];
+//        self.holidayLabel.backgroundColor = [UIColor clearColor];
+//        self.holidayLabel.textColor = [UIColor grayColor];
+//        self.holidayLabel.font = [UIFont systemFontOfSize:12.0f];
+//        self.holidayLabel.numberOfLines = 1;
+//        [self addSubview:self.holidayLabel];
+//        
+//        // おすすめメニュー
+//        self.featuredMenuLabel = [[UILabel alloc] initWithFrame:CGRectMake(12.0f,
+//                                                                           50.0f,
+//                                                                           300.0f,
+//                                                                           15.0f)];
+//        self.featuredMenuLabel.backgroundColor = [UIColor clearColor];
+//        self.featuredMenuLabel.textColor = [UIColor blackColor];
+//        self.featuredMenuLabel.font = [UIFont systemFontOfSize:12.0f];
+//        self.featuredMenuLabel.numberOfLines = 1;
+//        [self addSubview:self.featuredMenuLabel];
+        
     }
     return self;
 }
@@ -41,14 +81,18 @@
     // Configure the view for the selected state
 }
 
-- (void)setRestaurant:(Restaurant *)restaurant
+- (void)setRestaurant:(Restaurant *)r
 {
-    self.nameLabel.text = restaurant.name;
+    self.nameLabel.text = r.name;
+    self.timeLabel.text = [NSString stringWithFormat:@"%@〜%@",
+                           r.startLunchTime, r.finishLunchTime];
+    self.holidayLabel.text = [NSString stringWithFormat:@"定休:%@", r.holiday];
+    self.featuredMenuLabel.text = r.featuredMenu;
 }
 
 + (CGFloat)cellHeight
 {
-    return 88.0f;
+    return [RestaurantSimpleView cellHeight];
 }
 
 @end

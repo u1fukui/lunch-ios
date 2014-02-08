@@ -19,6 +19,8 @@
 
 @implementation RestaurantListViewController
 
+NSString * const kCellIdentifier = @"launch_app";
+
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
@@ -36,6 +38,9 @@
     
     self.restaurantTableView.delegate = self;
     self.restaurantTableView.dataSource = self;
+    [self.restaurantTableView
+                registerNib:[UINib nibWithNibName:@"RestaurantCell" bundle:nil]
+     forCellReuseIdentifier:kCellIdentifier];
 }
 
 - (void)didReceiveMemoryWarning
@@ -55,12 +60,11 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    RestaurantCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    RestaurantCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier];
     if (cell == nil) {
         cell = [[RestaurantCell alloc]
-                initWithStyle:UITableViewCellStyleDefault
-                reuseIdentifier:CellIdentifier];
+                    initWithStyle:UITableViewCellStyleDefault
+                  reuseIdentifier:kCellIdentifier];
     }
     
     Restaurant *restaurant = [[RestaurantManager sharedManager].restaurantArray
