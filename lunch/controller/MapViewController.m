@@ -7,6 +7,9 @@
 //
 
 #import "MapViewController.h"
+#import "Restaurant.h"
+#import "RestaurantManager.h"
+#import "RestaurantDetailView.h"
 
 @interface MapViewController ()
 
@@ -14,7 +17,6 @@
 @property (strong, nonatomic) CLLocationManager *locationManager;
 
 @end
-
 
 @implementation MapViewController
 
@@ -35,8 +37,16 @@
     // 地図初期化
     self.mapView.camera =  [GMSCameraPosition cameraWithLatitude:35.658517
                                                        longitude:139.701334
-                                                            zoom:14];
+                                                            zoom:16];
     self.mapView.myLocationEnabled = YES;
+    
+    for (Restaurant *r in [RestaurantManager sharedManager].restaurantArray) {
+        CLLocationCoordinate2D position = CLLocationCoordinate2DMake(r.lat, r.lng);
+        GMSMarker *marker = [GMSMarker markerWithPosition:position];
+        marker.title = r.name;
+        marker.userData = r;
+        marker.map = self.mapView;
+    }
     
     // 位置情報
     self.locationManager = [[CLLocationManager alloc] init];
@@ -58,18 +68,6 @@
 
 
 #pragma mark - CLLocationManagerDelegate
-
-// 位置情報更新時
-- (void)locationManager:(CLLocationManager *)manager
-    didUpdateToLocation:(CLLocation *)newLocation
-           fromLocation:(CLLocation *)oldLocation {
-    [self.mapView animateToLocation:[newLocation coordinate]];
-    
-    //緯度・経度を出力
-    NSLog(@"didUpdateToLocation latitude=%f, longitude=%f",
-          [newLocation coordinate].latitude,
-          [newLocation coordinate].longitude);
-}
 
 // 測位失敗時や、位置情報の利用をユーザーが「不許可」とした場合などに呼ばれる
 - (void)locationManager:(CLLocationManager *)manager

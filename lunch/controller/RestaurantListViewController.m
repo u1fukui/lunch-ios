@@ -9,14 +9,11 @@
 #import "RestaurantListViewController.h"
 #import "Restaurant.h"
 #import "RestaurantCell.h"
+#import "RestaurantManager.h"
 
 @interface RestaurantListViewController ()
 
-@property (weak, nonatomic) IBOutlet UIButton *conditionButton;
-@property (weak, nonatomic) IBOutlet UIButton *sortButton;
 @property (weak, nonatomic) IBOutlet UITableView *restaurantTableView;
-
-@property NSMutableArray *restaurantArray;
 
 @end
 
@@ -24,16 +21,8 @@
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
-    NSLog(@"%s", __func__);
     self = [super initWithCoder:aDecoder];
     if (self) {
-        self.restaurantArray = [NSMutableArray array];
-        NSArray *nameArray = @[ @"サブウェイ", @"松屋", @"すき家", @"マクドナルド", @"吉野家"];
-        for (NSString *name in nameArray) {
-            Restaurant *restaurant = [[Restaurant alloc] init];
-            restaurant.name = name;
-            [self.restaurantArray addObject:restaurant];            
-        }
 
     }
     return self;
@@ -45,18 +34,8 @@
 	// Do any additional setup after loading the view.
     NSLog(@"%s", __func__);
     
-    [self initButton:self.conditionButton];
-    [self initButton:self.sortButton];
-    
     self.restaurantTableView.delegate = self;
     self.restaurantTableView.dataSource = self;
-}
-
-- (void)initButton:(UIButton *)button
-{
-    button.layer.borderColor = [UIColor grayColor].CGColor;
-    button.layer.borderWidth = 1.0f;
-    button.layer.cornerRadius = 7.5f;
 }
 
 - (void)didReceiveMemoryWarning
@@ -70,7 +49,7 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.restaurantArray.count;
+    return [RestaurantManager sharedManager].restaurantArray.count;
 }
 
 
@@ -84,7 +63,8 @@
                 reuseIdentifier:CellIdentifier];
     }
     
-    Restaurant *restaurant = [self.restaurantArray objectAtIndex:indexPath.row];
+    Restaurant *restaurant = [[RestaurantManager sharedManager].restaurantArray
+                              objectAtIndex:indexPath.row];
     [cell setRestaurant:restaurant];
     
     return cell;

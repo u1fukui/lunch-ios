@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import <GoogleMaps/GoogleMaps.h>
+#import "Restaurant.h"
+#import "RestaurantManager.h"
 
 @implementation AppDelegate
 
@@ -21,10 +23,30 @@ void uncaughtExceptionHandler(NSException *exception)
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
+    
     [GMSServices provideAPIKey:[[[NSBundle mainBundle] infoDictionary] objectForKey:@"GoogleMapsApiKey"]];
+    
+    [self loadRestaurantFile:[[NSBundle mainBundle] pathForResource:@"lunch" ofType:@"csv"]];
+    
     return YES;
 }
-							
+
+- (void)loadRestaurantFile:(NSString *)path
+{
+    // UTF8 エンコードされた CSV ファイル
+    NSString *text = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+    
+    // 改行文字で区切って配列に格納する
+    NSArray *lines = [text componentsSeparatedByString:@"\n"];
+    
+    for (NSString *row in lines) {
+        // コンマで区切って配列に格納する
+        NSArray *items = [row componentsSeparatedByString:@","];
+        Restaurant *r = [Restaurant initWithCsvArray:items];
+        [[RestaurantManager sharedManager] add:r];
+    }
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

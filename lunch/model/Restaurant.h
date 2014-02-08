@@ -10,6 +10,37 @@
 
 @interface Restaurant : NSObject
 
+/** 識別ID  */
+@property (strong, nonatomic) NSString *restaurantId;
+
+/** 店名 */
 @property (strong, nonatomic) NSString *name;
+
+/** 住所 */
+@property (strong, nonatomic) NSString *address;
+
+/** 緯度 */
+@property (assign, nonatomic) double lat;
+
+/** 軽度 */
+@property (assign, nonatomic) double lng;
+
+/** おすすめメニュー */
+@property (strong, nonatomic) NSString *featuredMenu;
+
+/** お昼の営業開始時間 */
+@property (strong, nonatomic) NSString *startLunchTime;
+
+/** お昼の営業修了時間 */
+@property (strong, nonatomic) NSString *finishLunchTime;
+
+/** 定休日 */
+@property (strong, nonatomic) NSString *holiday;
+
+/** 食べログURL */
+@property (strong, nonatomic) NSString *tabelogUrl;
+
+
++(id)initWithCsvArray:(NSArray *)array;
 
 @end
