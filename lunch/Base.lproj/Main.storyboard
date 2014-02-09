@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
-        <!--Restaurant List View Controller - お店リスト-->
+        <!--Restaurant List View Controller-->
         <scene sceneID="kJP-Me-YKr">
             <objects>
                 <viewController id="sJE-Ks-lmp" customClass="RestaurantListViewController" sceneMemberID="viewController">
@@ -17,21 +17,21 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="aOy-ze-hG2">
-                                <rect key="frame" x="0.0" y="20" width="320" height="500"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="お店リスト" id="rKo-VN-eS6"/>
+                    <navigationItem key="navigationItem" id="9Un-rL-4Et"/>
                     <connections>
                         <outlet property="restaurantTableView" destination="aOy-ze-hG2" id="RIi-U7-VXB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GLi-af-Mhj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="425" y="121"/>
+            <point key="canvasLocation" x="951" y="121"/>
         </scene>
         <!--Lunch Tab Bar Controller-->
         <scene sceneID="IWV-Hr-3WP">
@@ -44,15 +44,15 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="sJE-Ks-lmp" kind="relationship" relationship="viewControllers" id="fP3-aj-1NR"/>
-                        <segue destination="gbA-r6-FBJ" kind="relationship" relationship="viewControllers" id="iO1-jr-dN8"/>
+                        <segue destination="GZp-8R-YKC" kind="relationship" relationship="viewControllers" id="fP3-aj-1NR"/>
+                        <segue destination="TME-Wl-j1h" kind="relationship" relationship="viewControllers" id="iO1-jr-dN8"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="caF-Ea-egh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-177" y="121"/>
         </scene>
-        <!--Map View Controller - 地図-->
+        <!--Map View Controller-->
         <scene sceneID="ml0-yU-XSF">
             <objects>
                 <viewController id="gbA-r6-FBJ" customClass="MapViewController" sceneMemberID="viewController">
@@ -65,19 +65,63 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rbd-lh-ReK" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="20" width="320" height="500"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="430"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fsD-wB-SbM" customClass="RestaurantSimpleView">
+                                <rect key="frame" x="0.0" y="430" width="320" height="88"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="地図" id="ua4-18-oQH"/>
+                    <navigationItem key="navigationItem" id="g7Q-5a-SJD"/>
                     <connections>
+                        <outlet property="footerView" destination="fsD-wB-SbM" id="Hqj-eo-ZM8"/>
                         <outlet property="mapView" destination="Rbd-lh-ReK" id="b1h-aW-s2h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ySa-Re-Lhg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="951" y="909"/>
+        </scene>
+        <!--Navigation Controller - お店リスト-->
+        <scene sceneID="sgj-rQ-mhV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GZp-8R-YKC" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="お店リスト" id="rKo-VN-eS6"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VXO-Rx-Tdu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="sJE-Ks-lmp" kind="relationship" relationship="rootViewController" id="j2z-tj-0mo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PQC-Uy-vFl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="425" y="121"/>
+        </scene>
+        <!--Navigation Controller - 地図-->
+        <scene sceneID="Six-3r-DfG">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TME-Wl-j1h" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="地図" id="ua4-18-oQH"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="K8k-qb-CXg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="gbA-r6-FBJ" kind="relationship" relationship="rootViewController" id="U7t-LT-SzP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pzP-xd-aq2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="425" y="909"/>
         </scene>

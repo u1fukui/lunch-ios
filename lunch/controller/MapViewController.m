@@ -9,12 +9,15 @@
 #import "MapViewController.h"
 #import "Restaurant.h"
 #import "RestaurantManager.h"
-#import "RestaurantDetailView.h"
+#import "RestaurantSimpleView.h"
 
 @interface MapViewController ()
 
 @property (weak, nonatomic) IBOutlet GMSMapView *mapView;
+@property (weak, nonatomic) IBOutlet RestaurantSimpleView *footerView;
+@property (strong, nonatomic) RestaurantSimpleView *restaurantView;
 @property (strong, nonatomic) CLLocationManager *locationManager;
+@property (strong, nonatomic) UIButton *conditionButton;
 
 @end
 
@@ -34,7 +37,25 @@
     [super viewDidLoad];
     NSLog(@"%s", __func__);
     
+    // ナビゲーション
+    UIImage *navImage = [UIImage imageNamed:@"navigation_bg_top"];
+    [self.navigationController.navigationBar setBackgroundImage:navImage
+                                                  forBarMetrics:UIBarMetricsDefault];
+    
+    // 条件設定ボタン
+    self.conditionButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.conditionButton.frame = CGRectMake(0.0f, 0.0f, 33.0f, 33.0f);
+    [self.conditionButton setBackgroundImage:[UIImage imageNamed:@"navigation_info"]
+                               forState:UIControlStateNormal];
+    [self.conditionButton addTarget:self
+                             action:@selector(onClickButton:)
+                   forControlEvents:UIControlEventTouchUpInside];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.conditionButton];
+
+    
     // 地図初期化
+    self.mapView.delegate = self;
     self.mapView.camera =  [GMSCameraPosition cameraWithLatitude:35.658517
                                                        longitude:139.701334
                                                             zoom:16];
@@ -47,6 +68,13 @@
         marker.userData = r;
         marker.map = self.mapView;
     }
+    
+    // お店情報
+    self.restaurantView = [[RestaurantSimpleView alloc]
+                           initWithFrame:self.footerView.bounds];
+    [self.restaurantView setRestaurant:
+     [[RestaurantManager sharedManager].restaurantArray objectAtIndex:0]];
+    [self.footerView addSubview:self.restaurantView];
     
     // 位置情報
     self.locationManager = [[CLLocationManager alloc] init];
@@ -73,6 +101,15 @@
 - (void)locationManager:(CLLocationManager *)manager
        didFailWithError:(NSError *)error{
     NSLog(@"didFailWithError");
+}
+
+
+#pragma mark - GMSMapViewDelegate
+
+- (BOOL) mapView:(GMSMapView *)mapView didTapMarker:(GMSMarker *)marker
+{
+    [self.restaurantView setRestaurant:marker.userData];
+    return NO;
 }
 
 @end

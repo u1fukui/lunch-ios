@@ -25,9 +25,8 @@ void uncaughtExceptionHandler(NSException *exception)
     NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
     
     [GMSServices provideAPIKey:[[[NSBundle mainBundle] infoDictionary] objectForKey:@"GoogleMapsApiKey"]];
-    
     [self loadRestaurantFile:[[NSBundle mainBundle] pathForResource:@"lunch" ofType:@"csv"]];
-    
+    [UINavigationBar appearance].barTintColor = [UIColor colorWithRed:0.077 green:0.411 blue:0.672 alpha:1.000];
     return YES;
 }
 
