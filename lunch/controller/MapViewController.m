@@ -10,6 +10,7 @@
 #import "Restaurant.h"
 #import "RestaurantManager.h"
 #import "RestaurantSimpleView.h"
+#import "RestaurantDetailViewController.h"
 
 @interface MapViewController ()
 
@@ -18,6 +19,7 @@
 @property (strong, nonatomic) RestaurantSimpleView *restaurantView;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) UIButton *conditionButton;
+@property (strong, nonatomic) Restaurant *restaurant;
 
 @end
 
@@ -58,7 +60,7 @@
     self.mapView.delegate = self;
     self.mapView.camera =  [GMSCameraPosition cameraWithLatitude:35.658517
                                                        longitude:139.701334
-                                                            zoom:16];
+                                                            zoom:15];
     self.mapView.myLocationEnabled = YES;
     
     for (Restaurant *r in [RestaurantManager sharedManager].restaurantArray) {
@@ -70,11 +72,14 @@
     }
     
     // お店情報
+    self.restaurant = [[RestaurantManager sharedManager].restaurantArray
+                       objectAtIndex:0];
     self.restaurantView = [[RestaurantSimpleView alloc]
                            initWithFrame:self.footerView.bounds];
-    [self.restaurantView setRestaurant:
-     [[RestaurantManager sharedManager].restaurantArray objectAtIndex:0]];
+    [self.restaurantView setRestaurant:self.restaurant];
     [self.footerView addSubview:self.restaurantView];
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onClickFooterView:)];
+    [self.footerView addGestureRecognizer:tapGesture];
     
     // 位置情報
     self.locationManager = [[CLLocationManager alloc] init];
@@ -106,10 +111,22 @@
 
 #pragma mark - GMSMapViewDelegate
 
-- (BOOL) mapView:(GMSMapView *)mapView didTapMarker:(GMSMarker *)marker
+- (BOOL)mapView:(GMSMapView *)mapView didTapMarker:(GMSMarker *)marker
 {
-    [self.restaurantView setRestaurant:marker.userData];
+    self.restaurant = marker.userData;
+    [self.restaurantView setRestaurant:self.restaurant];
     return NO;
 }
+
+
+- (void)onClickFooterView:(UITapGestureRecognizer *)sender {
+    RestaurantDetailViewController *controller = [[RestaurantDetailViewController alloc]
+                                                  initWithNibName:@"RestaurantDetailViewController" bundle:nil];
+    [controller showRestaurant:self.restaurant];
+    [self.navigationController presentViewController:controller
+                                            animated:YES
+                                          completion:nil];
+}
+
 
 @end

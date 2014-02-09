@@ -36,6 +36,8 @@
 		77E5BF0118A67611008164F6 /* RestaurantSimpleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77E5BF0018A67611008164F6 /* RestaurantSimpleView.xib */; };
 		77E5BF0418A6762E008164F6 /* RestaurantSimpleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E5BF0318A6762E008164F6 /* RestaurantSimpleView.m */; };
 		77E5BF0618A68399008164F6 /* RestaurantCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77E5BF0518A68399008164F6 /* RestaurantCell.xib */; };
+		77E5BF0A18A790DC008164F6 /* RestaurantDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E5BF0818A790DC008164F6 /* RestaurantDetailViewController.m */; };
+		77E5BF0B18A790DC008164F6 /* RestaurantDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77E5BF0918A790DC008164F6 /* RestaurantDetailViewController.xib */; };
 		897876439B114BD9AC17968E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E66ED4BD004CC4AC751D12 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +95,9 @@
 		77E5BF0218A6762E008164F6 /* RestaurantSimpleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantSimpleView.h; sourceTree = "<group>"; };
 		77E5BF0318A6762E008164F6 /* RestaurantSimpleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantSimpleView.m; sourceTree = "<group>"; };
 		77E5BF0518A68399008164F6 /* RestaurantCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RestaurantCell.xib; sourceTree = "<group>"; };
+		77E5BF0718A790DC008164F6 /* RestaurantDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantDetailViewController.h; sourceTree = "<group>"; };
+		77E5BF0818A790DC008164F6 /* RestaurantDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantDetailViewController.m; sourceTree = "<group>"; };
+		77E5BF0918A790DC008164F6 /* RestaurantDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RestaurantDetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +215,9 @@
 				77956EF41893E6A000CF98C8 /* MapViewController.m */,
 				77956EFC1893F3A500CF98C8 /* RestaurantListViewController.h */,
 				77956EFD1893F3A500CF98C8 /* RestaurantListViewController.m */,
+				77E5BF0718A790DC008164F6 /* RestaurantDetailViewController.h */,
+				77E5BF0818A790DC008164F6 /* RestaurantDetailViewController.m */,
+				77E5BF0918A790DC008164F6 /* RestaurantDetailViewController.xib */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -338,6 +346,7 @@
 				77E5BEFD18A5D190008164F6 /* navigation_bg_top@2x.png in Resources */,
 				77E5BEFB18A5D190008164F6 /* navigation_back@2x.png in Resources */,
 				77E5BF0118A67611008164F6 /* RestaurantSimpleView.xib in Resources */,
+				77E5BF0B18A790DC008164F6 /* RestaurantDetailViewController.xib in Resources */,
 				77E5BF0618A68399008164F6 /* RestaurantCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -396,6 +405,7 @@
 				77E5BF0418A6762E008164F6 /* RestaurantSimpleView.m in Sources */,
 				77956F0C1894082600CF98C8 /* RestaurantCell.m in Sources */,
 				77956EF51893E6A000CF98C8 /* MapViewController.m in Sources */,
+				77E5BF0A18A790DC008164F6 /* RestaurantDetailViewController.m in Sources */,
 				77956ECB1893D30900CF98C8 /* AppDelegate.m in Sources */,
 				77956F031893F77D00CF98C8 /* Restaurant.m in Sources */,
 				77956EC71893D30900CF98C8 /* main.m in Sources */,

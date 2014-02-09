@@ -10,6 +10,7 @@
 #import "Restaurant.h"
 #import "RestaurantCell.h"
 #import "RestaurantManager.h"
+#import "RestaurantDetailViewController.h"
 
 @interface RestaurantListViewController ()
 
@@ -89,7 +90,13 @@ NSString * const kCellIdentifier = @"launch_app";
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // 何もしない
+    Restaurant *r = [[RestaurantManager sharedManager].restaurantArray objectAtIndex:indexPath.row];
+    RestaurantDetailViewController *controller = [[RestaurantDetailViewController alloc]
+                                                  initWithNibName:@"RestaurantDetailViewController" bundle:nil];
+    [controller showRestaurant:r];
+    [self.navigationController presentViewController:controller
+                                            animated:YES
+                                          completion:nil];
 }
 
 
