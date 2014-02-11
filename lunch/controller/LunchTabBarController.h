@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ModalPickerViewController.h"
 
-@interface LunchTabBarController : UITabBarController
+@interface LunchTabBarController : UITabBarController<ModalPickerViewControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource>
 
 @end

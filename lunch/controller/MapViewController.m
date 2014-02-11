@@ -11,6 +11,7 @@
 #import "RestaurantManager.h"
 #import "RestaurantSimpleView.h"
 #import "RestaurantDetailViewController.h"
+#import "LunchTabBarController.h"
 
 @interface MapViewController ()
 
@@ -18,7 +19,6 @@
 @property (weak, nonatomic) IBOutlet RestaurantSimpleView *footerView;
 @property (strong, nonatomic) RestaurantSimpleView *restaurantView;
 @property (strong, nonatomic) CLLocationManager *locationManager;
-@property (strong, nonatomic) UIButton *conditionButton;
 @property (strong, nonatomic) Restaurant *restaurant;
 
 @end
@@ -38,23 +38,6 @@
 {
     [super viewDidLoad];
     NSLog(@"%s", __func__);
-    
-    // ナビゲーション
-    UIImage *navImage = [UIImage imageNamed:@"navigation_bg_top"];
-    [self.navigationController.navigationBar setBackgroundImage:navImage
-                                                  forBarMetrics:UIBarMetricsDefault];
-    
-    // 条件設定ボタン
-    self.conditionButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.conditionButton.frame = CGRectMake(0.0f, 0.0f, 33.0f, 33.0f);
-    [self.conditionButton setBackgroundImage:[UIImage imageNamed:@"navigation_info"]
-                               forState:UIControlStateNormal];
-    [self.conditionButton addTarget:self
-                             action:@selector(onClickButton:)
-                   forControlEvents:UIControlEventTouchUpInside];
-    
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.conditionButton];
-
     
     // 地図初期化
     self.mapView.delegate = self;
