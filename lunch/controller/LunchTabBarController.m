@@ -7,12 +7,14 @@
 //
 
 #import "LunchTabBarController.h"
+#import "RestaurantManager.h"
 
 @interface LunchTabBarController ()
 
 @property (nonatomic, strong) UIButton *conditionButton;
 @property (nonatomic, strong) NSArray *pickerDataArray;
 @property (nonatomic, strong) ModalPickerViewController *pickerViewController;
+@property (nonatomic, strong) NSString *selectedData;
 
 @end
 
@@ -36,11 +38,11 @@ int const kPickerViewTag = 1;
     NSLog(@"%s", __func__);
     
     self.pickerDataArray = @[@"11:00", @"11:30", @"12:00", @"12:30",
-                             @"13:00", @"13:30", @"14;00", @"14:30",
+                             @"13:00", @"13:30", @"14:00", @"14:30",
                              @"15:00", @"15:30", @"16:00"];
     
     // ナビゲーション
-    UIImage *navImage = [UIImage imageNamed:@"navigation_bg_top"];
+    UIImage *navImage = [UIImage imageNamed:@"navigation_bg"];
     [self.navigationController.navigationBar setBackgroundImage:navImage
                                                   forBarMetrics:UIBarMetricsDefault];
     
@@ -113,12 +115,20 @@ int const kPickerViewTag = 1;
     self.pickerViewController = nil;
 }
 
+
 #pragma mark - ModalPickerViewController
 
 - (void)didOkButtonClicked:(ModalPickerViewController *)controller
                        tag:(NSString *)tag
 {
+    //保存
+    [RestaurantManager sharedManager].filterTime = self.selectedData;
+    [[RestaurantManager sharedManager] filter];
     [self closeAnimationPickerView];
+    
+    [RestaurantManager sharedManager].needReloadTable = YES;
+    [RestaurantManager sharedManager].needReloadMap = YES;
+    [self viewWillAppear:NO];
 }
 
 - (void)didCancelButtonClicked:(ModalPickerViewController *)controller
@@ -127,6 +137,22 @@ int const kPickerViewTag = 1;
     [self closeAnimationPickerView];
 }
 
+- (int)initialPickerRow
+{
+    NSString *filterTime = [RestaurantManager sharedManager].filterTime;
+    if (filterTime == nil) {
+        return 0;
+    }
+    
+    int count = self.pickerDataArray.count;
+    for (int i = 0; i < count; i++) {
+        if ([filterTime isEqualToString:self.pickerDataArray[i]]) {
+            return i;
+        }
+    }
+        
+    return 0;
+}
 
 #pragma mark - UIPickerViewDataSource
 
@@ -155,6 +181,7 @@ int const kPickerViewTag = 1;
 - (void)pickerView:(UIPickerView *)pickerView
       didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
+    self.selectedData = self.pickerDataArray[row];
 }
 
 

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		7778C5F818AA56DC00B725B3 /* ModalPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778C5F618AA56DC00B725B3 /* ModalPickerViewController.m */; };
 		7778C5F918AA56DC00B725B3 /* ModalPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7778C5F718AA56DC00B725B3 /* ModalPickerViewController.xib */; };
+		7778C5FC18AA75E000B725B3 /* navigation_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 7778C5FA18AA75E000B725B3 /* navigation_bg.png */; };
+		7778C5FD18AA75E000B725B3 /* navigation_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7778C5FB18AA75E000B725B3 /* navigation_bg@2x.png */; };
 		77956EBB1893D30900CF98C8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77956EBA1893D30900CF98C8 /* Foundation.framework */; };
 		77956EBD1893D30900CF98C8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77956EBC1893D30900CF98C8 /* CoreGraphics.framework */; };
 		77956EBF1893D30900CF98C8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77956EBE1893D30900CF98C8 /* UIKit.framework */; };
@@ -31,8 +33,6 @@
 		77E5BEF2189E7973008164F6 /* lunch.csv in Resources */ = {isa = PBXBuildFile; fileRef = 77E5BEF1189E7973008164F6 /* lunch.csv */; };
 		77E5BEFA18A5D190008164F6 /* navigation_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 77E5BEF418A5D190008164F6 /* navigation_back.png */; };
 		77E5BEFB18A5D190008164F6 /* navigation_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 77E5BEF518A5D190008164F6 /* navigation_back@2x.png */; };
-		77E5BEFC18A5D190008164F6 /* navigation_bg_top.png in Resources */ = {isa = PBXBuildFile; fileRef = 77E5BEF618A5D190008164F6 /* navigation_bg_top.png */; };
-		77E5BEFD18A5D190008164F6 /* navigation_bg_top@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 77E5BEF718A5D190008164F6 /* navigation_bg_top@2x.png */; };
 		77E5BEFE18A5D190008164F6 /* navigation_info.png in Resources */ = {isa = PBXBuildFile; fileRef = 77E5BEF818A5D190008164F6 /* navigation_info.png */; };
 		77E5BEFF18A5D190008164F6 /* navigation_info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 77E5BEF918A5D190008164F6 /* navigation_info@2x.png */; };
 		77E5BF0118A67611008164F6 /* RestaurantSimpleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77E5BF0018A67611008164F6 /* RestaurantSimpleView.xib */; };
@@ -59,6 +59,8 @@
 		7778C5F518AA56DC00B725B3 /* ModalPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModalPickerViewController.h; sourceTree = "<group>"; };
 		7778C5F618AA56DC00B725B3 /* ModalPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModalPickerViewController.m; sourceTree = "<group>"; };
 		7778C5F718AA56DC00B725B3 /* ModalPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ModalPickerViewController.xib; sourceTree = "<group>"; };
+		7778C5FA18AA75E000B725B3 /* navigation_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navigation_bg.png; sourceTree = "<group>"; };
+		7778C5FB18AA75E000B725B3 /* navigation_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigation_bg@2x.png"; sourceTree = "<group>"; };
 		77956EB71893D30900CF98C8 /* lunch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lunch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77956EBA1893D30900CF98C8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		77956EBC1893D30900CF98C8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -92,8 +94,6 @@
 		77E5BEF1189E7973008164F6 /* lunch.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lunch.csv; sourceTree = "<group>"; };
 		77E5BEF418A5D190008164F6 /* navigation_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navigation_back.png; sourceTree = "<group>"; };
 		77E5BEF518A5D190008164F6 /* navigation_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigation_back@2x.png"; sourceTree = "<group>"; };
-		77E5BEF618A5D190008164F6 /* navigation_bg_top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navigation_bg_top.png; sourceTree = "<group>"; };
-		77E5BEF718A5D190008164F6 /* navigation_bg_top@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigation_bg_top@2x.png"; sourceTree = "<group>"; };
 		77E5BEF818A5D190008164F6 /* navigation_info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navigation_info.png; sourceTree = "<group>"; };
 		77E5BEF918A5D190008164F6 /* navigation_info@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigation_info@2x.png"; sourceTree = "<group>"; };
 		77E5BF0018A67611008164F6 /* RestaurantSimpleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RestaurantSimpleView.xib; sourceTree = "<group>"; };
@@ -255,10 +255,10 @@
 		77E5BEF318A5D190008164F6 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				7778C5FA18AA75E000B725B3 /* navigation_bg.png */,
+				7778C5FB18AA75E000B725B3 /* navigation_bg@2x.png */,
 				77E5BEF418A5D190008164F6 /* navigation_back.png */,
 				77E5BEF518A5D190008164F6 /* navigation_back@2x.png */,
-				77E5BEF618A5D190008164F6 /* navigation_bg_top.png */,
-				77E5BEF718A5D190008164F6 /* navigation_bg_top@2x.png */,
 				77E5BEF818A5D190008164F6 /* navigation_info.png */,
 				77E5BEF918A5D190008164F6 /* navigation_info@2x.png */,
 			);
@@ -344,7 +344,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				77956ED31893D30900CF98C8 /* Images.xcassets in Resources */,
-				77E5BEFC18A5D190008164F6 /* navigation_bg_top.png in Resources */,
 				77E5BEFE18A5D190008164F6 /* navigation_info.png in Resources */,
 				77E5BEFA18A5D190008164F6 /* navigation_back.png in Resources */,
 				77E5BEFF18A5D190008164F6 /* navigation_info@2x.png in Resources */,
@@ -352,9 +351,10 @@
 				7778C5F918AA56DC00B725B3 /* ModalPickerViewController.xib in Resources */,
 				77956EC51893D30900CF98C8 /* InfoPlist.strings in Resources */,
 				77956ECE1893D30900CF98C8 /* Main.storyboard in Resources */,
-				77E5BEFD18A5D190008164F6 /* navigation_bg_top@2x.png in Resources */,
 				77E5BEFB18A5D190008164F6 /* navigation_back@2x.png in Resources */,
+				7778C5FD18AA75E000B725B3 /* navigation_bg@2x.png in Resources */,
 				77E5BF0118A67611008164F6 /* RestaurantSimpleView.xib in Resources */,
+				7778C5FC18AA75E000B725B3 /* navigation_bg.png in Resources */,
 				77E5BF0B18A790DC008164F6 /* RestaurantDetailViewController.xib in Resources */,
 				77E5BF0618A68399008164F6 /* RestaurantCell.xib in Resources */,
 			);

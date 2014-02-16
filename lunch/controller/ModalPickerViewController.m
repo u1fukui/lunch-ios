@@ -43,6 +43,9 @@
     
     self.pickerView.delegate = self.delegate;
     self.pickerView.dataSource = self.delegate;
+    [self.pickerView selectRow:[self.delegate initialPickerRow]
+                   inComponent:0
+                      animated:NO];
 }
 
 - (void)didReceiveMemoryWarning

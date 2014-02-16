@@ -46,23 +46,14 @@
                                                             zoom:15];
     self.mapView.myLocationEnabled = YES;
     
-    for (Restaurant *r in [RestaurantManager sharedManager].restaurantArray) {
-        CLLocationCoordinate2D position = CLLocationCoordinate2DMake(r.lat, r.lng);
-        GMSMarker *marker = [GMSMarker markerWithPosition:position];
-        marker.title = r.name;
-        marker.userData = r;
-        marker.map = self.mapView;
-    }
-    
     // お店情報
-    self.restaurant = [[RestaurantManager sharedManager].restaurantArray
-                       objectAtIndex:0];
     self.restaurantView = [[RestaurantSimpleView alloc]
                            initWithFrame:self.footerView.bounds];
-    [self.restaurantView setRestaurant:self.restaurant];
     [self.footerView addSubview:self.restaurantView];
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onClickFooterView:)];
     [self.footerView addGestureRecognizer:tapGesture];
+    
+    [self setRestaurantList];
     
     // 位置情報
     self.locationManager = [[CLLocationManager alloc] init];
@@ -76,10 +67,36 @@
     }
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    if ([RestaurantManager sharedManager].needReloadMap) {
+        [self setRestaurantList];
+        [RestaurantManager sharedManager].needReloadMap = NO;
+    }
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)setRestaurantList
+{
+    [self.mapView clear];
+    
+    for (Restaurant *r in [RestaurantManager sharedManager].filteredRestaurantArray) {
+        CLLocationCoordinate2D position = CLLocationCoordinate2DMake(r.lat, r.lng);
+        GMSMarker *marker = [GMSMarker markerWithPosition:position];
+        marker.title = r.name;
+        marker.userData = r;
+        marker.map = self.mapView;
+    }
+    
+    self.restaurant = [[RestaurantManager sharedManager].filteredRestaurantArray
+                       objectAtIndex:0];
+    [self.restaurantView setRestaurant:self.restaurant];
 }
 
 

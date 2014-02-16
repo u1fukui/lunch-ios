@@ -17,6 +17,8 @@
 - (void)didCancelButtonClicked:(ModalPickerViewController *)controller
                            tag:(NSString *)tag;
 
+- (int)initialPickerRow;
+
 @end
 
 @interface ModalPickerViewController : UIViewController

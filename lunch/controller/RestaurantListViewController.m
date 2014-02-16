@@ -44,6 +44,16 @@ NSString * const kCellIdentifier = @"launch_app";
      forCellReuseIdentifier:kCellIdentifier];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    if([RestaurantManager sharedManager].needReloadTable) {
+        [self.restaurantTableView reloadData];
+        [RestaurantManager sharedManager].needReloadTable = NO;
+    }
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -55,7 +65,7 @@ NSString * const kCellIdentifier = @"launch_app";
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [RestaurantManager sharedManager].restaurantArray.count;
+    return [RestaurantManager sharedManager].filteredRestaurantArray.count;
 }
 
 
@@ -68,8 +78,7 @@ NSString * const kCellIdentifier = @"launch_app";
                   reuseIdentifier:kCellIdentifier];
     }
     
-    Restaurant *restaurant = [[RestaurantManager sharedManager].restaurantArray
-                              objectAtIndex:indexPath.row];
+    Restaurant *restaurant = [[RestaurantManager sharedManager].filteredRestaurantArray objectAtIndex:indexPath.row];
     [cell setRestaurant:restaurant];
     
     return cell;
@@ -90,7 +99,7 @@ NSString * const kCellIdentifier = @"launch_app";
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Restaurant *r = [[RestaurantManager sharedManager].restaurantArray objectAtIndex:indexPath.row];
+    Restaurant *r = [[RestaurantManager sharedManager].filteredRestaurantArray objectAtIndex:indexPath.row];
     RestaurantDetailViewController *controller = [[RestaurantDetailViewController alloc]
                                                   initWithNibName:@"RestaurantDetailViewController" bundle:nil];
     [controller showRestaurant:r];

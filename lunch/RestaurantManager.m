@@ -33,18 +33,49 @@ static RestaurantManager *_sharedInstance = nil;
     self = [super init];
     if (self) {
         _restaurantDictionary = [NSMutableDictionary dictionary];
+        _filteredRestaurantArray = [NSMutableArray array];
+        _needReloadTable = YES;
+        _needReloadMap = YES;
     }
     return self;
 }
 
-- (NSArray *) restaurantArray
-{
-    return [self.restaurantDictionary allValues];
-}
-
-- (void) add:(Restaurant *)r
+- (void)add:(Restaurant *)r
 {
     [self.restaurantDictionary setObject:r forKey:r.restaurantId];
+    if ([self isFilterRange:self.filterTime restaurant:r]) {
+        [self.filteredRestaurantArray addObject:r];
+    }
+}
+
+- (void)filter
+{
+    self.filteredRestaurantArray = [NSMutableArray array];
+    for (Restaurant *r in [self.restaurantDictionary allValues]) {
+        if ([self isFilterRange:self.filterTime restaurant:r]) {
+            [self.filteredRestaurantArray addObject:r];
+        }
+    }
+}
+
+// 引数の時間帯が、フィルタの範囲内であればYES
+- (BOOL)isFilterRange:(NSString *)filterTime restaurant:(Restaurant *)r
+{
+    if (filterTime == nil) {
+        return YES;
+    }
+    
+    int filter = [self integerFromTimeString:filterTime];
+    int start = [self integerFromTimeString:r.startLunchTime];
+    int finish = [self integerFromTimeString:r.finishLunchTime];
+    
+    return filter >= start && filter < finish;
+}
+
+- (int)integerFromTimeString:(NSString *)string
+{
+    NSArray *array = [string componentsSeparatedByString:@":"];
+    return [[NSString stringWithFormat:@"%@%@", array[0], array[1]] intValue];
 }
 
 @end
