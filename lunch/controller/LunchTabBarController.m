@@ -34,22 +34,19 @@ int const kPickerViewTag = 1;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
-    NSLog(@"%s", __func__);
-    
     self.pickerDataArray = @[@"11:00", @"11:30", @"12:00", @"12:30",
                              @"13:00", @"13:30", @"14:00", @"14:30",
                              @"15:00", @"15:30", @"16:00"];
     
     // ナビゲーション
-    UIImage *navImage = [UIImage imageNamed:@"navigation_bg"];
-    [self.navigationController.navigationBar setBackgroundImage:navImage
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navigation_bg"]
                                                   forBarMetrics:UIBarMetricsDefault];
+    self.navigationItem.title = @"渋谷500円ランチ";
     
     // 条件設定ボタン
     self.conditionButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.conditionButton.frame = CGRectMake(0.0f, 0.0f, 33.0f, 33.0f);
-    [self.conditionButton setBackgroundImage:[UIImage imageNamed:@"navigation_info"]
+    [self.conditionButton setBackgroundImage:[UIImage imageNamed:@"navigation_setting_icon"]
                                     forState:UIControlStateNormal];
     [self.conditionButton addTarget:self
                              action:@selector(onClickButton:)
@@ -64,6 +61,13 @@ int const kPickerViewTag = 1;
     // Dispose of any resources that can be recreated.
 }
 
+- (BOOL)prefersStatusBarHidden
+{
+    return NO;
+}
+
+
+#pragma mark -
 
 - (void)onClickButton:(UIButton *)button
 {

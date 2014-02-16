@@ -18,7 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *holidayLabel;
 @property (weak, nonatomic) IBOutlet UILabel *tabelogLabel;
-@property (weak, nonatomic) IBOutlet UINavigationBar *navigationBar; // 要らないかも？
+@property (weak, nonatomic) IBOutlet UINavigationBar *navigationBar;
 @property (weak, nonatomic) IBOutlet UINavigationItem *navItem;
 
 @property (strong, nonatomic) Restaurant *restaurant;
@@ -42,16 +42,19 @@
     [super viewDidLoad];
     
     // ナビゲーションバー
-    self.navigationBar.backgroundColor = [UIColor blackColor];
+    [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"navigation_bg"]
+                             forBarMetrics:UIBarMetricsDefault];
+    self.navItem.title = @"お店詳細";
+    
     self.closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.closeButton.frame = CGRectMake(0.0f, 0.0f, 33.0f, 33.0f);
-    [self.closeButton setBackgroundImage:[UIImage imageNamed:@"navigation_info"]
+    [self.closeButton setBackgroundImage:[UIImage imageNamed:@"navigation_close_icon"]
                                     forState:UIControlStateNormal];
     [self.closeButton addTarget:self
                          action:@selector(onClickButton:)
                forControlEvents:UIControlEventTouchUpInside];
     
-    self.navItem.leftBarButtonItem = [[UIBarButtonItem alloc]
+    self.navItem.rightBarButtonItem = [[UIBarButtonItem alloc]
                                              initWithCustomView:self.closeButton];
     
     // 地図
@@ -75,6 +78,13 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
+}
+
+
+#pragma mark -
 
 - (void)showRestaurant:(Restaurant *)r
 {    

@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
-        <!--Restaurant List View Controller - Item-->
+        <!--Restaurant List View Controller - お店リスト-->
         <scene sceneID="kJP-Me-YKr">
             <objects>
                 <viewController id="sJE-Ks-lmp" customClass="RestaurantListViewController" sceneMemberID="viewController">
@@ -24,7 +24,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="RGp-tC-Ekd"/>
+                    <tabBarItem key="tabBarItem" title="お店リスト" image="tab_list_icon.png" id="RGp-tC-Ekd"/>
                     <navigationItem key="navigationItem" id="9Un-rL-4Et"/>
                     <connections>
                         <outlet property="restaurantTableView" destination="aOy-ze-hG2" id="RIi-U7-VXB"/>
@@ -69,7 +69,7 @@
             </objects>
             <point key="canvasLocation" x="-177" y="121"/>
         </scene>
-        <!--Map View Controller - Item-->
+        <!--Map View Controller - 地図-->
         <scene sceneID="ml0-yU-XSF">
             <objects>
                 <viewController id="gbA-r6-FBJ" customClass="MapViewController" sceneMemberID="viewController">
@@ -94,7 +94,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="IVF-ZP-3XY"/>
+                    <tabBarItem key="tabBarItem" title="地図" image="tab_map_icon.png" id="IVF-ZP-3XY"/>
                     <navigationItem key="navigationItem" id="g7Q-5a-SJD"/>
                     <connections>
                         <outlet property="footerView" destination="fsD-wB-SbM" id="Hqj-eo-ZM8"/>
@@ -106,6 +106,10 @@
             <point key="canvasLocation" x="393" y="851"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="tab_list_icon.png" width="30" height="30"/>
+        <image name="tab_map_icon.png" width="30" height="30"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
