@@ -7,6 +7,7 @@
 //
 
 #import "ModalPickerViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface ModalPickerViewController ()
 
@@ -34,6 +35,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    [self customButton:self.cancelButton];
+    [self customButton:self.okButton];
+    
     [self.cancelButton addTarget:self
                           action:@selector(onClickButton:)
                 forControlEvents:UIControlEventTouchUpInside];
@@ -52,6 +56,14 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)customButton:(UIButton *)button
+{
+    [[button layer] setBorderColor:[button.titleLabel.textColor CGColor]];
+    [[button layer] setBorderWidth:1.0];
+    [[button layer] setCornerRadius:7.0];
+    [button setClipsToBounds:YES];
 }
 
 - (void)onClickButton:(UIButton *)button
