@@ -86,7 +86,7 @@
     self.nameLabel.text = r.name;
     self.timeLabel.text = [NSString stringWithFormat:@"%@〜%@",
                            r.startLunchTime, r.finishLunchTime];
-    self.holidayLabel.text = [NSString stringWithFormat:@"定休:%@", r.holiday];
+    self.holidayLabel.text = r.holiday;
     self.featuredMenuLabel.text = r.featuredMenu;
 }
 
