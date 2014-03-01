@@ -40,6 +40,9 @@
 /** 食べログURL */
 @property (strong, nonatomic) NSString *tabelogUrl;
 
+/** サムネイル画像のファイル名 */
+@property (strong, nonatomic) NSString *thumbnailName;
+
 
 +(id)initWithCsvArray:(NSArray *)array;
 

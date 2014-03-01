@@ -23,6 +23,7 @@
     r.finishLunchTime = array[7];
     r.holiday = array[8];
     r.tabelogUrl = array[9];
+    r.thumbnailName = array[10];
     return r;
 }
 

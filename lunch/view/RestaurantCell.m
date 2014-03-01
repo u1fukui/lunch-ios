@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *holidayLabel;
 @property (weak, nonatomic) IBOutlet UILabel *featuredMenuLabel;
 
+@property (weak, nonatomic) IBOutlet UIImageView *thumbnailView;
 
 @end
 
@@ -88,11 +89,13 @@
                            r.startLunchTime, r.finishLunchTime];
     self.holidayLabel.text = r.holiday;
     self.featuredMenuLabel.text = r.featuredMenu;
+    NSLog(@"%@", r.thumbnailName);
+    [self.thumbnailView setImage:[UIImage imageNamed:r.thumbnailName]];
 }
 
 + (CGFloat)cellHeight
 {
-    return [RestaurantSimpleView cellHeight];
+    return 100.0f;
 }
 
 @end
