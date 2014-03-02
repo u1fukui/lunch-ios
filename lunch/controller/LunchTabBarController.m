@@ -138,6 +138,10 @@ int const kPickerViewTag = 1;
 - (void)didOkButtonClicked:(ModalPickerViewController *)controller
                        tag:(NSString *)tag
 {
+    if (self.selectedData == nil) {
+        self.selectedData = self.pickerDataArray[0];
+    }
+    
     //保存
     [RestaurantManager sharedManager].filterTime = self.selectedData;
     [[RestaurantManager sharedManager] filter];
