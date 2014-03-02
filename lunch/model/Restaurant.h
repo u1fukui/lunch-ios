@@ -43,6 +43,9 @@
 /** サムネイル画像のファイル名 */
 @property (strong, nonatomic) NSString *thumbnailName;
 
+/** 現在地からの距離 */
+@property (assign, nonatomic) double distance;
+
 
 +(id)initWithCsvArray:(NSArray *)array;
 

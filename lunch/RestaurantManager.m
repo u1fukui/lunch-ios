@@ -58,6 +58,24 @@ static RestaurantManager *_sharedInstance = nil;
     }
 }
 
+- (void)sortInOrderOfDistace
+{
+    if (self.currentLocation == nil) {
+        return;
+    }
+    
+    for (Restaurant *r in self.filteredRestaurantArray) {
+        CLLocation *loc = [[CLLocation alloc] initWithLatitude:r.lat
+                                                     longitude:r.lng];
+        r.distance = [loc distanceFromLocation:self.currentLocation];
+    }
+    
+    NSSortDescriptor* sort = [[NSSortDescriptor alloc]
+                               initWithKey:@"distance" ascending:YES];
+    [self.filteredRestaurantArray sortUsingDescriptors:@[sort]];
+}
+
+
 // 引数の時間帯が、フィルタの範囲内であればYES
 - (BOOL)isFilterRange:(NSString *)filterTime restaurant:(Restaurant *)r
 {

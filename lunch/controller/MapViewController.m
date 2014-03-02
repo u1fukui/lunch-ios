@@ -18,7 +18,6 @@
 @property (weak, nonatomic) IBOutlet GMSMapView *mapView;
 @property (weak, nonatomic) IBOutlet RestaurantSimpleView *footerView;
 @property (strong, nonatomic) RestaurantSimpleView *restaurantView;
-@property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) Restaurant *restaurant;
 
 @end
@@ -54,17 +53,6 @@
     [self.footerView addGestureRecognizer:tapGesture];
     
     [self setRestaurantList];
-    
-    // 位置情報
-    self.locationManager = [[CLLocationManager alloc] init];
-    
-    // 位置情報サービスが利用できるかどうかをチェック
-    if ([CLLocationManager locationServicesEnabled]) {
-        self.locationManager.delegate = self;
-        [self.locationManager startUpdatingLocation];
-    } else {
-        NSLog(@"Location services not available.");
-    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -100,15 +88,6 @@
     self.restaurant = [[RestaurantManager sharedManager].filteredRestaurantArray
                        objectAtIndex:0];
     [self.restaurantView setRestaurant:self.restaurant];
-}
-
-
-#pragma mark - CLLocationManagerDelegate
-
-// 測位失敗時や、位置情報の利用をユーザーが「不許可」とした場合などに呼ばれる
-- (void)locationManager:(CLLocationManager *)manager
-       didFailWithError:(NSError *)error{
-    NSLog(@"didFailWithError");
 }
 
 

@@ -89,7 +89,6 @@
                            r.startLunchTime, r.finishLunchTime];
     self.holidayLabel.text = r.holiday;
     self.featuredMenuLabel.text = r.featuredMenu;
-    NSLog(@"%@", r.thumbnailName);
     [self.thumbnailView setImage:[UIImage imageNamed:r.thumbnailName]];
 }
 

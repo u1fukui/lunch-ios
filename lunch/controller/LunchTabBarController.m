@@ -53,6 +53,18 @@ int const kPickerViewTag = 1;
                    forControlEvents:UIControlEventTouchUpInside];
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.conditionButton];
+    
+    // 位置情報
+    self.locationManager = [[CLLocationManager alloc] init];
+    
+    // 位置情報サービスが利用できるかどうかをチェック
+    if ([CLLocationManager locationServicesEnabled]) {
+        self.locationManager.delegate = self;
+        [self.locationManager startUpdatingLocation];
+    } else {
+        NSLog(@"Location services not available.");
+    }
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -129,6 +141,7 @@ int const kPickerViewTag = 1;
     //保存
     [RestaurantManager sharedManager].filterTime = self.selectedData;
     [[RestaurantManager sharedManager] filter];
+    [[RestaurantManager sharedManager] sortInOrderOfDistace];
     [self closeAnimationPickerView];
     
     [RestaurantManager sharedManager].needReloadTable = YES;
@@ -189,5 +202,24 @@ int const kPickerViewTag = 1;
     self.selectedData = self.pickerDataArray[row];
 }
 
+
+#pragma mark - CLLocationManagerDelegate
+
+- (void)locationManager:(CLLocationManager *)manager
+    didUpdateToLocation:(CLLocation *)newLocation
+           fromLocation:(CLLocation *)oldLocation
+{
+    NSLog(@"%s", __func__);
+	[RestaurantManager sharedManager].currentLocation =
+        [[CLLocation alloc] initWithLatitude:newLocation.coordinate.latitude
+                                   longitude:newLocation.coordinate.longitude];
+    [self.locationManager stopUpdatingLocation];
+}
+
+- (void)locationManager:(CLLocationManager *)manager
+       didFailWithError:(NSError *)error
+{
+    NSLog(@"didFailWithError");
+}
 
 @end
