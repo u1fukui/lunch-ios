@@ -22,6 +22,15 @@
 		77615A9F18C0F1C800122156 /* sushidaidokoroya@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77615A9018C0F1C800122156 /* sushidaidokoroya@2x.jpg */; };
 		77615AA018C0F1C800122156 /* udumasa.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77615A9118C0F1C800122156 /* udumasa.jpg */; };
 		77615AA118C0F1C800122156 /* udumasa@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77615A9218C0F1C800122156 /* udumasa@2x.jpg */; };
+		77615AAB18CAE7D900122156 /* sushizanmai.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77615AA218CAE7D900122156 /* sushizanmai.jpg */; };
+		77615AAC18CAE7D900122156 /* syanhai.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77615AA318CAE7D900122156 /* syanhai.jpg */; };
+		77615AAD18CAE7D900122156 /* nakanochikusan.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77615AA418CAE7D900122156 /* nakanochikusan.jpg */; };
+		77615AAE18CAE7D900122156 /* ma-san.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77615AA518CAE7D900122156 /* ma-san.jpg */; };
+		77615AAF18CAE7D900122156 /* mankatou.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77615AA618CAE7D900122156 /* mankatou.jpg */; };
+		77615AB018CAE7D900122156 /* nakanochikusan@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77615AA718CAE7D900122156 /* nakanochikusan@2x.jpg */; };
+		77615AB118CAE7D900122156 /* mankatou@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77615AA818CAE7D900122156 /* mankatou@2x.jpg */; };
+		77615AB218CAE7D900122156 /* sushizanmai@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77615AA918CAE7D900122156 /* sushizanmai@2x.jpg */; };
+		77615AB318CAE7D900122156 /* syanhai@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77615AAA18CAE7D900122156 /* syanhai@2x.jpg */; };
 		7778C5F818AA56DC00B725B3 /* ModalPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778C5F618AA56DC00B725B3 /* ModalPickerViewController.m */; };
 		7778C5F918AA56DC00B725B3 /* ModalPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7778C5F718AA56DC00B725B3 /* ModalPickerViewController.xib */; };
 		7778C5FC18AA75E000B725B3 /* navigation_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 7778C5FA18AA75E000B725B3 /* navigation_bg.png */; };
@@ -96,6 +105,15 @@
 		77615A9018C0F1C800122156 /* sushidaidokoroya@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "sushidaidokoroya@2x.jpg"; sourceTree = "<group>"; };
 		77615A9118C0F1C800122156 /* udumasa.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = udumasa.jpg; sourceTree = "<group>"; };
 		77615A9218C0F1C800122156 /* udumasa@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "udumasa@2x.jpg"; sourceTree = "<group>"; };
+		77615AA218CAE7D900122156 /* sushizanmai.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sushizanmai.jpg; sourceTree = "<group>"; };
+		77615AA318CAE7D900122156 /* syanhai.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = syanhai.jpg; sourceTree = "<group>"; };
+		77615AA418CAE7D900122156 /* nakanochikusan.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nakanochikusan.jpg; sourceTree = "<group>"; };
+		77615AA518CAE7D900122156 /* ma-san.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "ma-san.jpg"; sourceTree = "<group>"; };
+		77615AA618CAE7D900122156 /* mankatou.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mankatou.jpg; sourceTree = "<group>"; };
+		77615AA718CAE7D900122156 /* nakanochikusan@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "nakanochikusan@2x.jpg"; sourceTree = "<group>"; };
+		77615AA818CAE7D900122156 /* mankatou@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "mankatou@2x.jpg"; sourceTree = "<group>"; };
+		77615AA918CAE7D900122156 /* sushizanmai@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "sushizanmai@2x.jpg"; sourceTree = "<group>"; };
+		77615AAA18CAE7D900122156 /* syanhai@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "syanhai@2x.jpg"; sourceTree = "<group>"; };
 		7778C5F518AA56DC00B725B3 /* ModalPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModalPickerViewController.h; sourceTree = "<group>"; };
 		7778C5F618AA56DC00B725B3 /* ModalPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModalPickerViewController.m; sourceTree = "<group>"; };
 		7778C5F718AA56DC00B725B3 /* ModalPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ModalPickerViewController.xib; sourceTree = "<group>"; };
@@ -183,6 +201,15 @@
 		77615A8318C0F1C800122156 /* thumbnails */ = {
 			isa = PBXGroup;
 			children = (
+				77615AA218CAE7D900122156 /* sushizanmai.jpg */,
+				77615AA318CAE7D900122156 /* syanhai.jpg */,
+				77615AA418CAE7D900122156 /* nakanochikusan.jpg */,
+				77615AA518CAE7D900122156 /* ma-san.jpg */,
+				77615AA618CAE7D900122156 /* mankatou.jpg */,
+				77615AA718CAE7D900122156 /* nakanochikusan@2x.jpg */,
+				77615AA818CAE7D900122156 /* mankatou@2x.jpg */,
+				77615AA918CAE7D900122156 /* sushizanmai@2x.jpg */,
+				77615AAA18CAE7D900122156 /* syanhai@2x.jpg */,
 				77615A8418C0F1C800122156 /* gaku.jpg */,
 				77615A8518C0F1C800122156 /* gaku@2x.jpg */,
 				77615A8618C0F1C800122156 /* gokigen.jpg */,
@@ -397,6 +424,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = u1;
 				TargetAttributes = {
+					77956EB61893D30900CF98C8 = {
+						DevelopmentTeam = 36XBSC9G66;
+					};
 					77956ED71893D30900CF98C8 = {
 						TestTargetID = 77956EB61893D30900CF98C8;
 					};
@@ -449,17 +479,26 @@
 				77615AA018C0F1C800122156 /* udumasa.jpg in Resources */,
 				77615A9418C0F1C800122156 /* gaku@2x.jpg in Resources */,
 				77615AA118C0F1C800122156 /* udumasa@2x.jpg in Resources */,
+				77615AB018CAE7D900122156 /* nakanochikusan@2x.jpg in Resources */,
+				77615AAF18CAE7D900122156 /* mankatou.jpg in Resources */,
 				77E5BEFB18A5D190008164F6 /* navigation_back@2x.png in Resources */,
 				77615A9B18C0F1C800122156 /* saizeriya@2x.jpg in Resources */,
+				77615AAD18CAE7D900122156 /* nakanochikusan.jpg in Resources */,
 				7778C60518B096A100B725B3 /* tab_map_icon@2x.png in Resources */,
 				7778C5FD18AA75E000B725B3 /* navigation_bg@2x.png in Resources */,
 				7778C60118B0958A00B725B3 /* tab_list_icon@2x.png in Resources */,
+				77615AB218CAE7D900122156 /* sushizanmai@2x.jpg in Resources */,
 				7778C60C18B0A2FB00B725B3 /* navigation_close_icon.png in Resources */,
 				7778C60918B09FA000B725B3 /* navigation_setting_icon@2x.png in Resources */,
 				7778C60418B096A100B725B3 /* tab_map_icon.png in Resources */,
 				77E5BF0118A67611008164F6 /* RestaurantSimpleView.xib in Resources */,
+				77615AB318CAE7D900122156 /* syanhai@2x.jpg in Resources */,
+				77615AAC18CAE7D900122156 /* syanhai.jpg in Resources */,
+				77615AAE18CAE7D900122156 /* ma-san.jpg in Resources */,
 				77615A9918C0F1C800122156 /* ma-san@2x.jpg in Resources */,
 				7778C61418B0F6F100B725B3 /* r-time.png in Resources */,
+				77615AAB18CAE7D900122156 /* sushizanmai.jpg in Resources */,
+				77615AB118CAE7D900122156 /* mankatou@2x.jpg in Resources */,
 				77615A9618C0F1C800122156 /* gokigen@2x.jpg in Resources */,
 				7778C5FC18AA75E000B725B3 /* navigation_bg.png in Resources */,
 				7778C61218B0F6F100B725B3 /* r-holiday.png in Resources */,
@@ -654,12 +693,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: YUICHI KOBAYASHI (3XD53HY7MU)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: YUICHI KOBAYASHI (3XD53HY7MU)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "lunch/lunch-Prefix.pch";
 				INFOPLIST_FILE = "lunch/lunch-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "55171036-71FE-4AF2-B38D-EE04E4FB252C";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -670,12 +710,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: YUICHI KOBAYASHI";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: YUICHI KOBAYASHI (36XBSC9G66)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: YUICHI KOBAYASHI (36XBSC9G66)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "lunch/lunch-Prefix.pch";
 				INFOPLIST_FILE = "lunch/lunch-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "438523E4-6C39-43A7-AB74-DA1C4757F1AB";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
