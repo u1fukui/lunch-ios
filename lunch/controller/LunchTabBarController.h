@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import "ModalPickerViewController.h"
+#import "NADView.h"
 
-@interface LunchTabBarController : UITabBarController<ModalPickerViewControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource, CLLocationManagerDelegate>
+@interface LunchTabBarController : UITabBarController<ModalPickerViewControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource, CLLocationManagerDelegate, NADViewDelegate>
 
 @property (strong, nonatomic) CLLocationManager *locationManager;
 

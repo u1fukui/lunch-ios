@@ -38,5 +38,9 @@
 	</array>
 	<key>GoogleMapsApiKey</key>
 	<string></string>
+	<key>NendID</key>
+	<string>a6eca9dd074372c898dd1df549301f277c53f2b9</string>
+	<key>NendSpotID</key>
+	<string>3172</string>
 </dict>
 </plist>

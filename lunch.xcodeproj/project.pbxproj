@@ -31,6 +31,11 @@
 		77615AB118CAE7D900122156 /* mankatou@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77615AA818CAE7D900122156 /* mankatou@2x.jpg */; };
 		77615AB218CAE7D900122156 /* sushizanmai@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77615AA918CAE7D900122156 /* sushizanmai@2x.jpg */; };
 		77615AB318CAE7D900122156 /* syanhai@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77615AAA18CAE7D900122156 /* syanhai@2x.jpg */; };
+		77615ABF18CB430900122156 /* libNendAd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 77615AB918CB430900122156 /* libNendAd.a */; };
+		77615AC018CB430A00122156 /* NADView_readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 77615ABE18CB430900122156 /* NADView_readme.txt */; };
+		77615AC218CB432600122156 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77615AC118CB432600122156 /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		77615AC418CB432D00122156 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77615AC318CB432D00122156 /* Security.framework */; };
+		77615AC718CB545800122156 /* InfoPlistProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 77615AC618CB545800122156 /* InfoPlistProperty.m */; };
 		7778C5F818AA56DC00B725B3 /* ModalPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778C5F618AA56DC00B725B3 /* ModalPickerViewController.m */; };
 		7778C5F918AA56DC00B725B3 /* ModalPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7778C5F718AA56DC00B725B3 /* ModalPickerViewController.xib */; };
 		7778C5FC18AA75E000B725B3 /* navigation_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 7778C5FA18AA75E000B725B3 /* navigation_bg.png */; };
@@ -114,6 +119,16 @@
 		77615AA818CAE7D900122156 /* mankatou@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "mankatou@2x.jpg"; sourceTree = "<group>"; };
 		77615AA918CAE7D900122156 /* sushizanmai@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "sushizanmai@2x.jpg"; sourceTree = "<group>"; };
 		77615AAA18CAE7D900122156 /* syanhai@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "syanhai@2x.jpg"; sourceTree = "<group>"; };
+		77615AB918CB430900122156 /* libNendAd.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libNendAd.a; sourceTree = "<group>"; };
+		77615ABA18CB430900122156 /* NADIconArrayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NADIconArrayView.h; sourceTree = "<group>"; };
+		77615ABB18CB430900122156 /* NADIconLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NADIconLoader.h; sourceTree = "<group>"; };
+		77615ABC18CB430900122156 /* NADIconView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NADIconView.h; sourceTree = "<group>"; };
+		77615ABD18CB430900122156 /* NADView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NADView.h; sourceTree = "<group>"; };
+		77615ABE18CB430900122156 /* NADView_readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NADView_readme.txt; sourceTree = "<group>"; };
+		77615AC118CB432600122156 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		77615AC318CB432D00122156 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		77615AC518CB545800122156 /* InfoPlistProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoPlistProperty.h; sourceTree = "<group>"; };
+		77615AC618CB545800122156 /* InfoPlistProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoPlistProperty.m; sourceTree = "<group>"; };
 		7778C5F518AA56DC00B725B3 /* ModalPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModalPickerViewController.h; sourceTree = "<group>"; };
 		7778C5F618AA56DC00B725B3 /* ModalPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModalPickerViewController.m; sourceTree = "<group>"; };
 		7778C5F718AA56DC00B725B3 /* ModalPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ModalPickerViewController.xib; sourceTree = "<group>"; };
@@ -178,8 +193,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77615AC418CB432D00122156 /* Security.framework in Frameworks */,
+				77615AC218CB432600122156 /* AdSupport.framework in Frameworks */,
 				77956EBD1893D30900CF98C8 /* CoreGraphics.framework in Frameworks */,
 				77956EBF1893D30900CF98C8 /* UIKit.framework in Frameworks */,
+				77615ABF18CB430900122156 /* libNendAd.a in Frameworks */,
 				77956EBB1893D30900CF98C8 /* Foundation.framework in Frameworks */,
 				897876439B114BD9AC17968E /* libPods.a in Frameworks */,
 			);
@@ -229,6 +247,27 @@
 			path = thumbnails;
 			sourceTree = "<group>";
 		};
+		77615AB718CB430900122156 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				77615AB818CB430900122156 /* NendAd */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		77615AB818CB430900122156 /* NendAd */ = {
+			isa = PBXGroup;
+			children = (
+				77615AB918CB430900122156 /* libNendAd.a */,
+				77615ABA18CB430900122156 /* NADIconArrayView.h */,
+				77615ABB18CB430900122156 /* NADIconLoader.h */,
+				77615ABC18CB430900122156 /* NADIconView.h */,
+				77615ABD18CB430900122156 /* NADView.h */,
+				77615ABE18CB430900122156 /* NADView_readme.txt */,
+			);
+			path = NendAd;
+			sourceTree = "<group>";
+		};
 		77956EAE1893D30900CF98C8 = {
 			isa = PBXGroup;
 			children = (
@@ -252,6 +291,8 @@
 		77956EB91893D30900CF98C8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				77615AC318CB432D00122156 /* Security.framework */,
+				77615AC118CB432600122156 /* AdSupport.framework */,
 				77E5BEE41894FA2B008164F6 /* MapKit.framework */,
 				77956EBA1893D30900CF98C8 /* Foundation.framework */,
 				77956EBC1893D30900CF98C8 /* CoreGraphics.framework */,
@@ -265,11 +306,14 @@
 		77956EC01893D30900CF98C8 /* lunch */ = {
 			isa = PBXGroup;
 			children = (
+				77615AB718CB430900122156 /* lib */,
 				77956F091894080B00CF98C8 /* view */,
 				77956F001893F76300CF98C8 /* model */,
 				77956EEF1893E4C200CF98C8 /* controller */,
 				77956EC91893D30900CF98C8 /* AppDelegate.h */,
 				77956ECA1893D30900CF98C8 /* AppDelegate.m */,
+				77615AC518CB545800122156 /* InfoPlistProperty.h */,
+				77615AC618CB545800122156 /* InfoPlistProperty.m */,
 				77E5BEE6189539A0008164F6 /* RestaurantManager.h */,
 				77E5BEE7189539A0008164F6 /* RestaurantManager.m */,
 				77956ECC1893D30900CF98C8 /* Main.storyboard */,
@@ -487,6 +531,7 @@
 				7778C60518B096A100B725B3 /* tab_map_icon@2x.png in Resources */,
 				7778C5FD18AA75E000B725B3 /* navigation_bg@2x.png in Resources */,
 				7778C60118B0958A00B725B3 /* tab_list_icon@2x.png in Resources */,
+				77615AC018CB430A00122156 /* NADView_readme.txt in Resources */,
 				77615AB218CAE7D900122156 /* sushizanmai@2x.jpg in Resources */,
 				7778C60C18B0A2FB00B725B3 /* navigation_close_icon.png in Resources */,
 				7778C60918B09FA000B725B3 /* navigation_setting_icon@2x.png in Resources */,
@@ -566,6 +611,7 @@
 				77956F031893F77D00CF98C8 /* Restaurant.m in Sources */,
 				77956EC71893D30900CF98C8 /* main.m in Sources */,
 				7778C5F818AA56DC00B725B3 /* ModalPickerViewController.m in Sources */,
+				77615AC718CB545800122156 /* InfoPlistProperty.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -698,6 +744,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "lunch/lunch-Prefix.pch";
 				INFOPLIST_FILE = "lunch/lunch-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/u1/Desktop/workspace/lunch/lunch-ios/lunch/lib/NendAd",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -715,6 +765,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "lunch/lunch-Prefix.pch";
 				INFOPLIST_FILE = "lunch/lunch-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/u1/Desktop/workspace/lunch/lunch-ios/lunch/lib/NendAd",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;

@@ -8,9 +8,11 @@
 
 #import "LunchTabBarController.h"
 #import "RestaurantManager.h"
+#import "InfoPlistProperty.h"
 
 @interface LunchTabBarController ()
 
+@property (nonatomic, strong) NADView *nadView;
 @property (nonatomic, strong) UIButton *conditionButton;
 @property (nonatomic, strong) NSArray *pickerDataArray;
 @property (nonatomic, strong) ModalPickerViewController *pickerViewController;
@@ -38,6 +40,20 @@ int const kPickerViewTag = 1;
                              @"13:00", @"13:30", @"14:00", @"14:30",
                              @"15:00", @"15:30", @"16:00"];
     
+    // 広告
+    self.nadView = [[NADView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - NAD_ADVIEW_SIZE_320x50.height,
+                                                             NAD_ADVIEW_SIZE_320x50.width, NAD_ADVIEW_SIZE_320x50.height)];
+    [self.nadView setNendID:[[[NSBundle mainBundle] infoDictionary] objectForKey:kNendId]
+                     spotID:[[[NSBundle mainBundle] infoDictionary] objectForKey:kNendSpotId]];
+    [self.nadView setDelegate:self];
+    [self.nadView load];
+    [self.view addSubview:self.nadView];
+    
+    // 広告枠分だけTabBarを空ける
+    CGRect tabFrame = self.tabBar.frame;
+    tabFrame.origin.y -= NAD_ADVIEW_SIZE_320x50.height;
+    self.tabBar.frame = tabFrame;
+    
     // ナビゲーション
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navigation_bg"]
                                                   forBarMetrics:UIBarMetricsDefault];
@@ -51,13 +67,10 @@ int const kPickerViewTag = 1;
     [self.conditionButton addTarget:self
                              action:@selector(onClickButton:)
                    forControlEvents:UIControlEventTouchUpInside];
-    
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.conditionButton];
     
     // 位置情報
     self.locationManager = [[CLLocationManager alloc] init];
-    
-    // 位置情報サービスが利用できるかどうかをチェック
     if ([CLLocationManager locationServicesEnabled]) {
         self.locationManager.delegate = self;
         [self.locationManager startUpdatingLocation];
@@ -67,10 +80,28 @@ int const kPickerViewTag = 1;
 
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.nadView resume];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self.nadView pause];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)dealloc
+{
+    [self.nadView setDelegate:nil];
+    self.nadView = nil;
 }
 
 - (BOOL)prefersStatusBarHidden
@@ -176,6 +207,7 @@ int const kPickerViewTag = 1;
     return 0;
 }
 
+
 #pragma mark - UIPickerViewDataSource
 
 // returns the number of 'columns' to display.
@@ -213,7 +245,7 @@ int const kPickerViewTag = 1;
     didUpdateToLocation:(CLLocation *)newLocation
            fromLocation:(CLLocation *)oldLocation
 {
-    NSLog(@"%s", __func__);
+    NSLog(@"update location");
 	[RestaurantManager sharedManager].currentLocation =
         [[CLLocation alloc] initWithLatitude:newLocation.coordinate.latitude
                                    longitude:newLocation.coordinate.longitude];

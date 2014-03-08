@@ -36,8 +36,6 @@ NSString * const kCellIdentifier = @"launch_app";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
-    NSLog(@"%s", __func__);
     
     self.restaurantTableView.delegate = self;
     self.restaurantTableView.dataSource = self;

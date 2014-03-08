@@ -36,7 +36,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSLog(@"%s", __func__);
     
     // 地図初期化
     self.mapView.delegate = self;
