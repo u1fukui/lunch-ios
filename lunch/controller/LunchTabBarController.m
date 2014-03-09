@@ -13,6 +13,7 @@
 @interface LunchTabBarController ()
 
 @property (nonatomic, strong) NADView *nadView;
+@property (nonatomic, strong) UILabel *conditionLabel;
 @property (nonatomic, strong) UIButton *conditionButton;
 @property (nonatomic, strong) NSArray *pickerDataArray;
 @property (nonatomic, strong) ModalPickerViewController *pickerViewController;
@@ -77,6 +78,14 @@ int const kPickerViewTag = 1;
                    forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.conditionButton];
     
+    // 条件表示
+    self.conditionLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 24)];
+    [self.conditionLabel setBackgroundColor:[UIColor colorWithRed:0.25 green:0.25 blue:0.25 alpha:1.0]];
+    [self.conditionLabel setTextColor:[UIColor whiteColor]];
+    [self.conditionLabel setFont:[UIFont systemFontOfSize:12.0f]];
+    [self.conditionLabel setTextAlignment:NSTextAlignmentCenter];
+    [self.view addSubview:self.conditionLabel];
+    
     // 位置情報
     self.locationManager = [[CLLocationManager alloc] init];
     if ([CLLocationManager locationServicesEnabled]) {
@@ -92,6 +101,7 @@ int const kPickerViewTag = 1;
 {
     [super viewWillAppear:animated];
     [self.nadView resume];
+    [self updateConditionLabel];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -115,6 +125,23 @@ int const kPickerViewTag = 1;
 - (BOOL)prefersStatusBarHidden
 {
     return NO;
+}
+
+- (void)updateConditionLabel
+{
+    NSString *filter = [RestaurantManager sharedManager].filterTime;
+    NSMutableString *message;
+    if (filter) {
+        message = [NSMutableString stringWithFormat:@"%@に営業しているお店を", filter];
+    } else {
+        message = [NSMutableString stringWithFormat:@"全てのお店を"];
+    }
+    
+    if ([RestaurantManager sharedManager].currentLocation) {
+        [message appendString:@"近い順に"];
+    }
+    [message appendString:@"表示"];
+    self.conditionLabel.text = message;
 }
 
 

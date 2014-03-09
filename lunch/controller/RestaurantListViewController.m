@@ -16,7 +16,6 @@
 @interface RestaurantListViewController ()
 
 @property (weak, nonatomic) IBOutlet UITableView *restaurantTableView;
-@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 
 @end
 
@@ -47,7 +46,6 @@ NSString * const kCellIdentifier = @"launch_app";
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self updateDescriptionView];
     
     if([RestaurantManager sharedManager].needReloadTable) {
         [self.restaurantTableView reloadData];
@@ -61,22 +59,6 @@ NSString * const kCellIdentifier = @"launch_app";
     // Dispose of any resources that can be recreated.
 }
 
-- (void)updateDescriptionView
-{
-    NSString *filter = [RestaurantManager sharedManager].filterTime;
-    NSMutableString *message;
-    if (filter) {
-        message = [NSMutableString stringWithFormat:@"%@に営業しているお店を", filter];
-    } else {
-        message = [NSMutableString stringWithFormat:@"全てのお店を"];
-    }
-    
-    if ([RestaurantManager sharedManager].currentLocation) {
-        [message appendString:@"近い順に"];
-    }
-    [message appendString:@"表示"];
-    self.descriptionLabel.text = message;
-}
 
 #pragma mark - UITableViewDataSource
 
