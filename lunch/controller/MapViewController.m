@@ -72,14 +72,20 @@
 {
     [self.mapView clear];
     
+    GMSMarker *firstMarker;
     for (Restaurant *r in [RestaurantManager sharedManager].filteredRestaurantArray) {
         CLLocationCoordinate2D position = CLLocationCoordinate2DMake(r.lat, r.lng);
         GMSMarker *marker = [GMSMarker markerWithPosition:position];
         marker.title = r.name;
         marker.userData = r;
         marker.map = self.mapView;
+        
+        if (firstMarker == nil) {
+            firstMarker = marker;
+        }
     }
     
+    self.mapView.selectedMarker = firstMarker;
     self.restaurant = [[RestaurantManager sharedManager].filteredRestaurantArray
                        objectAtIndex:0];
     [self.restaurantView setRestaurant:self.restaurant];
