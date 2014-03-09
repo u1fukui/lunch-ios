@@ -159,7 +159,9 @@ int const kPickerViewTag = 1;
                                      initWithNibName:@"ModalPickerViewController" bundle:nil];
         self.pickerViewController.delegate = self;
         self.pickerViewController.view.tag = kPickerViewTag;
-        self.pickerViewController.view.frame = self.view.frame;
+        CGRect frame = self.view.frame;
+        frame.origin.y -= self.navigationController.navigationBar.frame.size.height + 20; // navigationBar + statusBar
+        self.pickerViewController.view.frame = frame;
         [self.view addSubview:self.pickerViewController.view];
         
         // アニメーション
