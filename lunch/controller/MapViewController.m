@@ -16,8 +16,7 @@
 @interface MapViewController ()
 
 @property (weak, nonatomic) IBOutlet GMSMapView *mapView;
-@property (weak, nonatomic) IBOutlet RestaurantSimpleView *footerView;
-@property (strong, nonatomic) RestaurantSimpleView *restaurantView;
+@property (weak, nonatomic) IBOutlet RestaurantSimpleView *restaurantView;
 @property (strong, nonatomic) Restaurant *restaurant;
 
 @end
@@ -45,11 +44,8 @@
     self.mapView.myLocationEnabled = YES;
     
     // お店情報
-    self.restaurantView = [[RestaurantSimpleView alloc]
-                           initWithFrame:self.footerView.bounds];
-    [self.footerView addSubview:self.restaurantView];
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onClickFooterView:)];
-    [self.footerView addGestureRecognizer:tapGesture];
+    [self.restaurantView addGestureRecognizer:tapGesture];
     
     [self setRestaurantList];
 }

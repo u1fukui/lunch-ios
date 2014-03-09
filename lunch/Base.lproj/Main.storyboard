@@ -107,8 +107,8 @@
                     <navigationItem key="navigationItem" id="g7Q-5a-SJD"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
-                        <outlet property="footerView" destination="fsD-wB-SbM" id="Hqj-eo-ZM8"/>
                         <outlet property="mapView" destination="Rbd-lh-ReK" id="b1h-aW-s2h"/>
+                        <outlet property="restaurantView" destination="fsD-wB-SbM" id="lb6-Do-jIO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ySa-Re-Lhg" userLabel="First Responder" sceneMemberID="firstResponder"/>

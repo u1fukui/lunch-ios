@@ -21,24 +21,15 @@
 
 @implementation RestaurantSimpleView
 
-- (id)initWithFrame:(CGRect)frame
+- (id)initWithCoder:(NSCoder *)aDecoder
 {
-    self = [super initWithFrame:frame];
+    self = [super initWithCoder:aDecoder];
     if (self) {
         NSArray *topLevelViews = [[NSBundle mainBundle]
                                   loadNibNamed:@"RestaurantSimpleView"
                                   owner:self
                                   options:nil];
         [self addSubview:topLevelViews[0]];
-    }
-    return self;
-}
-
-- (id)initWithCoder:(NSCoder *)aDecoder
-{
-    self = [super initWithCoder:aDecoder];
-    if (self) {
-        
     }
     return self;
 }
