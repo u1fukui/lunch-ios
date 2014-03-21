@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
+        <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RestaurantDetailViewController">
             <connections>
+                <outlet property="adView" destination="u40-Kw-BtM" id="GFw-gg-Lje"/>
                 <outlet property="addressLabel" destination="iW8-in-ZGY" id="6TZ-Fq-d0v"/>
                 <outlet property="featuredMenuLabel" destination="igf-hr-gQF" id="Ycw-eM-1xS"/>
                 <outlet property="holidayLabel" destination="FtR-X5-M8i" id="ufn-uj-527"/>
@@ -147,8 +149,13 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                 </view>
                 <view contentMode="scaleToFill" id="Bdd-bA-QQT" customClass="GMSMapView">
-                    <rect key="frame" x="0.0" y="288" width="320" height="192"/>
+                    <rect key="frame" x="0.0" y="288" width="320" height="142"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" id="u40-Kw-BtM">
+                    <rect key="frame" x="0.0" y="430" width="320" height="50"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                 </view>
                 <navigationBar contentMode="scaleToFill" id="TuQ-Q2-GYq">

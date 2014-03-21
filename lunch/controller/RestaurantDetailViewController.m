@@ -9,6 +9,7 @@
 #import "RestaurantDetailViewController.h"
 #import <GoogleMaps/GoogleMaps.h>
 #import "Restaurant.h"
+#import "InfoPlistProperty.h"
 
 @interface RestaurantDetailViewController ()
 @property (weak, nonatomic) IBOutlet GMSMapView *mapView;
@@ -20,9 +21,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *tabelogLabel;
 @property (weak, nonatomic) IBOutlet UINavigationBar *navigationBar;
 @property (weak, nonatomic) IBOutlet UINavigationItem *navItem;
+@property (weak, nonatomic) IBOutlet UIView *adView;
 
 @property (strong, nonatomic) Restaurant *restaurant;
 @property (strong, nonatomic) UIButton *closeButton;
+@property (strong, nonatomic) NADView *nadView;
 
 @end
 
@@ -68,14 +71,43 @@
     GMSMarker *marker = [GMSMarker markerWithPosition:position];
     marker.map = self.mapView;
     [self.mapView reloadInputViews];
+
+    // 広告
+    self.nadView = [[NADView alloc] initWithFrame:CGRectMake(0,0,
+                                                             NAD_ADVIEW_SIZE_320x50.width, NAD_ADVIEW_SIZE_320x50.height )];
+    [self.nadView setIsOutputLog:NO];
+    [self.nadView setNendID:[[[NSBundle mainBundle] infoDictionary] objectForKey:kNendId]
+                     spotID:[[[NSBundle mainBundle] infoDictionary] objectForKey:kNendSpotId]];
+    [self.nadView setDelegate:self];
+    [self.nadView load];
+    [self.adView addSubview:self.nadView];
     
+    // データセット
     [self show];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.nadView resume];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self.nadView pause];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)dealloc
+{
+    [self.nadView setDelegate:nil];
+    self.nadView = nil;
 }
 
 - (BOOL)prefersStatusBarHidden

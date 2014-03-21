@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NADView.h"
 
 @class Restaurant;
 
-@interface RestaurantDetailViewController : UIViewController
+@interface RestaurantDetailViewController : UIViewController<NADViewDelegate>
 
 - (void)showRestaurant:(Restaurant *)r;
 

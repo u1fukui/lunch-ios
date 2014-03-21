@@ -41,7 +41,6 @@ int const kPickerViewTag = 1;
                              @"13:00", @"13:30", @"14:00", @"14:30",
                              @"15:00", @"15:30", @"16:00"];
     
-    
     if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1) {
         self.edgesForExtendedLayout = UIRectEdgeNone;
     }
@@ -52,6 +51,7 @@ int const kPickerViewTag = 1;
     self.nadView = [[NADView alloc] initWithFrame:
                     CGRectMake(0, contentHeight - NAD_ADVIEW_SIZE_320x50.height,
                                NAD_ADVIEW_SIZE_320x50.width, NAD_ADVIEW_SIZE_320x50.height)];
+    [self.nadView setIsOutputLog:NO];
     [self.nadView setNendID:[[[NSBundle mainBundle] infoDictionary] objectForKey:kNendId]
                      spotID:[[[NSBundle mainBundle] infoDictionary] objectForKey:kNendSpotId]];
     [self.nadView setDelegate:self];
