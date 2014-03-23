@@ -8,6 +8,7 @@
 
 #import "RestaurantWebViewController.h"
 #import "InfoPlistProperty.h"
+#import "SVProgressHUD.h"
 
 @interface RestaurantWebViewController ()
 
@@ -120,12 +121,16 @@
 
 #pragma mark - UIWebViewDelegate
 
--(void)webViewDidStartLoad:(UIWebView*)webView{
+-(void)webViewDidStartLoad:(UIWebView*)webView
+{
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    [SVProgressHUD show];
 }
 
--(void)webViewDidFinishLoad:(UIWebView*)webView{
+-(void)webViewDidFinishLoad:(UIWebView*)webView
+{
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    [SVProgressHUD dismiss];
 }
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
