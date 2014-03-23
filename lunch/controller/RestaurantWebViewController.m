@@ -108,7 +108,7 @@
 }
 
 
-#pragma mark - Tap event
+#pragma mark - UI event
 
 - (void)onClickButton:(UIButton *)button
 {

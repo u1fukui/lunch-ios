@@ -17,6 +17,8 @@
 
 @property (weak, nonatomic) IBOutlet GMSMapView *mapView;
 @property (weak, nonatomic) IBOutlet RestaurantSimpleView *restaurantView;
+@property (strong, nonatomic) NSArray *restaurantArray;
+@property (strong, nonatomic) NSMutableArray *markerArray;
 @property (strong, nonatomic) Restaurant *restaurant;
 
 @end
@@ -47,6 +49,18 @@
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onClickFooterView:)];
     [self.restaurantView addGestureRecognizer:tapGesture];
     
+    // スワイプ
+    UISwipeGestureRecognizer* swipeRightGesture = [[UISwipeGestureRecognizer alloc]
+                                                   initWithTarget:self action:@selector(selSwipeRightGesture:)];
+    swipeRightGesture.direction = UISwipeGestureRecognizerDirectionRight;
+    [self.restaurantView addGestureRecognizer:swipeRightGesture];
+    
+    UISwipeGestureRecognizer* swipeLeftGesture = [[UISwipeGestureRecognizer alloc]
+                                                   initWithTarget:self action:@selector(selSwipeLeftGesture:)];
+    swipeLeftGesture.direction = UISwipeGestureRecognizerDirectionLeft;
+    [self.restaurantView addGestureRecognizer:swipeLeftGesture];
+    
+    // 全お店を表示
     [self setRestaurantList];
 }
 
@@ -72,23 +86,74 @@
 {
     [self.mapView clear];
     
-    GMSMarker *firstMarker;
-    for (Restaurant *r in [RestaurantManager sharedManager].filteredRestaurantArray) {
+    self.restaurantArray = [RestaurantManager sharedManager].filteredRestaurantArray;
+    self.markerArray = [NSMutableArray array];
+    for (Restaurant *r in self.restaurantArray) {
         CLLocationCoordinate2D position = CLLocationCoordinate2DMake(r.lat, r.lng);
         GMSMarker *marker = [GMSMarker markerWithPosition:position];
         marker.title = r.name;
         marker.userData = r;
         marker.map = self.mapView;
-        
-        if (firstMarker == nil) {
-            firstMarker = marker;
-        }
+        [self.markerArray addObject:marker];
     }
     
-    self.mapView.selectedMarker = firstMarker;
+    self.mapView.selectedMarker = [self.markerArray firstObject];
     self.restaurant = [[RestaurantManager sharedManager].filteredRestaurantArray
                        objectAtIndex:0];
     [self.restaurantView setRestaurant:self.restaurant];
+}
+
+
+#pragma mark - UI event
+
+- (void)selSwipeRightGesture:(UISwipeGestureRecognizer *)sender {
+    NSInteger index = [self.restaurantArray indexOfObject:self.restaurant];
+    int nextIndex;
+    if (index == [self.restaurantArray count] - 1) {
+        nextIndex = 0;
+    } else {
+        nextIndex = index + 1;
+    }
+    self.restaurant = [self.restaurantArray objectAtIndex:nextIndex];
+    self.mapView.selectedMarker = [self.markerArray objectAtIndex:nextIndex];
+    [self.mapView animateToLocation:self.mapView.selectedMarker.position];
+    
+    CGRect defaultFrame = self.restaurantView.frame;
+    [UIView animateWithDuration:0.3f
+                     animations:^{
+                         CGRect frame = self.restaurantView.frame;
+                         frame.origin.x += frame.size.width;
+                         self.restaurantView.frame = frame;
+                     }
+                     completion:^(BOOL finished){
+                         self.restaurantView.frame = defaultFrame;
+                         [self.restaurantView setRestaurant:self.restaurant];
+                     }];
+}
+
+- (void)selSwipeLeftGesture:(UISwipeGestureRecognizer *)sender {
+    NSInteger index = [self.restaurantArray indexOfObject:self.restaurant];
+    int nextIndex;
+    if (index == 0) {
+        nextIndex = [self.restaurantArray count] - 1;
+    } else {
+        nextIndex = index - 1;
+    }
+    self.restaurant = [self.restaurantArray objectAtIndex:nextIndex];
+    self.mapView.selectedMarker = [self.markerArray objectAtIndex:nextIndex];
+    [self.mapView animateToLocation:self.mapView.selectedMarker.position];
+
+    CGRect defaultFrame = self.restaurantView.frame;
+    [UIView animateWithDuration:0.3f
+                     animations:^{
+                         CGRect frame = self.restaurantView.frame;
+                         frame.origin.x -= frame.size.width;
+                         self.restaurantView.frame = frame;
+                     }
+                     completion:^(BOOL finished){
+                         self.restaurantView.frame = defaultFrame;
+                         [self.restaurantView setRestaurant:self.restaurant];
+                     }];
 }
 
 
@@ -106,7 +171,8 @@
     RestaurantDetailViewController *controller = [[RestaurantDetailViewController alloc]
                                                   initWithNibName:@"RestaurantDetailViewController" bundle:nil];
     [controller showRestaurant:self.restaurant];
-    [self.navigationController presentViewController:controller
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
+    [self.navigationController presentViewController:navController
                                             animated:YES
                                           completion:nil];
 }
