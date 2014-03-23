@@ -102,7 +102,8 @@ NSString * const kCellIdentifier = @"launch_app";
     RestaurantDetailViewController *controller = [[RestaurantDetailViewController alloc]
                                                   initWithNibName:@"RestaurantDetailViewController" bundle:nil];
     [controller showRestaurant:r];
-    [self.navigationController presentViewController:controller
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
+    [self.navigationController presentViewController:navController
                                             animated:YES
                                           completion:nil];
 }

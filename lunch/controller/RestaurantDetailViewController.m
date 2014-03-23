@@ -10,6 +10,7 @@
 #import <GoogleMaps/GoogleMaps.h>
 #import "Restaurant.h"
 #import "InfoPlistProperty.h"
+#import "RestaurantWebViewController.h"
 
 @interface RestaurantDetailViewController ()
 @property (weak, nonatomic) IBOutlet GMSMapView *mapView;
@@ -19,8 +20,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *holidayLabel;
 @property (weak, nonatomic) IBOutlet UILabel *tabelogLabel;
-@property (weak, nonatomic) IBOutlet UINavigationBar *navigationBar;
-@property (weak, nonatomic) IBOutlet UINavigationItem *navItem;
 @property (weak, nonatomic) IBOutlet UIView *adView;
 
 @property (strong, nonatomic) Restaurant *restaurant;
@@ -44,10 +43,14 @@
 {
     [super viewDidLoad];
     
+    if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1) {
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+    }
+    
     // ナビゲーションバー
-    [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"navigation_bg"]
-                             forBarMetrics:UIBarMetricsDefault];
-    self.navItem.title = @"お店詳細";
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navigation_bg"]
+                                                  forBarMetrics:UIBarMetricsDefault];
+    self.navigationItem.title = @"お店詳細";
     
     self.closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.closeButton.frame = CGRectMake(0.0f, 0.0f, 33.0f, 33.0f);
@@ -57,7 +60,7 @@
                          action:@selector(onClickButton:)
                forControlEvents:UIControlEventTouchUpInside];
     
-    self.navItem.rightBarButtonItem = [[UIBarButtonItem alloc]
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]
                                              initWithCustomView:self.closeButton];
     
     // 地図
@@ -84,6 +87,8 @@
     
     // データセット
     [self show];
+    self.tabelogLabel.userInteractionEnabled = YES;
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -110,9 +115,16 @@
     self.nadView = nil;
 }
 
-- (BOOL)prefersStatusBarHidden
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    return YES;
+    UITouch *touch = [[event allTouches] anyObject];
+    if (touch.view == self.tabelogLabel) {
+        RestaurantWebViewController *controller = [[RestaurantWebViewController alloc]
+                                                      initWithNibName:@"RestaurantWebViewController" bundle:nil];
+        [controller loadUrl:self.restaurant.tabelogUrl];
+        [self.navigationController pushViewController:controller
+                                             animated:YES];
+    }
 }
 
 

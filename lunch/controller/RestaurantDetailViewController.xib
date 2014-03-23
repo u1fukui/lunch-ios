@@ -13,8 +13,6 @@
                 <outlet property="holidayLabel" destination="FtR-X5-M8i" id="ufn-uj-527"/>
                 <outlet property="mapView" destination="Bdd-bA-QQT" id="oW8-2Z-Vjh"/>
                 <outlet property="nameLabel" destination="A1g-Zh-46X" id="kqG-vL-9rN"/>
-                <outlet property="navItem" destination="O7a-RB-bu1" id="Nk3-bV-4bl"/>
-                <outlet property="navigationBar" destination="TuQ-Q2-GYq" id="3iA-lN-IEk"/>
                 <outlet property="tabelogLabel" destination="yWx-7a-h1u" id="nx2-or-q1f"/>
                 <outlet property="timeLabel" destination="MZP-UZ-IAO" id="Qeu-F9-Hth"/>
                 <outlet property="view" destination="1" id="3"/>
@@ -26,7 +24,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" id="ojO-5t-qLE">
-                    <rect key="frame" x="0.0" y="44" width="320" height="244"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="244"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="店名" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hEc-vj-mEb">
@@ -149,7 +147,7 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                 </view>
                 <view contentMode="scaleToFill" id="Bdd-bA-QQT" customClass="GMSMapView">
-                    <rect key="frame" x="0.0" y="288" width="320" height="142"/>
+                    <rect key="frame" x="0.0" y="244" width="320" height="186"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                 </view>
@@ -158,13 +156,6 @@
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                 </view>
-                <navigationBar contentMode="scaleToFill" id="TuQ-Q2-GYq">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                    <items>
-                        <navigationItem title="Title" id="O7a-RB-bu1"/>
-                    </items>
-                </navigationBar>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>

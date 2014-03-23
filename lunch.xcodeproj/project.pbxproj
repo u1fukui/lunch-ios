@@ -70,6 +70,8 @@
 		77956EFE1893F3A500CF98C8 /* RestaurantListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77956EFD1893F3A500CF98C8 /* RestaurantListViewController.m */; };
 		77956F031893F77D00CF98C8 /* Restaurant.m in Sources */ = {isa = PBXBuildFile; fileRef = 77956F021893F77D00CF98C8 /* Restaurant.m */; };
 		77956F0C1894082600CF98C8 /* RestaurantCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 77956F0B1894082600CF98C8 /* RestaurantCell.m */; };
+		77D5B3B418DEA92F00F8B7A0 /* RestaurantWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77D5B3B218DEA92F00F8B7A0 /* RestaurantWebViewController.m */; };
+		77D5B3B518DEA92F00F8B7A0 /* RestaurantWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77D5B3B318DEA92F00F8B7A0 /* RestaurantWebViewController.xib */; };
 		77E5BEE8189539A0008164F6 /* RestaurantManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E5BEE7189539A0008164F6 /* RestaurantManager.m */; };
 		77E5BEF2189E7973008164F6 /* lunch.csv in Resources */ = {isa = PBXBuildFile; fileRef = 77E5BEF1189E7973008164F6 /* lunch.csv */; };
 		77E5BEFA18A5D190008164F6 /* navigation_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 77E5BEF418A5D190008164F6 /* navigation_back.png */; };
@@ -173,6 +175,9 @@
 		77956F021893F77D00CF98C8 /* Restaurant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Restaurant.m; sourceTree = "<group>"; };
 		77956F0A1894082600CF98C8 /* RestaurantCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantCell.h; sourceTree = "<group>"; };
 		77956F0B1894082600CF98C8 /* RestaurantCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantCell.m; sourceTree = "<group>"; };
+		77D5B3B118DEA92F00F8B7A0 /* RestaurantWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantWebViewController.h; sourceTree = "<group>"; };
+		77D5B3B218DEA92F00F8B7A0 /* RestaurantWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantWebViewController.m; sourceTree = "<group>"; };
+		77D5B3B318DEA92F00F8B7A0 /* RestaurantWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RestaurantWebViewController.xib; sourceTree = "<group>"; };
 		77E5BEE41894FA2B008164F6 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		77E5BEE6189539A0008164F6 /* RestaurantManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantManager.h; sourceTree = "<group>"; };
 		77E5BEE7189539A0008164F6 /* RestaurantManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantManager.m; sourceTree = "<group>"; };
@@ -369,6 +374,9 @@
 				7778C5F518AA56DC00B725B3 /* ModalPickerViewController.h */,
 				7778C5F618AA56DC00B725B3 /* ModalPickerViewController.m */,
 				7778C5F718AA56DC00B725B3 /* ModalPickerViewController.xib */,
+				77D5B3B118DEA92F00F8B7A0 /* RestaurantWebViewController.h */,
+				77D5B3B218DEA92F00F8B7A0 /* RestaurantWebViewController.m */,
+				77D5B3B318DEA92F00F8B7A0 /* RestaurantWebViewController.xib */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -516,6 +524,7 @@
 				77615A9C18C0F1C800122156 /* shibuya22.jpg in Resources */,
 				7778C61518B0F6F100B725B3 /* r-time@2x.png in Resources */,
 				77956ECE1893D30900CF98C8 /* Main.storyboard in Resources */,
+				77D5B3B518DEA92F00F8B7A0 /* RestaurantWebViewController.xib in Resources */,
 				77615A9A18C0F1C800122156 /* saizeriya.jpg in Resources */,
 				7778C60018B0958A00B725B3 /* tab_list_icon.png in Resources */,
 				77615A9F18C0F1C800122156 /* sushidaidokoroya@2x.jpg in Resources */,
@@ -603,6 +612,7 @@
 				77956EF21893E5A300CF98C8 /* LunchTabBarController.m in Sources */,
 				77956EFE1893F3A500CF98C8 /* RestaurantListViewController.m in Sources */,
 				77E5BEE8189539A0008164F6 /* RestaurantManager.m in Sources */,
+				77D5B3B418DEA92F00F8B7A0 /* RestaurantWebViewController.m in Sources */,
 				77E5BF0418A6762E008164F6 /* RestaurantSimpleView.m in Sources */,
 				77956F0C1894082600CF98C8 /* RestaurantCell.m in Sources */,
 				77956EF51893E6A000CF98C8 /* MapViewController.m in Sources */,
