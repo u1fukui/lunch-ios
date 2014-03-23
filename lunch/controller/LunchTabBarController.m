@@ -37,7 +37,7 @@ int const kPickerViewTag = 1;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.pickerDataArray = @[@"11:00", @"11:30", @"12:00", @"12:30",
+    self.pickerDataArray = @[@"全て", @"11:00", @"11:30", @"12:00", @"12:30",
                              @"13:00", @"13:30", @"14:00", @"14:30",
                              @"15:00", @"15:30", @"16:00"];
     
@@ -206,8 +206,9 @@ int const kPickerViewTag = 1;
 - (void)didOkButtonClicked:(ModalPickerViewController *)controller
                        tag:(NSString *)tag
 {
-    if (self.selectedData == nil) {
-        self.selectedData = self.pickerDataArray[0];
+    if ([self.pickerDataArray[0] isEqualToString:self.selectedData]) {
+        //self.selectedData = self.pickerDataArray[0];
+        self.selectedData = nil;
     }
     
     //保存
