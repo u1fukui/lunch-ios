@@ -81,6 +81,7 @@
 {
     [super viewWillDisappear:animated];
     [self.nadView pause];
+    [SVProgressHUD dismiss];
 }
 
 - (void)didReceiveMemoryWarning
