@@ -61,8 +61,7 @@
                          action:@selector(onClickButton:)
                forControlEvents:UIControlEventTouchUpInside];
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]
-                                             initWithCustomView:self.closeButton];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.closeButton];
     
     // 地図
     self.mapView.camera =  [GMSCameraPosition cameraWithLatitude:self.restaurant.lat
