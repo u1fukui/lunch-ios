@@ -15,4 +15,6 @@
 
 @property (strong, nonatomic) CLLocationManager *locationManager;
 
+-(void)updateLocation;
+
 @end

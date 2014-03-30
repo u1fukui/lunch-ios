@@ -16,6 +16,7 @@
 @interface RestaurantListViewController ()
 
 @property (weak, nonatomic) IBOutlet UITableView *restaurantTableView;
+@property (strong, nonatomic) UIRefreshControl *refreshControl;
 
 @end
 
@@ -41,6 +42,12 @@ NSString * const kCellIdentifier = @"launch_app";
     [self.restaurantTableView
                 registerNib:[UINib nibWithNibName:@"RestaurantCell" bundle:nil]
      forCellReuseIdentifier:kCellIdentifier];
+    
+    // 引っ張って更新
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"近い順に並び替え"];
+    [self.refreshControl addTarget:self action:@selector(onRefresh:) forControlEvents:UIControlEventValueChanged];
+    [self.restaurantTableView addSubview:self.refreshControl];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -57,6 +64,16 @@ NSString * const kCellIdentifier = @"launch_app";
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)onRefresh:(id)sender
+{
+    [self.refreshControl beginRefreshing];
+    
+    LunchTabBarController *controller = (LunchTabBarController *) self.tabBarController;
+    [controller updateLocation];
+    
+    [self.refreshControl endRefreshing];
 }
 
 

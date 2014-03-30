@@ -90,7 +90,7 @@ int const kPickerViewTag = 1;
     self.locationManager = [[CLLocationManager alloc] init];
     if ([CLLocationManager locationServicesEnabled]) {
         self.locationManager.delegate = self;
-        [self.locationManager startUpdatingLocation];
+        [self updateLocation];
     } else {
         NSLog(@"Location services not available.");
     }
@@ -142,6 +142,11 @@ int const kPickerViewTag = 1;
     }
     [message appendString:@"表示"];
     self.conditionLabel.text = message;
+}
+
+-(void)updateLocation
+{
+    [self.locationManager startUpdatingLocation];
 }
 
 
@@ -207,7 +212,6 @@ int const kPickerViewTag = 1;
                        tag:(NSString *)tag
 {
     if ([self.pickerDataArray[0] isEqualToString:self.selectedData]) {
-        //self.selectedData = self.pickerDataArray[0];
         self.selectedData = nil;
     }
     
