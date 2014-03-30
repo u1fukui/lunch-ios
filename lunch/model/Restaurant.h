@@ -40,6 +40,9 @@
 /** 食べログURL */
 @property (strong, nonatomic) NSString *tabelogUrl;
 
+/** 一言コメント */
+@property (strong, nonatomic) NSString *comment;
+
 /** サムネイル画像のファイル名 */
 @property (strong, nonatomic) NSString *thumbnailName;
 
