@@ -15,6 +15,7 @@
 @property (nonatomic, strong) NADView *nadView;
 @property (nonatomic, strong) UILabel *conditionLabel;
 @property (nonatomic, strong) UIButton *conditionButton;
+@property (nonatomic, strong) UIButton *infoButton;
 @property (nonatomic, strong) NSArray *pickerDataArray;
 @property (nonatomic, strong) ModalPickerViewController *pickerViewController;
 @property (nonatomic, strong) NSString *selectedData;
@@ -67,6 +68,13 @@ int const kPickerViewTag = 1;
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navigation_bg"]
                                                   forBarMetrics:UIBarMetricsDefault];
     self.navigationItem.title = @"渋谷500円ランチ";
+    
+    // メールボタン
+    self.infoButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
+    [self.infoButton addTarget:self
+                        action:@selector(onClickButton:)
+              forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.infoButton];
     
     // 条件設定ボタン
     self.conditionButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -178,6 +186,11 @@ int const kPickerViewTag = 1;
         [UIView setAnimationDuration:0.5];
         self.pickerViewController.view.center = pickerViewCenter;
         [UIView commitAnimations];
+    } else if (button == self.infoButton) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"開発者へ連絡" message:@"掲載情報の間違いや、掲載希望の情報等ありましたらご連絡おねがいします"
+                                  delegate:self cancelButtonTitle:@"キャンセル" otherButtonTitles:@"メールする", nil];
+        alert.delegate = self;
+        [alert show];
     }
 }
 
@@ -298,6 +311,22 @@ int const kPickerViewTag = 1;
        didFailWithError:(NSError *)error
 {
     NSLog(@"didFailWithError");
+}
+
+
+#pragma mark - UIAlertViewDelegate
+
+// アラートのボタンが押された時に呼ばれるデリゲート例文
+-(void)alertView:(UIAlertView*)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 1) {
+        NSString *subject = [@"渋谷500円ランチお問い合わせ"
+                             stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        
+        // メーラー起動
+        [[UIApplication sharedApplication] openURL:
+         [NSURL URLWithString:[NSString stringWithFormat:@"mailto:%@?Subject=%@",
+                               [[[NSBundle mainBundle] infoDictionary] objectForKey:kSupportEmailAddress], subject]]];
+    }
 }
 
 @end

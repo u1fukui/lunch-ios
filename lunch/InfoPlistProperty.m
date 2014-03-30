@@ -12,5 +12,6 @@
 
 NSString * const kNendId = @"NendID";
 NSString * const kNendSpotId = @"NendSpotID";
+NSString * const kSupportEmailAddress = @"SupportEmailAddress";
 
 @end

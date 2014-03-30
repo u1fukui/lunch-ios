@@ -12,5 +12,6 @@
 
 extern NSString * const kNendId;
 extern NSString * const kNendSpotId;
+extern NSString * const kSupportEmailAddress;
 
 @end
