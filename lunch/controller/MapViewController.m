@@ -108,7 +108,7 @@
 
 - (void)selSwipeRightGesture:(UISwipeGestureRecognizer *)sender {
     NSInteger index = [self.restaurantArray indexOfObject:self.restaurant];
-    int nextIndex;
+    NSInteger nextIndex;
     if (index == [self.restaurantArray count] - 1) {
         nextIndex = 0;
     } else {
@@ -133,7 +133,7 @@
 
 - (void)selSwipeLeftGesture:(UISwipeGestureRecognizer *)sender {
     NSInteger index = [self.restaurantArray indexOfObject:self.restaurant];
-    int nextIndex;
+    NSInteger nextIndex;
     if (index == 0) {
         nextIndex = [self.restaurantArray count] - 1;
     } else {

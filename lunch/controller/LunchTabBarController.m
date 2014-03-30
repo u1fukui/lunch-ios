@@ -252,7 +252,7 @@ int const kPickerViewTag = 1;
         return 0;
     }
     
-    int count = self.pickerDataArray.count;
+    NSUInteger count = self.pickerDataArray.count;
     for (int i = 0; i < count; i++) {
         if ([filterTime isEqualToString:self.pickerDataArray[i]]) {
             return i;
