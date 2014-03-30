@@ -19,8 +19,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *featuredMenuLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *holidayLabel;
-@property (weak, nonatomic) IBOutlet UILabel *tabelogLabel;
+@property (weak, nonatomic) IBOutlet UILabel *commentLabel;
 @property (weak, nonatomic) IBOutlet UIView *adView;
+@property (weak, nonatomic) IBOutlet UIButton *tabelogButton;
 
 @property (strong, nonatomic) Restaurant *restaurant;
 @property (strong, nonatomic) UIButton *closeButton;
@@ -87,8 +88,13 @@
     
     // データセット
     [self show];
-    self.tabelogLabel.userInteractionEnabled = YES;
-    
+    [self.tabelogButton addTarget:self
+                           action:@selector(onClickButton:)
+                 forControlEvents:UIControlEventTouchUpInside];
+    [[self.tabelogButton layer] setBorderColor:[self.tabelogButton.titleLabel.textColor CGColor]];
+    [[self.tabelogButton layer] setBorderWidth:1.0];
+    [[self.tabelogButton layer] setCornerRadius:7.0];
+    [self.tabelogButton setClipsToBounds:YES];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -115,18 +121,6 @@
     self.nadView = nil;
 }
 
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    UITouch *touch = [[event allTouches] anyObject];
-    if (touch.view == self.tabelogLabel) {
-        RestaurantWebViewController *controller = [[RestaurantWebViewController alloc]
-                                                      initWithNibName:@"RestaurantWebViewController" bundle:nil];
-        [controller loadUrl:self.restaurant.tabelogUrl];
-        [self.navigationController pushViewController:controller
-                                             animated:YES];
-    }
-}
-
 
 #pragma mark -
 
@@ -145,7 +139,7 @@
                            self.restaurant.startLunchTime,
                            self.restaurant.finishLunchTime];
     self.holidayLabel.text = self.restaurant.holiday;
-    self.tabelogLabel.text = self.restaurant.tabelogUrl;
+    self.commentLabel.text = self.restaurant.comment;
 }
 
 
@@ -154,6 +148,12 @@
     if (button == self.closeButton) {
         [self dismissViewControllerAnimated:YES
                                  completion:nil];
+    } else if (button == self.tabelogButton) {
+        RestaurantWebViewController *controller = [[RestaurantWebViewController alloc]
+                                                   initWithNibName:@"RestaurantWebViewController" bundle:nil];
+        [controller loadUrl:self.restaurant.tabelogUrl];
+        [self.navigationController pushViewController:controller
+                                             animated:YES];
     }
 }
 
