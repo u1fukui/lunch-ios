@@ -74,6 +74,7 @@ int const kPickerViewTag = 1;
     [self.infoButton addTarget:self
                         action:@selector(onClickButton:)
               forControlEvents:UIControlEventTouchUpInside];
+    self.infoButton.tintColor = [UIColor whiteColor];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.infoButton];
     
     // 条件設定ボタン
@@ -187,7 +188,7 @@ int const kPickerViewTag = 1;
         self.pickerViewController.view.center = pickerViewCenter;
         [UIView commitAnimations];
     } else if (button == self.infoButton) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"開発者へ連絡" message:@"掲載情報の間違いや、掲載希望の情報等ありましたらご連絡おねがいします"
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"開発者に教える" message:@"情報の間違いや、他にオススメのお店があったら教えて下さいm(_ _)m"
                                   delegate:self cancelButtonTitle:@"キャンセル" otherButtonTitles:@"メールする", nil];
         alert.delegate = self;
         [alert show];
