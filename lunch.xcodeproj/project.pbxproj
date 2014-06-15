@@ -92,6 +92,10 @@
 		77956EFE1893F3A500CF98C8 /* RestaurantListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77956EFD1893F3A500CF98C8 /* RestaurantListViewController.m */; };
 		77956F031893F77D00CF98C8 /* Restaurant.m in Sources */ = {isa = PBXBuildFile; fileRef = 77956F021893F77D00CF98C8 /* Restaurant.m */; };
 		77956F0C1894082600CF98C8 /* RestaurantCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 77956F0B1894082600CF98C8 /* RestaurantCell.m */; };
+		77C7863F194C7B7700E0EDB3 /* RestaurantDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C7863E194C7B7700E0EDB3 /* RestaurantDetailView.m */; };
+		77C78641194C7B9800E0EDB3 /* RestaurantDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77C78640194C7B9800E0EDB3 /* RestaurantDetailView.xib */; };
+		77C78644194C858A00E0EDB3 /* RestaurantDetailItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C78643194C858A00E0EDB3 /* RestaurantDetailItemView.m */; };
+		77C78646194C85A600E0EDB3 /* RestaurantDetailItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77C78645194C85A600E0EDB3 /* RestaurantDetailItemView.xib */; };
 		77D5B3B418DEA92F00F8B7A0 /* RestaurantWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77D5B3B218DEA92F00F8B7A0 /* RestaurantWebViewController.m */; };
 		77D5B3B518DEA92F00F8B7A0 /* RestaurantWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77D5B3B318DEA92F00F8B7A0 /* RestaurantWebViewController.xib */; };
 		77D5B3B818DF2AF300F8B7A0 /* swipe_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 77D5B3B618DF2AF300F8B7A0 /* swipe_left.png */; };
@@ -223,6 +227,12 @@
 		77956F021893F77D00CF98C8 /* Restaurant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Restaurant.m; sourceTree = "<group>"; };
 		77956F0A1894082600CF98C8 /* RestaurantCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantCell.h; sourceTree = "<group>"; };
 		77956F0B1894082600CF98C8 /* RestaurantCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantCell.m; sourceTree = "<group>"; };
+		77C7863D194C7B7700E0EDB3 /* RestaurantDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantDetailView.h; sourceTree = "<group>"; };
+		77C7863E194C7B7700E0EDB3 /* RestaurantDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantDetailView.m; sourceTree = "<group>"; };
+		77C78640194C7B9800E0EDB3 /* RestaurantDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RestaurantDetailView.xib; sourceTree = "<group>"; };
+		77C78642194C858A00E0EDB3 /* RestaurantDetailItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantDetailItemView.h; sourceTree = "<group>"; };
+		77C78643194C858A00E0EDB3 /* RestaurantDetailItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantDetailItemView.m; sourceTree = "<group>"; };
+		77C78645194C85A600E0EDB3 /* RestaurantDetailItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RestaurantDetailItemView.xib; sourceTree = "<group>"; };
 		77D5B3B118DEA92F00F8B7A0 /* RestaurantWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantWebViewController.h; sourceTree = "<group>"; };
 		77D5B3B218DEA92F00F8B7A0 /* RestaurantWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantWebViewController.m; sourceTree = "<group>"; };
 		77D5B3B318DEA92F00F8B7A0 /* RestaurantWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RestaurantWebViewController.xib; sourceTree = "<group>"; };
@@ -473,6 +483,12 @@
 				77E5BF0218A6762E008164F6 /* RestaurantSimpleView.h */,
 				77E5BF0318A6762E008164F6 /* RestaurantSimpleView.m */,
 				77E5BF0018A67611008164F6 /* RestaurantSimpleView.xib */,
+				77C7863D194C7B7700E0EDB3 /* RestaurantDetailView.h */,
+				77C7863E194C7B7700E0EDB3 /* RestaurantDetailView.m */,
+				77C78640194C7B9800E0EDB3 /* RestaurantDetailView.xib */,
+				77C78642194C858A00E0EDB3 /* RestaurantDetailItemView.h */,
+				77C78643194C858A00E0EDB3 /* RestaurantDetailItemView.m */,
+				77C78645194C85A600E0EDB3 /* RestaurantDetailItemView.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -586,6 +602,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77C78641194C7B9800E0EDB3 /* RestaurantDetailView.xib in Resources */,
 				779254BE18E7F509005DE3C8 /* shibuyakun.jpg in Resources */,
 				77615A9518C0F1C800122156 /* gokigen.jpg in Resources */,
 				77615A9D18C0F1C800122156 /* shibuya22@2x.jpg in Resources */,
@@ -654,6 +671,7 @@
 				7778C61418B0F6F100B725B3 /* r-time.png in Resources */,
 				779254BA18E7F509005DE3C8 /* isari.jpg in Resources */,
 				77615AAB18CAE7D900122156 /* sushizanmai.jpg in Resources */,
+				77C78646194C85A600E0EDB3 /* RestaurantDetailItemView.xib in Resources */,
 				779254C718E7F509005DE3C8 /* tengu@2x.jpg in Resources */,
 				77615AB118CAE7D900122156 /* mankatou@2x.jpg in Resources */,
 				77615A9618C0F1C800122156 /* gokigen@2x.jpg in Resources */,
@@ -722,6 +740,8 @@
 				77956EF51893E6A000CF98C8 /* MapViewController.m in Sources */,
 				77E5BF0A18A790DC008164F6 /* RestaurantDetailViewController.m in Sources */,
 				77956ECB1893D30900CF98C8 /* AppDelegate.m in Sources */,
+				77C78644194C858A00E0EDB3 /* RestaurantDetailItemView.m in Sources */,
+				77C7863F194C7B7700E0EDB3 /* RestaurantDetailView.m in Sources */,
 				77956F031893F77D00CF98C8 /* Restaurant.m in Sources */,
 				77956EC71893D30900CF98C8 /* main.m in Sources */,
 				7778C5F818AA56DC00B725B3 /* ModalPickerViewController.m in Sources */,

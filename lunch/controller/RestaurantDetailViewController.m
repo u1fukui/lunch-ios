@@ -11,21 +11,15 @@
 #import "Restaurant.h"
 #import "InfoPlistProperty.h"
 #import "RestaurantWebViewController.h"
+#import "RestaurantDetailView.h"
 
 @interface RestaurantDetailViewController ()
-@property (weak, nonatomic) IBOutlet GMSMapView *mapView;
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *addressLabel;
-@property (weak, nonatomic) IBOutlet UILabel *featuredMenuLabel;
-@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
-@property (weak, nonatomic) IBOutlet UILabel *holidayLabel;
-@property (weak, nonatomic) IBOutlet UILabel *commentLabel;
 @property (weak, nonatomic) IBOutlet UIView *adView;
-@property (weak, nonatomic) IBOutlet UIButton *tabelogButton;
-
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (strong, nonatomic) Restaurant *restaurant;
 @property (strong, nonatomic) UIButton *closeButton;
 @property (strong, nonatomic) NADView *nadView;
+@property (strong, nonatomic) RestaurantDetailView *detailView;
 
 @end
 
@@ -35,7 +29,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
@@ -61,19 +54,27 @@
                          action:@selector(onClickButton:)
                forControlEvents:UIControlEventTouchUpInside];
     
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.closeButton];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.closeButton];
     
-    // 地図
-    self.mapView.camera =  [GMSCameraPosition cameraWithLatitude:self.restaurant.lat
-                                                       longitude:self.restaurant.lng
-                                                            zoom:16];
-    self.mapView.myLocationEnabled = YES;
-    
-    CLLocationCoordinate2D position = CLLocationCoordinate2DMake(self.restaurant.lat,
-                                                                 self.restaurant.lng);
-    GMSMarker *marker = [GMSMarker markerWithPosition:position];
-    marker.map = self.mapView;
-    [self.mapView reloadInputViews];
+    self.detailView = [[RestaurantDetailView alloc] initWithFrame:CGRectMake(0, 0, 320.0f, 647.0f)];
+    if (self.restaurant != nil) {
+        [self.detailView showRestaurant:self.restaurant];
+    }
+    [self.scrollView addSubview:self.detailView];
+    [self.scrollView setContentSize:self.detailView.frame.size];
+    self.scrollView.showsVerticalScrollIndicator = NO;
+
+//    // 地図
+//    self.mapView.camera =  [GMSCameraPosition cameraWithLatitude:self.restaurant.lat
+//                                                       longitude:self.restaurant.lng
+//                                                            zoom:16];
+//    self.mapView.myLocationEnabled = YES;
+//    
+//    CLLocationCoordinate2D position = CLLocationCoordinate2DMake(self.restaurant.lat,
+//                                                                 self.restaurant.lng);
+//    GMSMarker *marker = [GMSMarker markerWithPosition:position];
+//    marker.map = self.mapView;
+//    [self.mapView reloadInputViews];
 
     // 広告
     self.nadView = [[NADView alloc] initWithFrame:CGRectMake(0,0,
@@ -84,16 +85,6 @@
     [self.nadView setDelegate:self];
     [self.nadView load];
     [self.adView addSubview:self.nadView];
-    
-    // データセット
-    [self show];
-    [self.tabelogButton addTarget:self
-                           action:@selector(onClickButton:)
-                 forControlEvents:UIControlEventTouchUpInside];
-    [[self.tabelogButton layer] setBorderColor:[self.tabelogButton.titleLabel.textColor CGColor]];
-    [[self.tabelogButton layer] setBorderWidth:1.0];
-    [[self.tabelogButton layer] setCornerRadius:7.0];
-    [self.tabelogButton setClipsToBounds:YES];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -124,21 +115,10 @@
 #pragma mark -
 
 - (void)showRestaurant:(Restaurant *)r
-{    
-    self.restaurant = r;
-    [self show];
-}
-
-- (void)show
 {
-    self.nameLabel.text = self.restaurant.name;
-    self.addressLabel.text = self.restaurant.address;
-    self.featuredMenuLabel.text = self.restaurant.featuredMenu;
-    self.timeLabel.text = [NSString stringWithFormat:@"%@〜%@",
-                           self.restaurant.startLunchTime,
-                           self.restaurant.finishLunchTime];
-    self.holidayLabel.text = self.restaurant.holiday;
-    self.commentLabel.text = self.restaurant.comment;
+    NSLog(@"%s", __func__);
+    self.restaurant = r;
+    [self.detailView showRestaurant:r];
 }
 
 
@@ -147,12 +127,6 @@
     if (button == self.closeButton) {
         [self dismissViewControllerAnimated:YES
                                  completion:nil];
-    } else if (button == self.tabelogButton) {
-        RestaurantWebViewController *controller = [[RestaurantWebViewController alloc]
-                                                   initWithNibName:@"RestaurantWebViewController" bundle:nil];
-        [controller loadUrl:self.restaurant.tabelogUrl];
-        [self.navigationController pushViewController:controller
-                                             animated:YES];
     }
 }
 
