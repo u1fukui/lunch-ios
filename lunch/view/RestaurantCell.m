@@ -44,7 +44,7 @@
                            r.startLunchTime, r.finishLunchTime];
     self.holidayLabel.text = r.holiday;
     self.featuredMenuLabel.text = r.featuredMenu;
-    [self.thumbnailView setImage:[UIImage imageNamed:r.thumbnailName]];
+    [self.thumbnailView setImage:[UIImage imageNamed:[r getThumbnailName:0]]];
 }
 
 + (CGFloat)cellHeight

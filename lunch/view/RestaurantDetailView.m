@@ -47,7 +47,6 @@
     return self;
 }
 
-
 - (void)showRestaurant:(Restaurant *) r
 {
     NSLog(@"%s", __func__);
@@ -61,17 +60,15 @@
     [self.commentItem showItem:@"補足" value:r.comment];
     
     CGSize size = self.photoScrollView.frame.size;
-    int pageSize = 3;
+    int pageSize = r.thumbnailCount;
     self.pageControl.numberOfPages = pageSize;
     [self.photoScrollView setContentSize:CGSizeMake((pageSize * size.width), size.height)];
     for (int i = 0; i < pageSize; i++) {
-        UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(i * size.width, 0,
-                                                                  size.width, size.height)];
-        label.text = [NSString stringWithFormat:@"%d", i + 1];
-        label.font = [UIFont fontWithName:@"Arial" size:92];
-        label.backgroundColor = [UIColor yellowColor];
-        label.textAlignment = NSTextAlignmentCenter;
-        [self.photoScrollView addSubview:label];
+        // 画像
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(320 * i, 0.0f,
+                                                                               320.0f, 320.0f)];
+        [imageView setImage:[UIImage imageNamed:[r getThumbnailName:i]]];
+        [self.photoScrollView addSubview:imageView];
     }
 }
 

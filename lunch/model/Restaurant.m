@@ -25,7 +25,13 @@
     r.tabelogUrl = array[9];
     r.comment = array[10];
     r.thumbnailName = array[11];
+    r.thumbnailCount = [array[12] intValue];
     return r;
+}
+
+-(NSString *)getThumbnailName:(int)pos
+{
+    return [NSString stringWithFormat:@"%@%d.jpg", self.thumbnailName, pos + 1];
 }
 
 @end

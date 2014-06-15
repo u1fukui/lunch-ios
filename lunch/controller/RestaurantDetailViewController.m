@@ -44,7 +44,6 @@
     // ナビゲーションバー
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navigation_bg"]
                                                   forBarMetrics:UIBarMetricsDefault];
-    self.navigationItem.title = @"お店詳細";
     
     self.closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.closeButton.frame = CGRectMake(0.0f, 0.0f, 33.0f, 33.0f);
@@ -56,7 +55,7 @@
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.closeButton];
     
-    self.detailView = [[RestaurantDetailView alloc] initWithFrame:CGRectMake(0, 0, 320.0f, 647.0f)];
+    self.detailView = [[RestaurantDetailView alloc] initWithFrame:CGRectMake(0, 0, 320.0f, 667.0f)];
     if (self.restaurant != nil) {
         [self.detailView showRestaurant:self.restaurant];
     }
@@ -118,6 +117,7 @@
 {
     NSLog(@"%s", __func__);
     self.restaurant = r;
+    self.navigationItem.title = r.name;
     [self.detailView showRestaurant:r];
 }
 
