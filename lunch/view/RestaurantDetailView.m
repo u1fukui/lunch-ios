@@ -43,6 +43,13 @@
         self.photoScrollView.showsHorizontalScrollIndicator = NO;
         self.photoScrollView.delegate = self;
         self.pageControl.currentPage = 0;
+        
+        [self.tabelogButton addTarget:self
+                            action:@selector(onClickButton:)
+                  forControlEvents:UIControlEventTouchUpInside];
+        [self.mapButton addTarget:self
+                            action:@selector(onClickButton:)
+                  forControlEvents:UIControlEventTouchUpInside];
     }
     return self;
 }
@@ -71,6 +78,16 @@
         [self.photoScrollView addSubview:imageView];
     }
 }
+
+- (void)onClickButton:(UIButton *)button
+{
+    if (button == self.tabelogButton) {
+        [self.delegate didTabelogButtonClicked];
+    } else if (button == self.mapButton) {
+        [self.delegate didMapButtonClicked];
+    }
+}
+
 
 
 #pragma mark - UIScrollViewDelegate

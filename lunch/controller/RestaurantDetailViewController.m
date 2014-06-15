@@ -56,6 +56,7 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.closeButton];
     
     self.detailView = [[RestaurantDetailView alloc] initWithFrame:CGRectMake(0, 0, 320.0f, 667.0f)];
+    self.detailView.delegate = self;
     if (self.restaurant != nil) {
         [self.detailView showRestaurant:self.restaurant];
     }
@@ -128,6 +129,23 @@
         [self dismissViewControllerAnimated:YES
                                  completion:nil];
     }
+}
+
+
+#pragma mark - RestaurantDetailViewDelegate
+
+- (void)didTabelogButtonClicked
+{
+    RestaurantWebViewController *controller = [[RestaurantWebViewController alloc]
+                                               initWithNibName:@"RestaurantWebViewController" bundle:nil];
+    [controller loadUrl:self.restaurant.tabelogUrl];
+    [self.navigationController pushViewController:controller
+                                         animated:YES];
+}
+
+- (void)didMapButtonClicked
+{
+    
 }
 
 @end

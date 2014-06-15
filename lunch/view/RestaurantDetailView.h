@@ -9,7 +9,17 @@
 #import <UIKit/UIKit.h>
 @class Restaurant;
 
+@protocol RestaurantDetailViewDelegate
+
+- (void)didTabelogButtonClicked;
+
+- (void)didMapButtonClicked;
+
+@end
+
 @interface RestaurantDetailView : UIView<UIScrollViewDelegate>
+
+@property (nonatomic, assign) id<RestaurantDetailViewDelegate> delegate;
 
 - (void)showRestaurant:(Restaurant *) r;
 
