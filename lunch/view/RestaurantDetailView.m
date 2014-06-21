@@ -56,7 +56,6 @@
 
 - (void)showRestaurant:(Restaurant *) r
 {
-    NSLog(@"%s", __func__);
     [self.addressItem showItem:@"住所" value:r.address];
     [self.lunchTimeItem showItem:@"ランチ\nタイム"
                            value:[NSString stringWithFormat:@"%@〜%@",
@@ -96,7 +95,6 @@
 {
     CGFloat pageWidth = scrollView.frame.size.width;
     if ((NSInteger)fmod(scrollView.contentOffset.x , pageWidth) == 0) {
-        NSLog(@"%f", scrollView.contentOffset.x / pageWidth);
         self.pageControl.currentPage = scrollView.contentOffset.x / pageWidth;
     }
 }

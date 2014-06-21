@@ -5,28 +5,28 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RestaurantWebViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RestaurantMapViewController">
             <connections>
-                <outlet property="adView" destination="Xi0-Sn-bU9" id="miu-Tu-1Pc"/>
-                <outlet property="view" destination="1" id="3"/>
-                <outlet property="webView" destination="In9-2D-Ml0" id="je6-be-Ceq"/>
+                <outlet property="adView" destination="DYJ-pT-4xm" id="O5I-hm-ySG"/>
+                <outlet property="mapView" destination="qzf-p4-O2B" id="fzh-cL-iWx"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="1">
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" id="Xi0-Sn-bU9">
+                <view contentMode="scaleToFill" id="DYJ-pT-4xm">
                     <rect key="frame" x="0.0" y="430" width="320" height="50"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
-                <webView contentMode="scaleToFill" id="In9-2D-Ml0">
+                <view contentMode="scaleToFill" id="qzf-p4-O2B" customClass="GMSMapView">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="430"/>
-                    <autoresizingMask key="autoresizingMask" heightSizable="YES"/>
-                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                </webView>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
         </view>

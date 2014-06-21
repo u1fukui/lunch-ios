@@ -113,6 +113,8 @@
 		77C786CE194DFA2E00E0EDB3 /* gaku1@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77C786C7194DFA2E00E0EDB3 /* gaku1@2x.jpg */; };
 		77C786CF194DFA2E00E0EDB3 /* udumasa2@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77C786C8194DFA2E00E0EDB3 /* udumasa2@2x.jpg */; };
 		77C786D1194DFB6900E0EDB3 /* black_brown1@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77C786D0194DFB6900E0EDB3 /* black_brown1@2x.jpg */; };
+		77C786D5194F45D800E0EDB3 /* RestaurantMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C786D3194F45D800E0EDB3 /* RestaurantMapViewController.m */; };
+		77C786D6194F45D800E0EDB3 /* RestaurantMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77C786D4194F45D800E0EDB3 /* RestaurantMapViewController.xib */; };
 		77D5B3B418DEA92F00F8B7A0 /* RestaurantWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77D5B3B218DEA92F00F8B7A0 /* RestaurantWebViewController.m */; };
 		77D5B3B518DEA92F00F8B7A0 /* RestaurantWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77D5B3B318DEA92F00F8B7A0 /* RestaurantWebViewController.xib */; };
 		77D5B3B818DF2AF300F8B7A0 /* swipe_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 77D5B3B618DF2AF300F8B7A0 /* swipe_left.png */; };
@@ -267,6 +269,9 @@
 		77C786C7194DFA2E00E0EDB3 /* gaku1@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "gaku1@2x.jpg"; sourceTree = "<group>"; };
 		77C786C8194DFA2E00E0EDB3 /* udumasa2@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "udumasa2@2x.jpg"; sourceTree = "<group>"; };
 		77C786D0194DFB6900E0EDB3 /* black_brown1@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "black_brown1@2x.jpg"; sourceTree = "<group>"; };
+		77C786D2194F45D800E0EDB3 /* RestaurantMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantMapViewController.h; sourceTree = "<group>"; };
+		77C786D3194F45D800E0EDB3 /* RestaurantMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantMapViewController.m; sourceTree = "<group>"; };
+		77C786D4194F45D800E0EDB3 /* RestaurantMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RestaurantMapViewController.xib; sourceTree = "<group>"; };
 		77D5B3B118DEA92F00F8B7A0 /* RestaurantWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantWebViewController.h; sourceTree = "<group>"; };
 		77D5B3B218DEA92F00F8B7A0 /* RestaurantWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantWebViewController.m; sourceTree = "<group>"; };
 		77D5B3B318DEA92F00F8B7A0 /* RestaurantWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RestaurantWebViewController.xib; sourceTree = "<group>"; };
@@ -439,6 +444,9 @@
 				7778C5F518AA56DC00B725B3 /* ModalPickerViewController.h */,
 				7778C5F618AA56DC00B725B3 /* ModalPickerViewController.m */,
 				7778C5F718AA56DC00B725B3 /* ModalPickerViewController.xib */,
+				77C786D2194F45D800E0EDB3 /* RestaurantMapViewController.h */,
+				77C786D3194F45D800E0EDB3 /* RestaurantMapViewController.m */,
+				77C786D4194F45D800E0EDB3 /* RestaurantMapViewController.xib */,
 				77D5B3B118DEA92F00F8B7A0 /* RestaurantWebViewController.h */,
 				77D5B3B218DEA92F00F8B7A0 /* RestaurantWebViewController.m */,
 				77D5B3B318DEA92F00F8B7A0 /* RestaurantWebViewController.xib */,
@@ -739,6 +747,7 @@
 				77C786BF194DE96400E0EDB3 /* via-mamma1@2x.jpg in Resources */,
 				77C78692194DE96400E0EDB3 /* himitsukichi2@2x.jpg in Resources */,
 				77C786B3194DE96400E0EDB3 /* syanhai2@2x.jpg in Resources */,
+				77C786D6194F45D800E0EDB3 /* RestaurantMapViewController.xib in Resources */,
 				77E5BF0B18A790DC008164F6 /* RestaurantDetailViewController.xib in Resources */,
 				77C786AD194DE96400E0EDB3 /* sushidaidokoroya2@2x.jpg in Resources */,
 				77C786A8194DE96400E0EDB3 /* shibuyakun2@2x.jpg in Resources */,
@@ -813,6 +822,7 @@
 				77956F031893F77D00CF98C8 /* Restaurant.m in Sources */,
 				77956EC71893D30900CF98C8 /* main.m in Sources */,
 				7778C5F818AA56DC00B725B3 /* ModalPickerViewController.m in Sources */,
+				77C786D5194F45D800E0EDB3 /* RestaurantMapViewController.m in Sources */,
 				77615AC718CB545800122156 /* InfoPlistProperty.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

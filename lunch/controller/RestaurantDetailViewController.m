@@ -7,11 +7,11 @@
 //
 
 #import "RestaurantDetailViewController.h"
-#import <GoogleMaps/GoogleMaps.h>
 #import "Restaurant.h"
 #import "InfoPlistProperty.h"
-#import "RestaurantWebViewController.h"
 #import "RestaurantDetailView.h"
+#import "RestaurantWebViewController.h"
+#import "RestaurantMapViewController.h"
 
 @interface RestaurantDetailViewController ()
 @property (weak, nonatomic) IBOutlet UIView *adView;
@@ -64,18 +64,6 @@
     [self.scrollView setContentSize:self.detailView.frame.size];
     self.scrollView.showsVerticalScrollIndicator = NO;
 
-//    // 地図
-//    self.mapView.camera =  [GMSCameraPosition cameraWithLatitude:self.restaurant.lat
-//                                                       longitude:self.restaurant.lng
-//                                                            zoom:16];
-//    self.mapView.myLocationEnabled = YES;
-//    
-//    CLLocationCoordinate2D position = CLLocationCoordinate2DMake(self.restaurant.lat,
-//                                                                 self.restaurant.lng);
-//    GMSMarker *marker = [GMSMarker markerWithPosition:position];
-//    marker.map = self.mapView;
-//    [self.mapView reloadInputViews];
-
     // 広告
     self.nadView = [[NADView alloc] initWithFrame:CGRectMake(0,0,
                                                              NAD_ADVIEW_SIZE_320x50.width, NAD_ADVIEW_SIZE_320x50.height )];
@@ -116,7 +104,6 @@
 
 - (void)showRestaurant:(Restaurant *)r
 {
-    NSLog(@"%s", __func__);
     self.restaurant = r;
     self.navigationItem.title = r.name;
     [self.detailView showRestaurant:r];
@@ -145,7 +132,11 @@
 
 - (void)didMapButtonClicked
 {
-    
+    RestaurantMapViewController *controller = [[RestaurantMapViewController alloc]
+                                               initWithNibName:@"RestaurantMapViewController" bundle:nil];
+    [controller showRestaurant:self.restaurant];
+    [self.navigationController pushViewController:controller
+                                         animated:YES];
 }
 
 @end

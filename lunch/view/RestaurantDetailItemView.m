@@ -32,7 +32,6 @@
 
 - (void) showItem:(NSString *)name value:(NSString *)value
 {
-    NSLog(@"%s", __func__);
     self.itemNameLabel.text = name;
     self.itemValueLabel.text = value;
 }
