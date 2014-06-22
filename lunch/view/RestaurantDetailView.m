@@ -68,7 +68,7 @@
     CGSize size = self.photoScrollView.frame.size;
     int pageSize = r.thumbnailCount;
     self.pageControl.numberOfPages = pageSize;
-    [self.photoScrollView setContentSize:CGSizeMake((pageSize * size.width), size.height)];
+    [self.photoScrollView setContentSize:CGSizeMake((size.width * pageSize), size.height)];
     for (int i = 0; i < pageSize; i++) {
         // 画像
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(320 * i, 0.0f,

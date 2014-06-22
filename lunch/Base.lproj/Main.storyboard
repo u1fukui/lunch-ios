@@ -79,14 +79,13 @@
                         <subviews>
                             <view contentMode="scaleToFill" id="Rbd-lh-ReK" customClass="GMSMapView">
                                 <rect key="frame" x="0.0" y="24" width="320" height="191"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" id="fsD-wB-SbM" customClass="RestaurantSimpleView">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="l5C-DQ-k6x">
                                 <rect key="frame" x="0.0" y="215" width="320" height="100"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            </view>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -96,7 +95,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="mapView" destination="Rbd-lh-ReK" id="b1h-aW-s2h"/>
-                        <outlet property="restaurantView" destination="fsD-wB-SbM" id="lb6-Do-jIO"/>
+                        <outlet property="scrollView" destination="l5C-DQ-k6x" id="He3-Od-EWl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ySa-Re-Lhg" userLabel="First Responder" sceneMemberID="firstResponder"/>
