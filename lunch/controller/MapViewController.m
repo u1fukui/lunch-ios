@@ -24,6 +24,7 @@
 @property (strong, nonatomic) RestaurantSimpleView *restaurantView;
 @property (strong, nonatomic) RestaurantSimpleView *restaurantPreviousView;
 @property (strong, nonatomic) RestaurantSimpleView *restaurantNextView;
+@property (assign, nonatomic) int currentIndex;
 
 @end
 
@@ -121,6 +122,8 @@
 
 - (void)showRestaurant:(int)index
 {
+    self.currentIndex = index;
+    
     // 中央
     CGRect frame = self.restaurantView.frame;
     frame.origin.x = self.restaurantView.frame.size.width * index;
@@ -175,9 +178,16 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    CGFloat pageWidth = scrollView.frame.size.width;
-    if ((NSInteger)fmod(scrollView.contentOffset.x , pageWidth) == 0) {
-        int index = scrollView.contentOffset.x / pageWidth;
+    CGFloat position = scrollView.contentOffset.x / scrollView.bounds.size.width;
+    CGFloat delta = position - (CGFloat)self.currentIndex;
+    
+    if (fabs(delta) >= 1.0f) {
+        int index = self.currentIndex;
+        if (delta > 0) {
+            index++;
+        } else {
+            index--;
+        }
         GMSMarker *marker = [self.markerArray objectAtIndex:index];
         self.mapView.selectedMarker = marker;
         [self.mapView animateToLocation:marker.position];
