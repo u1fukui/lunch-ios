@@ -37,6 +37,15 @@
     // Configure the view for the selected state
 }
 
+-(void) setHighlighted:(BOOL)highlighted animated:(BOOL)animated
+{
+    if (highlighted) {
+        self.backgroundColor = [UIColor colorWithRed:0.929 green:0.11 blue:0.141 alpha:0.2f];
+    } else {
+        self.backgroundColor = [UIColor whiteColor];
+    }
+}
+
 - (void)setRestaurant:(Restaurant *)r
 {
     self.nameLabel.text = r.name;

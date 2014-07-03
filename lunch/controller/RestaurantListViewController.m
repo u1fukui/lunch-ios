@@ -96,7 +96,7 @@ NSString * const kCellIdentifier = @"launch_app";
     
     Restaurant *restaurant = [[RestaurantManager sharedManager].filteredRestaurantArray objectAtIndex:indexPath.row];
     [cell setRestaurant:restaurant];
-    cell.backgroundColor = [UIColor clearColor];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     return cell;
 }

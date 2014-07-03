@@ -113,7 +113,7 @@
                        objectAtIndex:0];
     
     // 詳細情報
-    int pageSize = [self.restaurantArray count];
+    NSUInteger pageSize = [self.restaurantArray count];
     CGSize size = self.scrollView.frame.size;
     [self.scrollView setContentSize:CGSizeMake((size.width * pageSize), size.height)];
     [self showRestaurant:0];
@@ -125,7 +125,8 @@
     CGRect frame = self.restaurantView.frame;
     frame.origin.x = self.restaurantView.frame.size.width * index;
     self.restaurantView.frame = frame;
-    [self.restaurantView setRestaurant:[self.restaurantArray objectAtIndex:index]];
+    self.restaurant = [self.restaurantArray objectAtIndex:index];
+    [self.restaurantView setRestaurant:self.restaurant];
     
     // 前
     if (index > 0) {

@@ -55,7 +55,7 @@
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.closeButton];
     
-    self.detailView = [[RestaurantDetailView alloc] initWithFrame:CGRectMake(0, 0, 320.0f, 667.0f)];
+    self.detailView = [[RestaurantDetailView alloc] initWithFrame:CGRectMake(0, 0, 320.0f, 510.0f)];
     self.detailView.delegate = self;
     if (self.restaurant != nil) {
         [self.detailView showRestaurant:self.restaurant];
