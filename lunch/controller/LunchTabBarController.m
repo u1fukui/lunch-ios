@@ -9,6 +9,7 @@
 #import "LunchTabBarController.h"
 #import "RestaurantManager.h"
 #import "InfoPlistProperty.h"
+#import "UIView+Utils.h"
 
 @interface LunchTabBarController ()
 
@@ -58,6 +59,7 @@ int const kPickerViewTag = 1;
     [self.nadView setDelegate:self];
     [self.nadView load];
     [self.view addSubview:self.nadView];
+    [self.nadView addShadow:-1.5f];
     
     // 広告枠分だけTabBarを空ける
     CGRect tabFrame = self.tabBar.frame;
@@ -88,7 +90,7 @@ int const kPickerViewTag = 1;
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.conditionButton];
     
     // 条件表示
-    self.conditionLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 24)];
+    self.conditionLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 25)];
     [self.conditionLabel setBackgroundColor:[UIColor colorWithRed:0.25 green:0.25 blue:0.25 alpha:1.0]];
     [self.conditionLabel setTextColor:[UIColor whiteColor]];
     [self.conditionLabel setFont:[UIFont systemFontOfSize:12.0f]];

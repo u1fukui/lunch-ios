@@ -12,6 +12,7 @@
 #import "RestaurantManager.h"
 #import "RestaurantDetailViewController.h"
 #import "LunchTabBarController.h"
+#import "UIView+Utils.h"
 
 @interface RestaurantListViewController ()
 
@@ -42,6 +43,7 @@ NSString * const kCellIdentifier = @"launch_app";
     [self.restaurantTableView
                 registerNib:[UINib nibWithNibName:@"RestaurantCell" bundle:nil]
      forCellReuseIdentifier:kCellIdentifier];
+    [self.restaurantTableView addShadow:15];
     
     // 引っ張って更新
     self.refreshControl = [[UIRefreshControl alloc] init];

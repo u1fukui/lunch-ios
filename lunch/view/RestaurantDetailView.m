@@ -9,6 +9,7 @@
 #import "RestaurantDetailView.h"
 #import "RestaurantDetailItemView.h"
 #import "Restaurant.h"
+#import "UIView+Utils.h"
 
 @interface RestaurantDetailView()
 
@@ -21,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet RestaurantDetailItemView *commentItem;
 
 @property (weak, nonatomic) IBOutlet UIScrollView *photoScrollView;
+@property (weak, nonatomic) IBOutlet UIView *photoScrollTopShadowView;
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 
 @end
@@ -42,6 +44,13 @@
         self.photoScrollView.userInteractionEnabled = YES;
         self.photoScrollView.showsHorizontalScrollIndicator = NO;
         self.photoScrollView.delegate = self;
+        self.photoScrollView.bounces = NO;
+        
+        // 写真の上下に影
+        [self.photoScrollView addShadow:1.5f];
+        [self.photoScrollTopShadowView addShadow:-1.5f];
+      
+        
         self.pageControl.currentPage = 0;
         
         [self.tabelogButton addTarget:self
@@ -72,7 +81,7 @@
     for (int i = 0; i < pageSize; i++) {
         // 画像
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(320 * i, 0.0f,
-                                                                               320.0f, 320.0f)];
+                                                                               320.0f, 240.0f)];
         [imageView setImage:[UIImage imageNamed:[r getThumbnailName:i]]];
         [self.photoScrollView addSubview:imageView];
     }
