@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		7720D926197261E900D09DE9 /* UINavigationBar+DropShadow.m in Sources */ = {isa = PBXBuildFile; fileRef = 7720D925197261E900D09DE9 /* UINavigationBar+DropShadow.m */; };
 		7720D92C1972736900D09DE9 /* UIView+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7720D92B1972736900D09DE9 /* UIView+Utils.m */; };
+		7720D930197292DB00D09DE9 /* ventuno2@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7720D92D197292DB00D09DE9 /* ventuno2@2x.jpg */; };
+		7720D931197292DB00D09DE9 /* nakanochikusan3@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7720D92E197292DB00D09DE9 /* nakanochikusan3@2x.jpg */; };
+		7720D932197292DB00D09DE9 /* nakanochikusan2@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7720D92F197292DB00D09DE9 /* nakanochikusan2@2x.jpg */; };
 		77615ABF18CB430900122156 /* libNendAd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 77615AB918CB430900122156 /* libNendAd.a */; };
 		77615AC018CB430A00122156 /* NADView_readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 77615ABE18CB430900122156 /* NADView_readme.txt */; };
 		77615AC218CB432600122156 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77615AC118CB432600122156 /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -74,7 +77,6 @@
 		77C78698194DE96400E0EDB3 /* kikuya1@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77C7865B194DE96400E0EDB3 /* kikuya1@2x.jpg */; };
 		77C78699194DE96400E0EDB3 /* kikuya2@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77C7865C194DE96400E0EDB3 /* kikuya2@2x.jpg */; };
 		77C7869A194DE96400E0EDB3 /* kikuya3@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77C7865D194DE96400E0EDB3 /* kikuya3@2x.jpg */; };
-		77C7869B194DE96400E0EDB3 /* kokoro1@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77C7865E194DE96400E0EDB3 /* kokoro1@2x.jpg */; };
 		77C7869C194DE96400E0EDB3 /* ma-san1@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77C7865F194DE96400E0EDB3 /* ma-san1@2x.jpg */; };
 		77C7869D194DE96400E0EDB3 /* ma-san2@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77C78660194DE96400E0EDB3 /* ma-san2@2x.jpg */; };
 		77C7869E194DE96400E0EDB3 /* ma-san3@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77C78661194DE96400E0EDB3 /* ma-san3@2x.jpg */; };
@@ -84,7 +86,6 @@
 		77C786A2194DE96400E0EDB3 /* nakanochikusan1@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77C78665194DE96400E0EDB3 /* nakanochikusan1@2x.jpg */; };
 		77C786A3194DE96400E0EDB3 /* sagouemon1@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77C78666194DE96400E0EDB3 /* sagouemon1@2x.jpg */; };
 		77C786A4194DE96400E0EDB3 /* sagouemon2@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77C78667194DE96400E0EDB3 /* sagouemon2@2x.jpg */; };
-		77C786A5194DE96400E0EDB3 /* sagouemon3@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77C78668194DE96400E0EDB3 /* sagouemon3@2x.jpg */; };
 		77C786A6194DE96400E0EDB3 /* saizeriya1@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77C78669194DE96400E0EDB3 /* saizeriya1@2x.jpg */; };
 		77C786A7194DE96400E0EDB3 /* shibuyakun1@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77C7866A194DE96400E0EDB3 /* shibuyakun1@2x.jpg */; };
 		77C786A8194DE96400E0EDB3 /* shibuyakun2@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77C7866B194DE96400E0EDB3 /* shibuyakun2@2x.jpg */; };
@@ -93,7 +94,6 @@
 		77C786AB194DE96400E0EDB3 /* shinsyuya3@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77C7866E194DE96400E0EDB3 /* shinsyuya3@2x.jpg */; };
 		77C786AC194DE96400E0EDB3 /* sushidaidokoroya1@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77C7866F194DE96400E0EDB3 /* sushidaidokoroya1@2x.jpg */; };
 		77C786AD194DE96400E0EDB3 /* sushidaidokoroya2@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77C78670194DE96400E0EDB3 /* sushidaidokoroya2@2x.jpg */; };
-		77C786AE194DE96400E0EDB3 /* sushidaidokoroya3@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77C78671194DE96400E0EDB3 /* sushidaidokoroya3@2x.jpg */; };
 		77C786AF194DE96400E0EDB3 /* sushizanmai1@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77C78672194DE96400E0EDB3 /* sushizanmai1@2x.jpg */; };
 		77C786B0194DE96400E0EDB3 /* sushizanmai2@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77C78673194DE96400E0EDB3 /* sushizanmai2@2x.jpg */; };
 		77C786B1194DE96400E0EDB3 /* suzume1@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77C78674194DE96400E0EDB3 /* suzume1@2x.jpg */; };
@@ -106,13 +106,11 @@
 		77C786B8194DE96400E0EDB3 /* torico2@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77C7867B194DE96400E0EDB3 /* torico2@2x.jpg */; };
 		77C786B9194DE96400E0EDB3 /* totodon1@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77C7867C194DE96400E0EDB3 /* totodon1@2x.jpg */; };
 		77C786BA194DE96400E0EDB3 /* totodon2@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77C7867D194DE96400E0EDB3 /* totodon2@2x.jpg */; };
-		77C786BB194DE96400E0EDB3 /* totodon3@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77C7867E194DE96400E0EDB3 /* totodon3@2x.jpg */; };
 		77C786BC194DE96400E0EDB3 /* udumasa1@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77C7867F194DE96400E0EDB3 /* udumasa1@2x.jpg */; };
 		77C786BE194DE96400E0EDB3 /* ventuno1@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77C78681194DE96400E0EDB3 /* ventuno1@2x.jpg */; };
 		77C786BF194DE96400E0EDB3 /* via-mamma1@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77C78682194DE96400E0EDB3 /* via-mamma1@2x.jpg */; };
 		77C786C0194DE96400E0EDB3 /* via-mamma2@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77C78683194DE96400E0EDB3 /* via-mamma2@2x.jpg */; };
 		77C786C9194DFA2E00E0EDB3 /* torico3@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77C786C2194DFA2E00E0EDB3 /* torico3@2x.jpg */; };
-		77C786CA194DFA2E00E0EDB3 /* black_brown3@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77C786C3194DFA2E00E0EDB3 /* black_brown3@2x.jpg */; };
 		77C786CB194DFA2E00E0EDB3 /* aogaku_7gou1@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77C786C4194DFA2E00E0EDB3 /* aogaku_7gou1@2x.jpg */; };
 		77C786CC194DFA2E00E0EDB3 /* cona_shibuya1@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77C786C5194DFA2E00E0EDB3 /* cona_shibuya1@2x.jpg */; };
 		77C786CD194DFA2E00E0EDB3 /* cona_shibuya2@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77C786C6194DFA2E00E0EDB3 /* cona_shibuya2@2x.jpg */; };
@@ -156,6 +154,9 @@
 		7720D925197261E900D09DE9 /* UINavigationBar+DropShadow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+DropShadow.m"; sourceTree = "<group>"; };
 		7720D92A1972736900D09DE9 /* UIView+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Utils.h"; sourceTree = "<group>"; };
 		7720D92B1972736900D09DE9 /* UIView+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Utils.m"; sourceTree = "<group>"; };
+		7720D92D197292DB00D09DE9 /* ventuno2@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "ventuno2@2x.jpg"; sourceTree = "<group>"; };
+		7720D92E197292DB00D09DE9 /* nakanochikusan3@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "nakanochikusan3@2x.jpg"; sourceTree = "<group>"; };
+		7720D92F197292DB00D09DE9 /* nakanochikusan2@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "nakanochikusan2@2x.jpg"; sourceTree = "<group>"; };
 		77615AB918CB430900122156 /* libNendAd.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libNendAd.a; sourceTree = "<group>"; };
 		77615ABA18CB430900122156 /* NADIconArrayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NADIconArrayView.h; sourceTree = "<group>"; };
 		77615ABB18CB430900122156 /* NADIconLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NADIconLoader.h; sourceTree = "<group>"; };
@@ -238,7 +239,6 @@
 		77C7865B194DE96400E0EDB3 /* kikuya1@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "kikuya1@2x.jpg"; sourceTree = "<group>"; };
 		77C7865C194DE96400E0EDB3 /* kikuya2@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "kikuya2@2x.jpg"; sourceTree = "<group>"; };
 		77C7865D194DE96400E0EDB3 /* kikuya3@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "kikuya3@2x.jpg"; sourceTree = "<group>"; };
-		77C7865E194DE96400E0EDB3 /* kokoro1@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "kokoro1@2x.jpg"; sourceTree = "<group>"; };
 		77C7865F194DE96400E0EDB3 /* ma-san1@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "ma-san1@2x.jpg"; sourceTree = "<group>"; };
 		77C78660194DE96400E0EDB3 /* ma-san2@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "ma-san2@2x.jpg"; sourceTree = "<group>"; };
 		77C78661194DE96400E0EDB3 /* ma-san3@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "ma-san3@2x.jpg"; sourceTree = "<group>"; };
@@ -248,7 +248,6 @@
 		77C78665194DE96400E0EDB3 /* nakanochikusan1@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "nakanochikusan1@2x.jpg"; sourceTree = "<group>"; };
 		77C78666194DE96400E0EDB3 /* sagouemon1@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "sagouemon1@2x.jpg"; sourceTree = "<group>"; };
 		77C78667194DE96400E0EDB3 /* sagouemon2@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "sagouemon2@2x.jpg"; sourceTree = "<group>"; };
-		77C78668194DE96400E0EDB3 /* sagouemon3@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "sagouemon3@2x.jpg"; sourceTree = "<group>"; };
 		77C78669194DE96400E0EDB3 /* saizeriya1@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "saizeriya1@2x.jpg"; sourceTree = "<group>"; };
 		77C7866A194DE96400E0EDB3 /* shibuyakun1@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "shibuyakun1@2x.jpg"; sourceTree = "<group>"; };
 		77C7866B194DE96400E0EDB3 /* shibuyakun2@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "shibuyakun2@2x.jpg"; sourceTree = "<group>"; };
@@ -257,7 +256,6 @@
 		77C7866E194DE96400E0EDB3 /* shinsyuya3@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "shinsyuya3@2x.jpg"; sourceTree = "<group>"; };
 		77C7866F194DE96400E0EDB3 /* sushidaidokoroya1@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "sushidaidokoroya1@2x.jpg"; sourceTree = "<group>"; };
 		77C78670194DE96400E0EDB3 /* sushidaidokoroya2@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "sushidaidokoroya2@2x.jpg"; sourceTree = "<group>"; };
-		77C78671194DE96400E0EDB3 /* sushidaidokoroya3@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "sushidaidokoroya3@2x.jpg"; sourceTree = "<group>"; };
 		77C78672194DE96400E0EDB3 /* sushizanmai1@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "sushizanmai1@2x.jpg"; sourceTree = "<group>"; };
 		77C78673194DE96400E0EDB3 /* sushizanmai2@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "sushizanmai2@2x.jpg"; sourceTree = "<group>"; };
 		77C78674194DE96400E0EDB3 /* suzume1@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "suzume1@2x.jpg"; sourceTree = "<group>"; };
@@ -270,13 +268,11 @@
 		77C7867B194DE96400E0EDB3 /* torico2@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "torico2@2x.jpg"; sourceTree = "<group>"; };
 		77C7867C194DE96400E0EDB3 /* totodon1@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "totodon1@2x.jpg"; sourceTree = "<group>"; };
 		77C7867D194DE96400E0EDB3 /* totodon2@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "totodon2@2x.jpg"; sourceTree = "<group>"; };
-		77C7867E194DE96400E0EDB3 /* totodon3@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "totodon3@2x.jpg"; sourceTree = "<group>"; };
 		77C7867F194DE96400E0EDB3 /* udumasa1@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "udumasa1@2x.jpg"; sourceTree = "<group>"; };
 		77C78681194DE96400E0EDB3 /* ventuno1@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "ventuno1@2x.jpg"; sourceTree = "<group>"; };
 		77C78682194DE96400E0EDB3 /* via-mamma1@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "via-mamma1@2x.jpg"; sourceTree = "<group>"; };
 		77C78683194DE96400E0EDB3 /* via-mamma2@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "via-mamma2@2x.jpg"; sourceTree = "<group>"; };
 		77C786C2194DFA2E00E0EDB3 /* torico3@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "torico3@2x.jpg"; sourceTree = "<group>"; };
-		77C786C3194DFA2E00E0EDB3 /* black_brown3@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "black_brown3@2x.jpg"; sourceTree = "<group>"; };
 		77C786C4194DFA2E00E0EDB3 /* aogaku_7gou1@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "aogaku_7gou1@2x.jpg"; sourceTree = "<group>"; };
 		77C786C5194DFA2E00E0EDB3 /* cona_shibuya1@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "cona_shibuya1@2x.jpg"; sourceTree = "<group>"; };
 		77C786C6194DFA2E00E0EDB3 /* cona_shibuya2@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "cona_shibuya2@2x.jpg"; sourceTree = "<group>"; };
@@ -511,13 +507,15 @@
 		77C78647194DE96400E0EDB3 /* thumbnails */ = {
 			isa = PBXGroup;
 			children = (
+				7720D92D197292DB00D09DE9 /* ventuno2@2x.jpg */,
+				7720D92E197292DB00D09DE9 /* nakanochikusan3@2x.jpg */,
+				7720D92F197292DB00D09DE9 /* nakanochikusan2@2x.jpg */,
 				77AB8FD9196EE82B00AC94E5 /* shibuyakun3@2x.jpg */,
 				77AB8FDA196EE82B00AC94E5 /* gaku3@2x.jpg */,
 				77AB8FDB196EE82B00AC94E5 /* gaku2@2x.jpg */,
 				77AB8FDC196EE82B00AC94E5 /* via-mamma3@2x.jpg */,
 				77C786D0194DFB6900E0EDB3 /* black_brown1@2x.jpg */,
 				77C786C2194DFA2E00E0EDB3 /* torico3@2x.jpg */,
-				77C786C3194DFA2E00E0EDB3 /* black_brown3@2x.jpg */,
 				77C786C4194DFA2E00E0EDB3 /* aogaku_7gou1@2x.jpg */,
 				77C786C5194DFA2E00E0EDB3 /* cona_shibuya1@2x.jpg */,
 				77C786C6194DFA2E00E0EDB3 /* cona_shibuya2@2x.jpg */,
@@ -541,7 +539,6 @@
 				77C7865B194DE96400E0EDB3 /* kikuya1@2x.jpg */,
 				77C7865C194DE96400E0EDB3 /* kikuya2@2x.jpg */,
 				77C7865D194DE96400E0EDB3 /* kikuya3@2x.jpg */,
-				77C7865E194DE96400E0EDB3 /* kokoro1@2x.jpg */,
 				77C7865F194DE96400E0EDB3 /* ma-san1@2x.jpg */,
 				77C78660194DE96400E0EDB3 /* ma-san2@2x.jpg */,
 				77C78661194DE96400E0EDB3 /* ma-san3@2x.jpg */,
@@ -551,7 +548,6 @@
 				77C78665194DE96400E0EDB3 /* nakanochikusan1@2x.jpg */,
 				77C78666194DE96400E0EDB3 /* sagouemon1@2x.jpg */,
 				77C78667194DE96400E0EDB3 /* sagouemon2@2x.jpg */,
-				77C78668194DE96400E0EDB3 /* sagouemon3@2x.jpg */,
 				77C78669194DE96400E0EDB3 /* saizeriya1@2x.jpg */,
 				77C7866A194DE96400E0EDB3 /* shibuyakun1@2x.jpg */,
 				77C7866B194DE96400E0EDB3 /* shibuyakun2@2x.jpg */,
@@ -560,7 +556,6 @@
 				77C7866E194DE96400E0EDB3 /* shinsyuya3@2x.jpg */,
 				77C7866F194DE96400E0EDB3 /* sushidaidokoroya1@2x.jpg */,
 				77C78670194DE96400E0EDB3 /* sushidaidokoroya2@2x.jpg */,
-				77C78671194DE96400E0EDB3 /* sushidaidokoroya3@2x.jpg */,
 				77C78672194DE96400E0EDB3 /* sushizanmai1@2x.jpg */,
 				77C78673194DE96400E0EDB3 /* sushizanmai2@2x.jpg */,
 				77C78674194DE96400E0EDB3 /* suzume1@2x.jpg */,
@@ -573,7 +568,6 @@
 				77C7867B194DE96400E0EDB3 /* torico2@2x.jpg */,
 				77C7867C194DE96400E0EDB3 /* totodon1@2x.jpg */,
 				77C7867D194DE96400E0EDB3 /* totodon2@2x.jpg */,
-				77C7867E194DE96400E0EDB3 /* totodon3@2x.jpg */,
 				77C7867F194DE96400E0EDB3 /* udumasa1@2x.jpg */,
 				77C78681194DE96400E0EDB3 /* ventuno1@2x.jpg */,
 				77C78682194DE96400E0EDB3 /* via-mamma1@2x.jpg */,
@@ -699,14 +693,12 @@
 				7778C60818B09FA000B725B3 /* navigation_setting_icon.png in Resources */,
 				77C786CF194DFA2E00E0EDB3 /* udumasa2@2x.jpg in Resources */,
 				77C786AA194DE96400E0EDB3 /* shinsyuya2@2x.jpg in Resources */,
-				77C786AE194DE96400E0EDB3 /* sushidaidokoroya3@2x.jpg in Resources */,
 				77C78693194DE96400E0EDB3 /* ikudon1@2x.jpg in Resources */,
 				77C786CB194DFA2E00E0EDB3 /* aogaku_7gou1@2x.jpg in Resources */,
 				77C78697194DE96400E0EDB3 /* j-shibuya1@2x.jpg in Resources */,
 				77C78698194DE96400E0EDB3 /* kikuya1@2x.jpg in Resources */,
 				77C786CD194DFA2E00E0EDB3 /* cona_shibuya2@2x.jpg in Resources */,
 				77956ED31893D30900CF98C8 /* Images.xcassets in Resources */,
-				77C786CA194DFA2E00E0EDB3 /* black_brown3@2x.jpg in Resources */,
 				77D5B3B818DF2AF300F8B7A0 /* swipe_left.png in Resources */,
 				77C7869A194DE96400E0EDB3 /* kikuya3@2x.jpg in Resources */,
 				77D5B3BC18DF2C9C00F8B7A0 /* swipe_right.png in Resources */,
@@ -721,6 +713,7 @@
 				77C786CC194DFA2E00E0EDB3 /* cona_shibuya1@2x.jpg in Resources */,
 				7778C5F918AA56DC00B725B3 /* ModalPickerViewController.xib in Resources */,
 				77C786A4194DE96400E0EDB3 /* sagouemon2@2x.jpg in Resources */,
+				7720D931197292DB00D09DE9 /* nakanochikusan3@2x.jpg in Resources */,
 				77C786BC194DE96400E0EDB3 /* udumasa1@2x.jpg in Resources */,
 				77C78694194DE96400E0EDB3 /* ikudon2@2x.jpg in Resources */,
 				77C78696194DE96400E0EDB3 /* isari2@2x.jpg in Resources */,
@@ -738,7 +731,6 @@
 				7778C61518B0F6F100B725B3 /* r-time@2x.png in Resources */,
 				77956ECE1893D30900CF98C8 /* Main.storyboard in Resources */,
 				77D5B3B518DEA92F00F8B7A0 /* RestaurantWebViewController.xib in Resources */,
-				77C786BB194DE96400E0EDB3 /* totodon3@2x.jpg in Resources */,
 				77C7868B194DE96400E0EDB3 /* chintonsyan1@2x.jpg in Resources */,
 				7778C60018B0958A00B725B3 /* tab_list_icon.png in Resources */,
 				77D5B3BD18DF2C9C00F8B7A0 /* swipe_right@2x.png in Resources */,
@@ -752,15 +744,14 @@
 				77C786B4194DE96400E0EDB3 /* syanhai3@2x.jpg in Resources */,
 				77AB8FDE196EE82B00AC94E5 /* gaku3@2x.jpg in Resources */,
 				7778C60118B0958A00B725B3 /* tab_list_icon@2x.png in Resources */,
-				77C7869B194DE96400E0EDB3 /* kokoro1@2x.jpg in Resources */,
 				77C786A3194DE96400E0EDB3 /* sagouemon1@2x.jpg in Resources */,
 				77C786A2194DE96400E0EDB3 /* nakanochikusan1@2x.jpg in Resources */,
 				77C786CE194DFA2E00E0EDB3 /* gaku1@2x.jpg in Resources */,
 				77C786AF194DE96400E0EDB3 /* sushizanmai1@2x.jpg in Resources */,
 				77615AC018CB430A00122156 /* NADView_readme.txt in Resources */,
 				77C786C0194DE96400E0EDB3 /* via-mamma2@2x.jpg in Resources */,
-				77C786A5194DE96400E0EDB3 /* sagouemon3@2x.jpg in Resources */,
 				7778C60C18B0A2FB00B725B3 /* navigation_close_icon.png in Resources */,
+				7720D930197292DB00D09DE9 /* ventuno2@2x.jpg in Resources */,
 				77C786AB194DE96400E0EDB3 /* shinsyuya3@2x.jpg in Resources */,
 				77AB8FE0196EE82B00AC94E5 /* via-mamma3@2x.jpg in Resources */,
 				77C786BA194DE96400E0EDB3 /* totodon2@2x.jpg in Resources */,
@@ -791,6 +782,7 @@
 				77C786A1194DE96400E0EDB3 /* mankatou2@2x.jpg in Resources */,
 				77E5BF0618A68399008164F6 /* RestaurantCell.xib in Resources */,
 				77C78691194DE96400E0EDB3 /* himitsukichi1@2x.jpg in Resources */,
+				7720D932197292DB00D09DE9 /* nakanochikusan2@2x.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
