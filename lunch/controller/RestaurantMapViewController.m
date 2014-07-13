@@ -16,7 +16,7 @@
 @property (weak, nonatomic) IBOutlet UIView *adView;
 
 @property (strong, nonatomic) NADView *nadView;
-@property (strong, nonatomic) UIButton *backButton;
+@property (strong, nonatomic) UIButton *closeButton;
 @property (strong, nonatomic) Restaurant *restaurant;
 
 @end
@@ -43,19 +43,19 @@
     // ナビゲーションバー
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navigation_bg"]
                                                   forBarMetrics:UIBarMetricsDefault];
+    
+    self.closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.closeButton.frame = CGRectMake(0.0f, 0.0f, 20.0f, 20.0f);
+    [self.closeButton setBackgroundImage:[UIImage imageNamed:@"close"]
+                                forState:UIControlStateNormal];
+    [self.closeButton addTarget:self
+                         action:@selector(onClickButton:)
+               forControlEvents:UIControlEventTouchUpInside];
+
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.closeButton];
     self.navigationItem.title = @"お店の場所";
     
-    
-    self.backButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.backButton.frame = CGRectMake(0.0f, 0.0f, 33.0f, 33.0f);
-    [self.backButton setBackgroundImage:[UIImage imageNamed:@"navigation_back"]
-                               forState:UIControlStateNormal];
-    [self.backButton addTarget:self
-                        action:@selector(onClickButton:)
-              forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:self.backButton];
-    self.navigationItem.leftBarButtonItem = item;
-    
+    // 地図
     self.mapView.camera =  [GMSCameraPosition cameraWithLatitude:self.restaurant.lat
                                                        longitude:self.restaurant.lng
                                                             zoom:16];
@@ -115,8 +115,8 @@
 
 - (void)onClickButton:(UIButton *)button
 {
-    if (button == self.backButton) {
-        [self.navigationController popViewControllerAnimated:YES];
+    if (button == self.closeButton) {
+        [self.navigationController dismissViewControllerAnimated:YES completion:nil];
     }
 }
 

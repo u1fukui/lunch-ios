@@ -9,12 +9,13 @@
 #import "RestaurantWebViewController.h"
 #import "InfoPlistProperty.h"
 #import "SVProgressHUD.h"
+#import "UIView+Utils.h"
 
 @interface RestaurantWebViewController ()
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (weak, nonatomic) IBOutlet UIView *adView;
-@property (strong, nonatomic) UIButton *backButton;
+@property (strong, nonatomic) UIButton *closeButton;
 @property (strong, nonatomic) NADView *nadView;
 @property (strong, nonatomic) NSString *url;
 
@@ -45,15 +46,19 @@
     self.navigationItem.title = @"食べログ";
     
     
-    self.backButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.backButton.frame = CGRectMake(0.0f, 0.0f, 33.0f, 33.0f);
-    [self.backButton setBackgroundImage:[UIImage imageNamed:@"navigation_back"]
+    // ナビゲーションバー
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navigation_bg"]
+                                                  forBarMetrics:UIBarMetricsDefault];
+    
+    self.closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.closeButton.frame = CGRectMake(0.0f, 0.0f, 20.0f, 20.0f);
+    [self.closeButton setBackgroundImage:[UIImage imageNamed:@"close"]
                                 forState:UIControlStateNormal];
-    [self.backButton addTarget:self
-                        action:@selector(onClickButton:)
-              forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:self.backButton];
-    self.navigationItem.leftBarButtonItem = item;
+    [self.closeButton addTarget:self
+                         action:@selector(onClickButton:)
+               forControlEvents:UIControlEventTouchUpInside];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.closeButton];
     
     // WebView
     self.webView.delegate = self;
@@ -69,6 +74,7 @@
     [self.nadView setDelegate:self];
     [self.nadView load];
     [self.adView addSubview:self.nadView];
+    [self.adView addShadow:-1.5f];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -114,8 +120,8 @@
 
 - (void)onClickButton:(UIButton *)button
 {
-    if (button == self.backButton) {
-        [self.navigationController popViewControllerAnimated:YES];
+    if (button == self.closeButton) {
+        [self.navigationController dismissViewControllerAnimated:YES completion:nil];
     }
 }
 

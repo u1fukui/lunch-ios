@@ -24,17 +24,17 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="570"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="m9W-rY-jKD">
-                    <rect key="frame" x="0.0" y="0.0" width="160" height="45"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="m9W-rY-jKD">
+                    <rect key="frame" x="4" y="9" width="152" height="26"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="食べログ">
+                    <state key="normal" image="tabelog.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8P1-Q3-5GD">
-                    <rect key="frame" x="160" y="0.0" width="160" height="45"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="8P1-Q3-5GD">
+                    <rect key="frame" x="196.00000019506967" y="9" width="88" height="26"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="地図">
+                    <state key="normal" image="map.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
@@ -95,4 +95,8 @@
             <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
         </view>
     </objects>
+    <resources>
+        <image name="map.png" width="52" height="26"/>
+        <image name="tabelog.png" width="80" height="26"/>
+    </resources>
 </document>

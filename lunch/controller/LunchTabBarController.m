@@ -47,6 +47,20 @@ int const kPickerViewTag = 1;
         self.edgesForExtendedLayout = UIRectEdgeNone;
     }
     
+    // タブアイコン
+    UIViewController *vc1 = [self.viewControllers objectAtIndex:0];
+    [vc1.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"tab_list"]
+                  withFinishedUnselectedImage:[UIImage imageNamed:@"tab_list_disable"]];
+    UIEdgeInsets insets;
+    insets.top = 5.0;
+    insets.bottom = -5.0;
+    vc1.tabBarItem.imageInsets = insets;
+    
+    UIViewController *vc2 = [self.viewControllers objectAtIndex:1];
+    [vc2.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"tab_map"]
+                 withFinishedUnselectedImage:[UIImage imageNamed:@"tab_map_disable"]];
+    vc2.tabBarItem.imageInsets = insets;
+    
     // 広告
     int contentHeight = self.view.frame.size.height -
     self.navigationController.navigationBar.frame.size.height - 20; // screen - navigationBar - statusBar
@@ -72,7 +86,10 @@ int const kPickerViewTag = 1;
     self.navigationItem.title = @"渋谷500円ランチ";
     
     // メールボタン
-    self.infoButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
+    self.infoButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.infoButton.frame = CGRectMake(0.0f, 0.0f, 20.0f, 20.0f);
+    [self.infoButton setImage:[UIImage imageNamed:@"misc"]
+                     forState:UIControlStateNormal];
     [self.infoButton addTarget:self
                         action:@selector(onClickButton:)
               forControlEvents:UIControlEventTouchUpInside];
@@ -81,8 +98,8 @@ int const kPickerViewTag = 1;
     
     // 条件設定ボタン
     self.conditionButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.conditionButton.frame = CGRectMake(0.0f, 0.0f, 33.0f, 33.0f);
-    [self.conditionButton setBackgroundImage:[UIImage imageNamed:@"navigation_setting_icon"]
+    self.conditionButton.frame = CGRectMake(0.0f, 0.0f, 20.0f, 20.0f);
+    [self.conditionButton setBackgroundImage:[UIImage imageNamed:@"clock"]
                                     forState:UIControlStateNormal];
     [self.conditionButton addTarget:self
                              action:@selector(onClickButton:)

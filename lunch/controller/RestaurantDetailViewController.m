@@ -12,6 +12,7 @@
 #import "RestaurantDetailView.h"
 #import "RestaurantWebViewController.h"
 #import "RestaurantMapViewController.h"
+#import "UIView+Utils.h"
 
 @interface RestaurantDetailViewController ()
 @property (weak, nonatomic) IBOutlet UIView *adView;
@@ -46,8 +47,8 @@
                                                   forBarMetrics:UIBarMetricsDefault];
     
     self.closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.closeButton.frame = CGRectMake(0.0f, 0.0f, 33.0f, 33.0f);
-    [self.closeButton setBackgroundImage:[UIImage imageNamed:@"navigation_close_icon"]
+    self.closeButton.frame = CGRectMake(0.0f, 0.0f, 20.0f, 20.0f);
+    [self.closeButton setBackgroundImage:[UIImage imageNamed:@"close"]
                                     forState:UIControlStateNormal];
     [self.closeButton addTarget:self
                          action:@selector(onClickButton:)
@@ -73,6 +74,7 @@
     [self.nadView setDelegate:self];
     [self.nadView load];
     [self.adView addSubview:self.nadView];
+    [self.nadView addShadow:-1.5f];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -126,8 +128,10 @@
     RestaurantWebViewController *controller = [[RestaurantWebViewController alloc]
                                                initWithNibName:@"RestaurantWebViewController" bundle:nil];
     [controller loadUrl:self.restaurant.tabelogUrl];
-    [self.navigationController pushViewController:controller
-                                         animated:YES];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
+    [self.navigationController presentViewController:navController
+                                            animated:YES
+                                          completion:nil];
 }
 
 - (void)didMapButtonClicked
@@ -135,8 +139,10 @@
     RestaurantMapViewController *controller = [[RestaurantMapViewController alloc]
                                                initWithNibName:@"RestaurantMapViewController" bundle:nil];
     [controller showRestaurant:self.restaurant];
-    [self.navigationController pushViewController:controller
-                                         animated:YES];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
+    [self.navigationController presentViewController:navController
+                                            animated:YES
+                                          completion:nil];
 }
 
 @end

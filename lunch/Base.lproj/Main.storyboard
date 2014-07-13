@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--Restaurant List View Controller - お店リスト-->
+        <!--Restaurant List View Controller-->
         <scene sceneID="kJP-Me-YKr">
             <objects>
                 <viewController autoresizesArchivedViewToFullSize="NO" id="sJE-Ks-lmp" customClass="RestaurantListViewController" sceneMemberID="viewController">
@@ -25,7 +25,7 @@
                         <color key="backgroundColor" red="0.96862745100000003" green="0.95294117649999999" blue="0.87843137250000003" alpha="1" colorSpace="deviceRGB"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <tabBarItem key="tabBarItem" title="お店リスト" image="tab_list_icon.png" id="RGp-tC-Ekd"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="" id="RGp-tC-Ekd"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="restaurantTableView" destination="aOy-ze-hG2" id="RIi-U7-VXB"/>
@@ -73,7 +73,7 @@
             </objects>
             <point key="canvasLocation" x="-177" y="121"/>
         </scene>
-        <!--Map View Controller - 地図-->
+        <!--Map View Controller-->
         <scene sceneID="ml0-yU-XSF">
             <objects>
                 <viewController autoresizesArchivedViewToFullSize="NO" id="gbA-r6-FBJ" customClass="MapViewController" sceneMemberID="viewController">
@@ -132,7 +132,7 @@
                         <color key="backgroundColor" red="0.96862745100000003" green="0.95294117649999999" blue="0.87843137250000003" alpha="1" colorSpace="deviceRGB"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <tabBarItem key="tabBarItem" title="地図" image="tab_map_icon.png" id="IVF-ZP-3XY"/>
+                    <tabBarItem key="tabBarItem" title="" id="IVF-ZP-3XY"/>
                     <navigationItem key="navigationItem" id="g7Q-5a-SJD"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
@@ -148,8 +148,6 @@
     <resources>
         <image name="swipe_left.png" width="20" height="20"/>
         <image name="swipe_right.png" width="20" height="20"/>
-        <image name="tab_list_icon.png" width="30" height="30"/>
-        <image name="tab_map_icon.png" width="30" height="30"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
