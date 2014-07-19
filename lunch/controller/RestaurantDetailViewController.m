@@ -12,13 +12,13 @@
 #import "RestaurantDetailView.h"
 #import "RestaurantWebViewController.h"
 #import "RestaurantMapViewController.h"
-#import "UIView+Utils.h"
 
 @interface RestaurantDetailViewController ()
 @property (weak, nonatomic) IBOutlet UIView *adView;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (strong, nonatomic) Restaurant *restaurant;
 @property (strong, nonatomic) UIButton *closeButton;
+@property (strong, nonatomic) UIButton *shareButton;
 @property (strong, nonatomic) NADView *nadView;
 @property (strong, nonatomic) RestaurantDetailView *detailView;
 
@@ -42,10 +42,10 @@
         self.edgesForExtendedLayout = UIRectEdgeNone;
     }
     
-    // ナビゲーションバー
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navigation_bg"]
                                                   forBarMetrics:UIBarMetricsDefault];
     
+    // 閉じるボタン
     self.closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.closeButton.frame = CGRectMake(0.0f, 0.0f, 20.0f, 20.0f);
     [self.closeButton setBackgroundImage:[UIImage imageNamed:@"close"]
@@ -53,9 +53,19 @@
     [self.closeButton addTarget:self
                          action:@selector(onClickButton:)
                forControlEvents:UIControlEventTouchUpInside];
-    
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.closeButton];
+
+    // シェアボタン
+    self.shareButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.shareButton.frame = CGRectMake(0.0f, 10.0f, 20.0f, 20.0f);
+    [self.shareButton setBackgroundImage:[UIImage imageNamed:@"share"]
+                                forState:UIControlStateNormal];
+    [self.shareButton addTarget:self
+                         action:@selector(onClickButton:)
+               forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.shareButton];
     
+    // 詳細情報
     self.detailView = [[RestaurantDetailView alloc] initWithFrame:CGRectMake(0, 0, 320.0f, 570.0f)];
     self.detailView.delegate = self;
     if (self.restaurant != nil) {
@@ -74,7 +84,6 @@
     [self.nadView setDelegate:self];
     [self.nadView load];
     [self.adView addSubview:self.nadView];
-    [self.nadView addShadow:-1.5f];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -117,6 +126,16 @@
     if (button == self.closeButton) {
         [self dismissViewControllerAnimated:YES
                                  completion:nil];
+    } else if (button == self.shareButton) {
+        // メール件名
+        NSString *format = @"%@\n\n-----------------------------\n渋谷500円ランチ - iPhoneアプリ\n%@";
+        NSString *appUrl = @"https://itunes.apple.com/ja/app/se-gu500yuanranchimap/id856723884?l=ja&ls=1&mt=8";
+        NSString *text = [[NSString stringWithFormat:format, self.restaurant.tabelogUrl, appUrl]
+                             stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        
+        // メーラー起動
+        [[UIApplication sharedApplication] openURL:
+         [NSURL URLWithString:[NSString stringWithFormat:@"mailto:?body=%@", text]]];
     }
 }
 

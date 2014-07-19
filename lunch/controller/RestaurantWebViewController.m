@@ -9,7 +9,6 @@
 #import "RestaurantWebViewController.h"
 #import "InfoPlistProperty.h"
 #import "SVProgressHUD.h"
-#import "UIView+Utils.h"
 
 @interface RestaurantWebViewController ()
 
@@ -74,7 +73,6 @@
     [self.nadView setDelegate:self];
     [self.nadView load];
     [self.adView addSubview:self.nadView];
-    [self.adView addShadow:-1.5f];
 }
 
 - (void)viewWillAppear:(BOOL)animated

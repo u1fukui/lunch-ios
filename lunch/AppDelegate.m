@@ -28,6 +28,7 @@ void uncaughtExceptionHandler(NSException *exception)
     [self loadRestaurantFile:[[NSBundle mainBundle] pathForResource:@"lunch" ofType:@"csv"]];
     
     [UINavigationBar appearance].titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
+    [[UINavigationBar appearance] setShadowImage:[UIImage imageNamed:@"shadow_btm"]];
     
     return YES;
 }

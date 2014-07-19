@@ -9,7 +9,7 @@
 #import "LunchTabBarController.h"
 #import "RestaurantManager.h"
 #import "InfoPlistProperty.h"
-#import "UIView+Utils.h"
+#import "UIColor+Hex.h"
 
 @interface LunchTabBarController ()
 
@@ -49,18 +49,21 @@ int const kPickerViewTag = 1;
     
     // タブアイコン
     UIViewController *vc1 = [self.viewControllers objectAtIndex:0];
-    [vc1.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"tab_list"]
-                  withFinishedUnselectedImage:[UIImage imageNamed:@"tab_list_disable"]];
+    UIImage *image1 = [[UIImage imageNamed:@"tab_list_disable"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *selectedImage1 = [[UIImage imageNamed:@"tab_list"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    vc1.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image:image1 selectedImage:selectedImage1];
+
     UIEdgeInsets insets;
     insets.top = 5.0;
     insets.bottom = -5.0;
     vc1.tabBarItem.imageInsets = insets;
     
     UIViewController *vc2 = [self.viewControllers objectAtIndex:1];
-    [vc2.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"tab_map"]
-                 withFinishedUnselectedImage:[UIImage imageNamed:@"tab_map_disable"]];
+    UIImage *image2 = [[UIImage imageNamed:@"tab_map_disable"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *selectedImage2 = [[UIImage imageNamed:@"tab_map"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    vc2.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image:image2 selectedImage:selectedImage2];
     vc2.tabBarItem.imageInsets = insets;
-    
+
     // 広告
     int contentHeight = self.view.frame.size.height -
     self.navigationController.navigationBar.frame.size.height - 20; // screen - navigationBar - statusBar
@@ -73,13 +76,24 @@ int const kPickerViewTag = 1;
     [self.nadView setDelegate:self];
     [self.nadView load];
     [self.view addSubview:self.nadView];
-    [self.nadView addShadow:-1.5f];
-    
+
     // 広告枠分だけTabBarを空ける
     CGRect tabFrame = self.tabBar.frame;
     tabFrame.origin.y -= NAD_ADVIEW_SIZE_320x50.height;
     self.tabBar.frame = tabFrame;
     
+    // 影を付ける
+    UIImageView *topShadow = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, tabFrame.size.width, 1)];
+    [topShadow setImage:[UIImage imageNamed:@"shadow_btm"]];
+    UIImageView *bottomShadow = [[UIImageView alloc] initWithFrame:
+                                 CGRectMake(0, tabFrame.size.height - 1, tabFrame.size.width, 1)];
+    [bottomShadow setImage:[UIImage imageNamed:@"shadow_up"]];
+    [self.tabBar addSubview:topShadow];
+    [self.tabBar addSubview:bottomShadow];
+    
+    // タブの背景色
+    self.tabBar.barTintColor = [UIColor colorWithHex:@"#f7f3e9"];
+
     // ナビゲーション
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navigation_bg"]
                                                   forBarMetrics:UIBarMetricsDefault];

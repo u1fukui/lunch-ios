@@ -9,7 +9,7 @@
 #import "RestaurantDetailView.h"
 #import "RestaurantDetailItemView.h"
 #import "Restaurant.h"
-#import "UIView+Utils.h"
+#import "UIColor+Hex.h"
 
 @interface RestaurantDetailView()
 
@@ -22,7 +22,6 @@
 @property (weak, nonatomic) IBOutlet RestaurantDetailItemView *commentItem;
 
 @property (weak, nonatomic) IBOutlet UIScrollView *photoScrollView;
-@property (weak, nonatomic) IBOutlet UIView *photoScrollTopShadowView;
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 
 @end
@@ -38,7 +37,10 @@
                                   loadNibNamed:@"RestaurantDetailView"
                                   owner:self
                                   options:nil];
-        [self addSubview:topLevelViews[0]];
+        UIView *mainView = topLevelViews[0];
+        [self addSubview:mainView];
+        
+        mainView.backgroundColor = [UIColor colorWithHex:@"#f7f3e9"];;
         
         self.photoScrollView.pagingEnabled = YES;
         self.photoScrollView.userInteractionEnabled = YES;
@@ -46,10 +48,6 @@
         self.photoScrollView.delegate = self;
         self.photoScrollView.bounces = NO;
         
-        // 写真の上下に影
-        [self.photoScrollView addShadow:1.5f];
-        [self.photoScrollTopShadowView addShadow:-1.5f];
-      
         
         self.pageControl.currentPage = 0;
         

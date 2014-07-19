@@ -12,7 +12,7 @@
 #import "RestaurantManager.h"
 #import "RestaurantDetailViewController.h"
 #import "LunchTabBarController.h"
-#import "UIView+Utils.h"
+#import "UIColor+Hex.h"
 
 @interface RestaurantListViewController ()
 
@@ -38,12 +38,13 @@ NSString * const kCellIdentifier = @"launch_app";
 {
     [super viewDidLoad];
     
+    // リスト
     self.restaurantTableView.delegate = self;
     self.restaurantTableView.dataSource = self;
     [self.restaurantTableView
                 registerNib:[UINib nibWithNibName:@"RestaurantCell" bundle:nil]
      forCellReuseIdentifier:kCellIdentifier];
-    [self.restaurantTableView addShadow:15];
+    self.restaurantTableView.backgroundColor = [UIColor colorWithHex:@"#f7f3e9"];
     
     // 引っ張って更新
     self.refreshControl = [[UIRefreshControl alloc] init];
