@@ -75,6 +75,8 @@ NSString * const kCellIdentifier = @"launch_app";
     
     LunchTabBarController *controller = (LunchTabBarController *) self.tabBarController;
     [controller updateLocation];
+    [[RestaurantManager sharedManager] sortInOrderOfDistace];
+    [self.restaurantTableView reloadData];
     
     [self.refreshControl endRefreshing];
 }
