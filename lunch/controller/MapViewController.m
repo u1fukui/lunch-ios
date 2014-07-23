@@ -25,6 +25,7 @@
 @property (strong, nonatomic) RestaurantSimpleView *restaurantPreviousView;
 @property (strong, nonatomic) RestaurantSimpleView *restaurantNextView;
 @property (assign, nonatomic) int currentIndex;
+@property (assign, nonatomic) BOOL isTappingMarker;
 
 @end
 
@@ -34,7 +35,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        self.isTappingMarker = NO;
     }
     return self;
 }
@@ -166,11 +167,15 @@
     [mapView animateToLocation:marker.position];
     self.restaurant = marker.userData;
     
-    int index = [self.restaurant.restaurantId intValue] - 1;
+    int index = [self.restaurantArray indexOfObject:self.restaurant];
+    
+    self.isTappingMarker = YES;
     self.scrollView.contentOffset = CGPointMake(self.restaurantView.frame.size.width * index, 0);
+    self.isTappingMarker = NO;
     
     [self showRestaurant:index];
-    return YES;
+    
+    return NO;
 }
 
 
@@ -178,6 +183,10 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
+    if (self.isTappingMarker || self.currentIndex >= [self.restaurantArray count]) {
+        return; // マーカータップ時に発生するスクロールは無視
+    }
+    
     CGFloat position = scrollView.contentOffset.x / scrollView.bounds.size.width;
     CGFloat delta = position - (CGFloat)self.currentIndex;
     
