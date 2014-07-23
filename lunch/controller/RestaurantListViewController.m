@@ -44,7 +44,7 @@ NSString * const kCellIdentifier = @"launch_app";
     [self.restaurantTableView
                 registerNib:[UINib nibWithNibName:@"RestaurantCell" bundle:nil]
      forCellReuseIdentifier:kCellIdentifier];
-    self.restaurantTableView.backgroundColor = [UIColor colorWithHex:@"#f7f3e9"];
+    self.restaurantTableView.backgroundColor = [UIColor colorWithHex:@"#fef9ea"];
     
     // 引っ張って更新
     self.refreshControl = [[UIRefreshControl alloc] init];

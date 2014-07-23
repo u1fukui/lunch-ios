@@ -92,8 +92,8 @@ int const kPickerViewTag = 1;
     [self.tabBar addSubview:bottomShadow];
     
     // タブの背景色
-    self.tabBar.barTintColor = [UIColor colorWithHex:@"#f7f3e9"];
-
+    self.tabBar.barTintColor = [UIColor colorWithHex:@"#fef9eaf"];
+    
     // ナビゲーション
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navigation_bg"]
                                                   forBarMetrics:UIBarMetricsDefault];

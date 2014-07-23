@@ -40,7 +40,7 @@
         UIView *mainView = topLevelViews[0];
         [self addSubview:mainView];
         
-        mainView.backgroundColor = [UIColor colorWithHex:@"#f7f3e9"];;
+        mainView.backgroundColor = [UIColor colorWithHex:@"#fef9ea"];;
         
         self.photoScrollView.pagingEnabled = YES;
         self.photoScrollView.userInteractionEnabled = YES;
