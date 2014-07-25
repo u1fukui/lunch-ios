@@ -36,6 +36,7 @@ static RestaurantManager *_sharedInstance = nil;
         _filteredRestaurantArray = [NSMutableArray array];
         _needReloadTable = YES;
         _needReloadMap = YES;
+        _isSortedList = NO;
     }
     return self;
 }
@@ -73,6 +74,7 @@ static RestaurantManager *_sharedInstance = nil;
     NSSortDescriptor* sort = [[NSSortDescriptor alloc]
                                initWithKey:@"distance" ascending:YES];
     [self.filteredRestaurantArray sortUsingDescriptors:@[sort]];
+    self.isSortedList = YES;
 }
 
 

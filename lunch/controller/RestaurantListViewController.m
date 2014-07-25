@@ -77,6 +77,7 @@ NSString * const kCellIdentifier = @"launch_app";
     [controller updateLocation];
     [[RestaurantManager sharedManager] sortInOrderOfDistace];
     [self.restaurantTableView reloadData];
+    [controller updateConditionLabel];
     
     [self.refreshControl endRefreshing];
 }

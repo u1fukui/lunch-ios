@@ -179,7 +179,7 @@ int const kPickerViewTag = 1;
         message = [NSMutableString stringWithFormat:@"全てのお店を"];
     }
     
-    if ([RestaurantManager sharedManager].currentLocation) {
+    if ([RestaurantManager sharedManager].isSortedList) {
         [message appendString:@"近い順に"];
     }
     [message appendString:@"表示"];

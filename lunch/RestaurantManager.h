@@ -28,6 +28,10 @@
 /** ユーザの現在地 */
 @property (strong, nonatomic) CLLocation *currentLocation;
 
+/** 近い順に並び替えをしたか */
+@property (assign, nonatomic) BOOL isSortedList;
+
+
 /**
  * シングルトンのインスタンス取得
  */
