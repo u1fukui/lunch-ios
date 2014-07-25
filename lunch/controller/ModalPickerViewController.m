@@ -62,7 +62,7 @@
 {
     [[button layer] setBorderColor:[button.titleLabel.textColor CGColor]];
     [[button layer] setBorderWidth:1.0];
-    [[button layer] setCornerRadius:7.0];
+    [[button layer] setCornerRadius:4.0];
     [button setClipsToBounds:YES];
 }
 

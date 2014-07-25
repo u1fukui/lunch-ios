@@ -128,9 +128,9 @@
                                  completion:nil];
     } else if (button == self.shareButton) {
         // メール件名
-        NSString *format = @"%@\n\n-----------------------------\n渋谷500円ランチ - iPhoneアプリ\n%@";
+        NSString *format = @"%@\n%@\n\n-----------------------------\n渋谷500円ランチ - iPhoneアプリ\n%@";
         NSString *appUrl = @"https://itunes.apple.com/ja/app/se-gu500yuanranchimap/id856723884?l=ja&ls=1&mt=8";
-        NSString *text = [[NSString stringWithFormat:format, self.restaurant.tabelogUrl, appUrl]
+        NSString *text = [[NSString stringWithFormat:format,self.restaurant.name, self.restaurant.tabelogUrl, appUrl]
                              stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         
         // メーラー起動

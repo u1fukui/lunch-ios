@@ -167,7 +167,7 @@
     [mapView animateToLocation:marker.position];
     self.restaurant = marker.userData;
     
-    int index = [self.restaurantArray indexOfObject:self.restaurant];
+    int index = (int)[self.restaurantArray indexOfObject:self.restaurant];
     
     self.isTappingMarker = YES;
     self.scrollView.contentOffset = CGPointMake(self.restaurantView.frame.size.width * index, 0);
