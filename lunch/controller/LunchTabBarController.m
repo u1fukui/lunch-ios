@@ -95,9 +95,8 @@ int const kPickerViewTag = 1;
     self.tabBar.barTintColor = [UIColor colorWithHex:@"#fef9eaf"];
     
     // ナビゲーション
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navigation_bg"]
-                                                  forBarMetrics:UIBarMetricsDefault];
     self.navigationItem.title = @"渋谷500円ランチ";
+    self.navigationController.navigationBar.translucent = NO;
     
     // メールボタン
     self.infoButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -162,11 +161,6 @@ int const kPickerViewTag = 1;
 {
     [self.nadView setDelegate:nil];
     self.nadView = nil;
-}
-
-- (BOOL)prefersStatusBarHidden
-{
-    return NO;
 }
 
 - (void)updateConditionLabel

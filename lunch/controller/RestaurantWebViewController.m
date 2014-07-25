@@ -40,15 +40,8 @@
     }
     
     // ナビゲーションバー
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navigation_bg"]
-                                                  forBarMetrics:UIBarMetricsDefault];
     self.navigationItem.title = @"食べログ";
-    
-    
-    // ナビゲーションバー
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navigation_bg"]
-                                                  forBarMetrics:UIBarMetricsDefault];
-    
+    self.navigationController.navigationBar.translucent = NO;
     self.closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.closeButton.frame = CGRectMake(0.0f, 0.0f, 20.0f, 20.0f);
     [self.closeButton setBackgroundImage:[UIImage imageNamed:@"close"]

@@ -26,6 +26,8 @@
 	<true/>
 	<key>SupportEmailAddress</key>
 	<string>u1fukuicom+lunch@gmail.com</string>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>

@@ -10,6 +10,7 @@
 #import <GoogleMaps/GoogleMaps.h>
 #import "Restaurant.h"
 #import "RestaurantManager.h"
+#import "UIColor+Hex.h"
 
 @implementation AppDelegate
 
@@ -26,7 +27,9 @@ void uncaughtExceptionHandler(NSException *exception)
     
     [GMSServices provideAPIKey:[[[NSBundle mainBundle] infoDictionary] objectForKey:@"GoogleMapsApiKey"]];
     [self loadRestaurantFile:[[NSBundle mainBundle] pathForResource:@"lunch" ofType:@"csv"]];
-    
+
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    [UINavigationBar appearance].barTintColor = [UIColor colorWithHex:@"#ed1c24"];
     [UINavigationBar appearance].titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
     [[UINavigationBar appearance] setShadowImage:[UIImage imageNamed:@"shadow_btm"]];
     
