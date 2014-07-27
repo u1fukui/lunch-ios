@@ -17,6 +17,8 @@
 
 @property (weak, nonatomic) IBOutlet GMSMapView *mapView;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIButton *slideLeftButton;
+@property (weak, nonatomic) IBOutlet UIButton *slideRightButton;
 
 @property (strong, nonatomic) NSArray *restaurantArray;
 @property (strong, nonatomic) NSMutableArray *markerArray;
@@ -26,6 +28,8 @@
 @property (strong, nonatomic) RestaurantSimpleView *restaurantNextView;
 @property (assign, nonatomic) int currentIndex;
 @property (assign, nonatomic) BOOL isTappingMarker;
+@property (assign, nonatomic) BOOL isResetScroll;
+@property (assign, nonatomic) float pageWidth;
 
 @end
 
@@ -36,6 +40,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.isTappingMarker = NO;
+        self.isResetScroll = NO;
     }
     return self;
 }
@@ -52,6 +57,7 @@
     self.mapView.myLocationEnabled = YES;
     
     // 全お店を表示
+    self.pageWidth = self.scrollView.frame.size.width;
     [self showRestaurantList];
     
     // お店情報
@@ -73,6 +79,9 @@
     [[UITapGestureRecognizer alloc] initWithTarget:self
                                             action:@selector(onClickRestaurantView:)];
     [self.restaurantView addGestureRecognizer:recognizer];
+    
+    self.slideLeftButton.userInteractionEnabled = NO;
+    self.slideRightButton.userInteractionEnabled = NO;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -116,8 +125,10 @@
     
     // 詳細情報
     NSUInteger pageSize = [self.restaurantArray count];
-    CGSize size = self.scrollView.frame.size;
-    [self.scrollView setContentSize:CGSizeMake((size.width * pageSize), size.height)];
+    [self.scrollView setContentSize:
+     CGSizeMake(self.pageWidth * pageSize, self.scrollView.frame.size.height)];
+    self.isResetScroll = YES;
+    self.scrollView.contentOffset = CGPointMake(0, 0);
     [self showRestaurant:0];
 }
 
@@ -147,9 +158,22 @@
         self.restaurantNextView.frame = frame3;
         [self.restaurantNextView setRestaurant:[self.restaurantArray objectAtIndex:index + 1]];
     }
+    
+    // スライドボタン
+    if (self.currentIndex == 0) {
+        self.slideLeftButton.hidden = YES;
+        self.slideRightButton.hidden = NO;
+    } else if (self.currentIndex == [self.restaurantArray count] - 1) {
+        self.slideLeftButton.hidden = NO;
+        self.slideRightButton.hidden = YES;
+    } else {
+        self.slideLeftButton.hidden = NO;
+        self.slideRightButton.hidden = NO;
+    }
 }
 
-- (void)onClickRestaurantView:(UITapGestureRecognizer *)recognizer {
+- (void)onClickRestaurantView:(UITapGestureRecognizer *)recognizer
+{
     RestaurantDetailViewController *controller = [[RestaurantDetailViewController alloc]
                                                   initWithNibName:@"RestaurantDetailViewController" bundle:nil];
     [controller showRestaurant:self.restaurant];
@@ -171,7 +195,6 @@
     
     self.isTappingMarker = YES;
     self.scrollView.contentOffset = CGPointMake(self.restaurantView.frame.size.width * index, 0);
-    self.isTappingMarker = NO;
     
     [self showRestaurant:index];
     
@@ -183,7 +206,11 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    if (self.isTappingMarker || self.currentIndex >= [self.restaurantArray count]) {
+    if (self.isTappingMarker
+        || self.isResetScroll
+        || self.currentIndex >= [self.restaurantArray count]) {
+        self.isTappingMarker = NO;
+        self.isResetScroll = NO;
         return; // マーカータップ時に発生するスクロールは無視
     }
     
