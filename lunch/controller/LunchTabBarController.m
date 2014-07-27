@@ -9,7 +9,6 @@
 #import "LunchTabBarController.h"
 #import "RestaurantManager.h"
 #import "InfoPlistProperty.h"
-#import "UIColor+Hex.h"
 
 @interface LunchTabBarController ()
 
@@ -47,23 +46,45 @@ int const kPickerViewTag = 1;
         self.edgesForExtendedLayout = UIRectEdgeNone;
     }
     
+    // タブの背景色
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1) {
+        self.tabBar.barTintColor = appDelegate.baseColor;
+    } else {
+        //伸縮可能な一色の画像を生成
+        UIImage *blueBackImage = [[self imageWithColor:appDelegate.baseColor] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
+        UIImage *clearBackImage = [[self imageWithColor:[UIColor clearColor]] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
+        
+        //タブバーの背景,選択中タブアイテムの背景に画像を設定
+        [[UITabBar appearance] setBackgroundImage:blueBackImage];
+        [[UITabBar appearance] setSelectionIndicatorImage:clearBackImage];
+    }
+    
     // タブアイコン
     UIViewController *vc1 = [self.viewControllers objectAtIndex:0];
-    UIImage *image1 = [[UIImage imageNamed:@"tab_list_disable"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    UIImage *selectedImage1 = [[UIImage imageNamed:@"tab_list"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    vc1.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image:image1 selectedImage:selectedImage1];
-
+    UIViewController *vc2 = [self.viewControllers objectAtIndex:1];
     UIEdgeInsets insets;
     insets.top = 5.0;
     insets.bottom = -5.0;
-    vc1.tabBarItem.imageInsets = insets;
     
-    UIViewController *vc2 = [self.viewControllers objectAtIndex:1];
-    UIImage *image2 = [[UIImage imageNamed:@"tab_map_disable"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    UIImage *selectedImage2 = [[UIImage imageNamed:@"tab_map"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    vc2.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image:image2 selectedImage:selectedImage2];
+    if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1) {
+        UIImage *image1 = [[UIImage imageNamed:@"tab_list_disable"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        UIImage *selectedImage1 = [[UIImage imageNamed:@"tab_list"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        vc1.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image:image1 selectedImage:selectedImage1];
+        
+        UIImage *image2 = [[UIImage imageNamed:@"tab_map_disable"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        UIImage *selectedImage2 = [[UIImage imageNamed:@"tab_map"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        vc2.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image:image2 selectedImage:selectedImage2];
+    } else {
+        [vc1.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"tab_list"]
+                     withFinishedUnselectedImage:[UIImage imageNamed:@"tab_list_disable"]];
+        
+        [vc2.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"tab_map"]
+                     withFinishedUnselectedImage:[UIImage imageNamed:@"tab_map_disable"]];
+    }
+    vc1.tabBarItem.imageInsets = insets;
     vc2.tabBarItem.imageInsets = insets;
-
+    
     // 広告
     int contentHeight = self.view.frame.size.height -
     self.navigationController.navigationBar.frame.size.height - 20; // screen - navigationBar - statusBar
@@ -90,9 +111,6 @@ int const kPickerViewTag = 1;
     [bottomShadow setImage:[UIImage imageNamed:@"shadow_up"]];
     [self.tabBar addSubview:topShadow];
     [self.tabBar addSubview:bottomShadow];
-    
-    // タブの背景色
-    self.tabBar.barTintColor = [UIColor colorWithHex:@"#fef9eaf"];
     
     // ナビゲーション
     self.navigationItem.title = @"渋谷500円ランチ";
@@ -135,7 +153,20 @@ int const kPickerViewTag = 1;
     } else {
         NSLog(@"Location services not available.");
     }
+}
 
+- (UIImage *)imageWithColor:(UIColor *)color {
+    CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextFillRect(context, rect);
+    
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return image;
 }
 
 - (void)viewWillAppear:(BOOL)animated

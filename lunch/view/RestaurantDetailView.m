@@ -9,7 +9,6 @@
 #import "RestaurantDetailView.h"
 #import "RestaurantDetailItemView.h"
 #import "Restaurant.h"
-#import "UIColor+Hex.h"
 
 @interface RestaurantDetailView()
 
@@ -40,7 +39,8 @@
         UIView *mainView = topLevelViews[0];
         [self addSubview:mainView];
         
-        mainView.backgroundColor = [UIColor colorWithHex:@"#fef9ea"];;
+        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+        mainView.backgroundColor = appDelegate.baseColor;
         
         self.photoScrollView.pagingEnabled = YES;
         self.photoScrollView.userInteractionEnabled = YES;

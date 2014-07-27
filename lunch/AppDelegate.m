@@ -23,13 +23,24 @@ void uncaughtExceptionHandler(NSException *exception)
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    self.themeColor = [UIColor colorWithHex:@"#ed1c24"];
+    self.baseColor = [UIColor colorWithHex:@"#fef9eaf"];
+    
     NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
     
     [GMSServices provideAPIKey:[[[NSBundle mainBundle] infoDictionary] objectForKey:@"GoogleMapsApiKey"]];
     [self loadRestaurantFile:[[NSBundle mainBundle] pathForResource:@"lunch" ofType:@"csv"]];
 
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-    [UINavigationBar appearance].barTintColor = [UIColor colorWithHex:@"#ed1c24"];
+    
+    if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1) {
+        [UINavigationBar appearance].barTintColor = self.themeColor;
+    } else {
+        [[UINavigationBar appearance] setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
+        [[UINavigationBar appearance] setBackgroundColor:self.themeColor];
+        [[UINavigationBar appearance] setTintColor:self.themeColor];
+    }
+    
     [UINavigationBar appearance].titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
     [[UINavigationBar appearance] setShadowImage:[UIImage imageNamed:@"shadow_btm"]];
     

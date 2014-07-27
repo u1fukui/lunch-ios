@@ -12,4 +12,8 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+@property (strong, nonatomic) UIColor *themeColor;
+
+@property (strong, nonatomic) UIColor *baseColor;
+
 @end
