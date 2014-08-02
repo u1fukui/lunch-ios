@@ -9,6 +9,7 @@
 #import "RestaurantCell.h"
 #import "Restaurant.h"
 #import "RestaurantSimpleView.h"
+#import "UIColor+Hex.h"
 
 @interface RestaurantCell()
 
@@ -40,7 +41,7 @@
 -(void) setHighlighted:(BOOL)highlighted animated:(BOOL)animated
 {
     if (highlighted) {
-        self.backgroundColor = [UIColor colorWithRed:0.929 green:0.11 blue:0.141 alpha:0.2f];
+        self.backgroundColor = [UIColor colorWithHex:@"#fff1eb"];
     } else {
         self.backgroundColor = [UIColor whiteColor];
     }
