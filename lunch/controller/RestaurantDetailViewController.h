@@ -12,7 +12,7 @@
 
 @class Restaurant;
 
-@interface RestaurantDetailViewController : UIViewController<NADViewDelegate, RestaurantDetailViewDelegate>
+@interface RestaurantDetailViewController : UIViewController<NADViewDelegate, RestaurantDetailViewDelegate, UIAlertViewDelegate>
 
 - (void)showRestaurant:(Restaurant *)r;
 

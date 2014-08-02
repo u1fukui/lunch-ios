@@ -125,15 +125,11 @@
         [self dismissViewControllerAnimated:YES
                                  completion:nil];
     } else if (button == self.shareButton) {
-        // メール件名
-        NSString *format = @"%@\n%@\n\n-----------------------------\n渋谷500円ランチ - iPhoneアプリ\n%@";
-        NSString *appUrl = @"https://itunes.apple.com/ja/app/se-gu500yuanranchimap/id856723884?l=ja&ls=1&mt=8";
-        NSString *text = [[NSString stringWithFormat:format,self.restaurant.name, self.restaurant.tabelogUrl, appUrl]
-                             stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-        
-        // メーラー起動
-        [[UIApplication sharedApplication] openURL:
-         [NSURL URLWithString:[NSString stringWithFormat:@"mailto:?body=%@", text]]];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
+                                                        message:@"お店情報を友達に教える"
+                                                       delegate:self cancelButtonTitle:@"キャンセル" otherButtonTitles:@"メールする", nil];
+        alert.delegate = self;
+        [alert show];
     }
 }
 
@@ -160,6 +156,22 @@
     [self.navigationController presentViewController:navController
                                             animated:YES
                                           completion:nil];
+}
+
+
+#pragma mark - UIAlertViewDelegate
+
+-(void)alertView:(UIAlertView*)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 1) {
+        // メール件名
+        NSString *format = @"%@\n%@\n";
+        NSString *text = [[NSString stringWithFormat:format,self.restaurant.name, self.restaurant.tabelogUrl]
+                          stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        
+        // メーラー起動
+        [[UIApplication sharedApplication] openURL:
+         [NSURL URLWithString:[NSString stringWithFormat:@"mailto:?body=%@", text]]];
+    }
 }
 
 @end

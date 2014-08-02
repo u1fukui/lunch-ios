@@ -375,7 +375,6 @@ int const kPickerViewTag = 1;
 
 #pragma mark - UIAlertViewDelegate
 
-// アラートのボタンが押された時に呼ばれるデリゲート例文
 -(void)alertView:(UIAlertView*)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex == 1) {
         NSString *subject = [@"渋谷500円ランチお問い合わせ"
